@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #121212;
+  color: #d4d4d8;
+  /* text-zinc-300 */
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+.serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.animate-fadeIn {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

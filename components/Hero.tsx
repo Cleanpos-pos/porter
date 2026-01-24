@@ -9,10 +9,10 @@ const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background with parallax effect simulation */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center z-0 scale-105 transition-transform duration-1000"
-        style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=2000')`,
+        style={{
+          backgroundImage: `url('/hero-steak.jpg')`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/70 via-[#0a0a0a]/50 to-[#0a0a0a]"></div>
@@ -29,7 +29,7 @@ const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
         <p className="text-lg md:text-2xl text-zinc-300 font-light tracking-wide mb-10 max-w-2xl mx-auto">
           100% Grass-Fed, Naturally Reared Beef.
         </p>
-        <button 
+        <button
           onClick={onBookClick}
           className="group relative px-10 py-5 bg-red-900 hover:bg-red-800 text-white font-bold uppercase tracking-[0.2em] transition-all duration-300 shadow-2xl overflow-hidden"
         >

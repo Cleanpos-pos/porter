@@ -1,191 +1,313 @@
 
 import React, { useState } from 'react';
-import { Utensils, Wine, Clock, Star, Snowflake } from 'lucide-react';
+import { Utensils, Wine, Clock, Beef, Beer, Coffee, IceCream } from 'lucide-react';
+
+interface MenuItem {
+  name: string;
+  price: string;
+  desc?: string;
+  gf?: boolean;
+  v?: boolean;
+  notes?: string;
+}
 
 const Menu: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'dinner' | 'daytime' | 'specials' | 'drinks'>('dinner');
+  const [activeTab, setActiveTab] = useState<'dinner' | 'daytime' | 'drinks'>('dinner');
+  const [activeCategory, setActiveCategory] = useState<string>('starters');
 
-  const MenuSection = ({ title, items, subtitle }: { title: string; items: any[]; subtitle?: string }) => (
-    <div className="mb-12">
-      <div className="border-b border-zinc-800 pb-4 mb-6">
-        <h3 className="text-2xl serif text-white">{title}</h3>
-        {subtitle && <p className="text-red-700 text-xs uppercase tracking-widest mt-1">{subtitle}</p>}
-      </div>
-      <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
-        {items.map((item, idx) => (
-          <div key={idx} className="flex justify-between items-start group">
-            <div className="space-y-1">
-              <h4 className="text-zinc-100 font-medium group-hover:text-red-700 transition-colors">
-                {item.name} {item.gf && <span className="text-[10px] text-zinc-500 ml-2 border border-zinc-800 px-1">GF</span>}
-              </h4>
-              <p className="text-sm text-zinc-500 font-light leading-relaxed max-w-xs">{item.desc}</p>
-            </div>
-            <span className="serif text-white font-bold">£{item.price}</span>
-          </div>
-        ))}
-      </div>
+  const dinnerMenu = {
+    starters: [
+      { name: "Mixed Platter for Two", price: "19", desc: "Assorted platter of tiger prawns, beef skewers, chicken skewers, BBQ spare ribs, grilled halloumi cheese and vegetable croquettes." },
+      { name: "Smoked Salmon", price: "9", desc: "Oak wood chips - fired, fresh smoked salmon, served with onion, capers, lettuce, creamy horseradish and garlic toast.", gf: true },
+      { name: "Pan Fried Sea Scallops", price: "12", desc: "Sea scallops, grilled asparagus, lime butter." },
+      { name: "Grilled Calamari", price: "8.50", desc: "Rosemary marinated grilled calamari, cherry tomato salsa, garlic toast.", gf: true },
+      { name: "Teriyaki Beef Skewers", price: "8", desc: "Japanese style marinated strips of beef." },
+      { name: "Pan Fried Jumbo Tiger Prawns", price: "13", desc: "Garlic and chilli jumbo tiger prawns served with peppery lettuce.", gf: true },
+      { name: "Steak Tartar", price: "8.50", desc: "Seared fillet steak, capers, shallots, parsley, Worcestershire sauce, crushed mustard seeds, young rocket, truffle oil.", gf: true },
+      { name: "Veggie Cakes", price: "6.50", desc: "Mix vegetable cakes with jalapeño, mozzarella, coriander-chipotle sauce.", v: true },
+      { name: "BBQ Spare Ribs", price: "8.00", desc: "Served with mixed greens." },
+      { name: "Spicy Fusion Chicken", price: "8.50", desc: "Fresh spring onion, coriander and chilli infused chicken mince balls." },
+      { name: "Tomato Mozzarella Salad", price: "6.50", desc: "With aged balsamic dressing.", gf: true },
+      { name: "Soup of the Day", price: "4.50", desc: "Served with bread and butter." },
+      { name: "Ciabatta Garlic Breads", price: "3.25", v: true },
+      { name: "Mediterranean Olives", price: "4.50", v: true },
+      { name: "Assorted Bread Basket", price: "3.25", v: true },
+    ],
+    steaks: [
+      { name: "Charred Tenderloin (Fillet) 10oz", price: "42", desc: "Lean, tender and elegant cut." },
+      { name: "Char-Grilled Sirloin 12oz", price: "38", desc: "Well-marbled and full of flavour." },
+      { name: "Char-Grilled Sirloin 16oz", price: "42" },
+      { name: "Char-Grilled Rib Eye 12oz", price: "38", desc: "Rich, juicy and exceptionally tender." },
+      { name: "Char-Grilled Rib Eye 16oz", price: "42" },
+      { name: "Char-Grilled Rump 16oz", price: "28", desc: "Firm texture and deep beef flavour." },
+      { name: "Char-Grilled T-Bone 18oz", price: "39", desc: "Fillet and Sirloin separated by the bone." },
+      { name: "Char-Grilled Prime Rib 20oz", price: "45", desc: "On the bone, juicy and extremely flavourful." },
+      { name: "32oz Porterhouse (For Two)", price: "72", desc: "Traditional cut of two muscles: top loin and buttery soft tenderloin.", notes: "Allow 30 minutes cooking time." },
+      { name: "Wagyu 14oz Rib Eye", price: "75", desc: "Freedown Hills UK Olive Fed Wagyu. Amazing umami experience.", notes: "Limited availability." },
+    ],
+    sides: [
+      { name: "Baked Broccoli & Cheddar", price: "5.90", v: true },
+      { name: "Baked Potato & Sour Cream", price: "2.50", v: true, gf: true },
+      { name: "Garlic Sautéed Mushroom", price: "4.50", v: true, gf: true },
+      { name: "Grilled Asparagus, Truffle Oil", price: "4.75", v: true, gf: true },
+      { name: "Roasted Vegetables", price: "4.50", v: true, gf: true },
+      { name: "Fresh Green Beans", price: "3.75", v: true, gf: true },
+      { name: "Mixed Green Salad", price: "3.25", v: true, gf: true },
+      { name: "Red Onion & Tomato Salad", price: "3.25", v: true, gf: true },
+      { name: "Mash Potato", price: "2.50", v: true, gf: true },
+    ],
+    desserts: [
+      { name: "Baileys Cheesecake", price: "6.9" },
+      { name: "Chocolate Brownie", price: "6.9", desc: "Served with Vanilla Ice Cream." },
+      { name: "Apple & Raspberry Crumble", price: "6.9", desc: "Served with Vanilla Ice Cream." },
+      { name: "Sticky Toffee Pudding", price: "6.9", desc: "Served with Vanilla Ice Cream." },
+      { name: "Ice Cream or Sorbet", price: "5.3", desc: "Mint Chocolate, Pistachio, Caramelita, Blackcurrant, Lemon." },
+      { name: "Cheese Selection", price: "8.3" },
+    ]
+  };
+
+  const daytimeMenu = {
+    mains: [
+      { name: "8oz Rib Eye Steak", price: "20", desc: "Served with a selection of vegetables and chips." },
+      { name: "8oz Rump Steak", price: "15", desc: "Served with a selection of vegetables and chips." },
+      { name: "8oz Sirloin Steak", price: "20", desc: "Served with a selection of vegetables and chips." },
+      { name: "8oz Grilled Gammon Steak", price: "9.50", desc: "Served with vegetables, chips and grilled pineapple or fried egg." },
+      { name: "8oz Porterhouse Burger", price: "11", desc: "Topped with crispy bacon, served with a salad and chips." },
+      { name: "Grilled Breast of Chicken", price: "14.50", desc: "White wine and mushroom sauce, vegetables and chips." },
+      { name: "Porterhouse Sandwich", price: "11", desc: "Sliced tender beef, baguette with horseradish, salad and chips." },
+      { name: "Penne Arrabiata", price: "11", desc: "Penne pasta made in a rich spicy tomato sauce.", v: true },
+      { name: "Pan Fried Sea Bass", price: "16", desc: "Sea Bass Fillet, Baby Spinach, Lime Butter Sauce.", gf: true },
+    ]
+  };
+
+  const drinksMenu = {
+    malbec: [
+      { name: "La Vuelta Malbec", price: "30", notes: "Mendoza Argentina" },
+      { name: "San Felipe Malbec Roble", price: "34", notes: "Mendoza Argentina | 175ml: £8.1" },
+      { name: "Los Haroldos Chacabuco", price: "36", notes: "Mendoza Argentina" },
+      { name: "Cruz Alta Grand Reserve", price: "44", notes: "Mendoza Argentina" },
+      { name: "Rutini Altamira Single", price: "85", notes: "Mendoza Argentina" },
+    ],
+    european: [
+      { name: "Lacrimus 5 Tempranillo", price: "34", notes: "Rioja Spain | 175ml: £8.1" },
+      { name: "Domaine Sarrelon Rhone", price: "39", notes: "Rhone France | 175ml: £9.5" },
+      { name: "Altitude de Duorum", price: "36", notes: "Douro Portugal" },
+      { name: "Valpolicella Ripasso", price: "37", notes: "Veneto Italy" },
+      { name: "Tenuta Cappallotto", price: "48", notes: "Piedmont Italy" },
+      { name: "Saint Julien 2016", price: "95", notes: "Bordeaux France" },
+    ],
+    digestifs: [
+      { name: "Hennessy XO Cognac", price: "16.5", notes: "France" },
+      { name: "VSOP Armagnac 10yr", price: "7.5", notes: "France" },
+      { name: "Knob Creek Bourbon", price: "5.5", notes: "USA" },
+      { name: "Limoncetta di Sorrento", price: "4", notes: "Italy" },
+      { name: "Cotswold Single Malt", price: "5.5", notes: "England" },
+    ],
+    coffee: [
+      { name: "Liqueur Coffee", price: "7.5", desc: "Irish, Royal, Calypso or Baileys" },
+      { name: "Cappuccino / Latte", price: "3.5" },
+      { name: "Espresso / Coffee", price: "2.8" },
+      { name: "Tea & Infusions", price: "2.8" },
+    ]
+  };
+
+  const SectionHeader = ({ title, icon }: { title: string, icon?: React.ReactNode }) => (
+    <div className="flex items-center space-x-3 mb-10 border-b border-zinc-800 pb-4">
+      {icon && <div className="text-red-700">{icon}</div>}
+      <h3 className="text-3xl serif text-white tracking-wide">{title}</h3>
     </div>
   );
 
+  const MenuGrid = ({ items }: { items: MenuItem[] }) => (
+    <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
+      {items.map((item, idx) => (
+        <div key={idx} className="group relative flex flex-col">
+          <div className="flex justify-between items-baseline mb-1">
+            <h4 className="text-zinc-100 font-bold tracking-wide group-hover:text-red-700 transition-colors uppercase text-sm">
+              {item.name}
+              <span className="ml-2 inline-flex gap-1">
+                {item.gf && <span className="text-[9px] border border-zinc-700 px-1 text-zinc-500 font-normal">GF</span>}
+                {item.v && <span className="text-[9px] border border-green-900/50 px-1 text-green-700 font-normal">V</span>}
+              </span>
+            </h4>
+            <div className="flex-1 mx-4 border-b border-dotted border-zinc-800 self-center"></div>
+            <span className="serif text-white font-bold text-lg">£{item.price}</span>
+          </div>
+          {item.desc && <p className="text-xs text-zinc-500 leading-relaxed italic">{item.desc}</p>}
+          {item.notes && <p className="text-[10px] text-red-900/80 uppercase tracking-widest mt-1 font-bold">{item.notes}</p>}
+        </div>
+      ))}
+    </div>
+  );
+
+  const categoryIcons: Record<string, React.ReactNode> = {
+    starters: <Utensils size={24} />,
+    steaks: <Beef size={24} />,
+    sides: <Beer size={24} />,
+    desserts: <IceCream size={24} />,
+    mains: <Beef size={24} />,
+    drinks: <Wine size={24} />,
+    coffee: <Coffee size={24} />
+  };
+
   return (
-    <section id="menu" className="py-24 bg-[#0d0d0d]">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 space-y-4">
-          <h3 className="text-red-700 uppercase tracking-[0.3em] text-sm font-bold">Exquisite Selection</h3>
-          <h2 className="text-5xl md:text-7xl serif text-white">Our Menu</h2>
-          <div className="w-24 h-1 bg-red-900 mx-auto mt-6"></div>
+    <section id="menu" className="relative py-32 bg-[#080808] overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-red-900/30 to-transparent"></div>
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 opacity-5 pointer-events-none">
+        <h2 className="text-[200px] serif text-white rotate-90 select-none">PORTERHOUSE</h2>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
+          <p className="text-red-700 uppercase tracking-[0.5em] text-[10px] font-black mb-4">Established Excellence</p>
+          <h2 className="text-6xl md:text-8xl serif text-white mb-6">Our Menu</h2>
+          <p className="text-zinc-500 max-w-lg mx-auto text-sm font-light uppercase tracking-widest">
+            100% Grass-Fed, Naturally Reared Beef. We do one thing better than anyone else: Beef.
+          </p>
         </div>
 
-        {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
+        {/* Primary Tabs */}
+        <div className="flex flex-wrap justify-center gap-2 mb-12">
           {[
-            { id: 'dinner', label: 'Dinner Menu', icon: <Utensils size={16} /> },
-            { id: 'daytime', label: 'Day Time', icon: <Clock size={16} /> },
-            { id: 'specials', label: 'Specials & Xmas', icon: <Snowflake size={16} /> },
-            { id: 'drinks', label: 'Wine & Drinks', icon: <Wine size={16} /> },
+            { id: 'dinner', label: 'Dinner Menu', icon: <Utensils size={14} /> },
+            { id: 'daytime', label: 'Day Time', icon: <Clock size={14} /> },
+            { id: 'drinks', label: 'Beverages', icon: <Wine size={14} /> },
           ].map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
-              className={`flex items-center space-x-2 px-8 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 border ${
+              onClick={() => {
+                setActiveTab(tab.id as any);
+                if (tab.id === 'dinner') setActiveCategory('starters');
+                if (tab.id === 'daytime') setActiveCategory('mains');
+                if (tab.id === 'drinks') setActiveCategory('malbec');
+              }}
+              className={`group flex items-center space-x-3 px-10 py-4 transition-all duration-500 ${
                 activeTab === tab.id 
-                ? 'bg-red-900 border-red-900 text-white shadow-xl' 
-                : 'bg-transparent border-zinc-800 text-zinc-500 hover:border-zinc-600'
+                ? 'bg-red-900 text-white shadow-[0_0_30px_rgba(127,29,29,0.3)]' 
+                : 'bg-zinc-900/50 text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900'
               }`}
             >
-              {tab.icon}
-              <span>{tab.label}</span>
+              <span className={`transition-transform duration-500 ${activeTab === tab.id ? 'scale-110' : 'group-hover:scale-110'}`}>
+                {tab.icon}
+              </span>
+              <span className="text-[10px] font-black uppercase tracking-[0.2em]">{tab.label}</span>
             </button>
           ))}
         </div>
 
-        {/* Menu Content */}
-        <div className="animate-fadeIn">
+        {/* Secondary Navigation (Categories) */}
+        <div className="flex justify-center flex-wrap gap-8 mb-16 border-b border-zinc-900 pb-8">
+          {activeTab === 'dinner' && ['starters', 'steaks', 'sides', 'desserts'].map(cat => (
+            <button 
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${
+                activeCategory === cat ? 'text-red-700 scale-110' : 'text-zinc-600 hover:text-zinc-400'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+          {activeTab === 'drinks' && ['malbec', 'european', 'digestifs', 'coffee'].map(cat => (
+            <button 
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${
+                activeCategory === cat ? 'text-red-700 scale-110' : 'text-zinc-600 hover:text-zinc-400'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Content Area */}
+        <div className="min-h-[400px]">
           {activeTab === 'dinner' && (
-            <div>
-              <MenuSection 
-                title="House Specialities" 
-                items={[
-                  { name: "Chimichurri Beef Skewers", desc: "Grilled beef, red onion & vine tomato salad", price: "24", gf: true },
-                  { name: "Grilled Trio", desc: "Fillet mignon, chicken breast, lamb chop", price: "27", gf: true },
-                  { name: "Hampshire Pork Loin", desc: "Roasted vegetables, vintage port & fig sauce", price: "20" },
-                  { name: "Grilled Lamb Chops", desc: "English lamb, rosemary red wine sauce", price: "27" },
-                ]}
-              />
-              <div className="bg-zinc-900/40 border border-zinc-800 p-8 mb-12 relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-4 opacity-10"><Star size={120} /></div>
-                <h3 className="text-3xl serif text-white mb-8 border-b border-red-900/30 pb-4 flex items-center">
-                  Premium Steaks <span className="text-xs uppercase tracking-widest text-red-700 ml-4">The Heart of Porterhouse</span>
-                </h3>
-                <div className="grid md:grid-cols-2 gap-12">
-                  <div className="space-y-6">
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <p className="text-white font-bold">32oz Porterhouse (For Two)</p>
-                        <p className="text-xs text-zinc-500 italic mt-1">Allow 30 mins cooking time. Flavourful top loin & buttery soft tenderloin.</p>
-                      </div>
-                      <span className="serif text-2xl text-red-700">£72</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <p className="text-white font-bold">Wagyu 14oz Rib Eye</p>
-                        <p className="text-xs text-zinc-500 mt-1">Freedown Hills UK Olive Fed. Amazing umami experience.</p>
-                      </div>
-                      <span className="serif text-2xl text-red-700">£75</span>
-                    </div>
-                  </div>
-                  <div className="space-y-4 text-sm text-zinc-400">
-                    <p className="flex justify-between"><span>Charred Tenderloin (Fillet) 10oz</span> <span className="text-white">£42</span></p>
-                    <p className="flex justify-between"><span>Char-Grilled Sirloin 16oz</span> <span className="text-white">£42</span></p>
-                    <p className="flex justify-between"><span>Char-Grilled T-Bone 18oz</span> <span className="text-white">£39</span></p>
-                    <p className="flex justify-between"><span>Char-Grilled Prime Rib 20oz</span> <span className="text-white">£45</span></p>
-                  </div>
+            <div className="animate-fadeIn space-y-20">
+              {activeCategory === 'starters' && (
+                <div>
+                  <SectionHeader title="To Begin" icon={categoryIcons.starters} />
+                  <MenuGrid items={dinnerMenu.starters} />
                 </div>
-                <p className="text-[10px] text-zinc-600 uppercase tracking-widest mt-8 text-center">All steaks served with chips & house sauces of the day</p>
-              </div>
+              )}
+              {activeCategory === 'steaks' && (
+                <div>
+                  <SectionHeader title="The Cuts" icon={categoryIcons.steaks} />
+                  <div className="bg-red-950/5 border border-red-900/20 p-6 mb-12 text-center">
+                    <p className="text-[10px] text-zinc-400 uppercase tracking-[0.4em]">All steaks are served with chips and house sauces of the day</p>
+                  </div>
+                  <MenuGrid items={dinnerMenu.steaks} />
+                </div>
+              )}
+              {activeCategory === 'sides' && (
+                <div>
+                  <SectionHeader title="Accompaniments" icon={categoryIcons.sides} />
+                  <MenuGrid items={dinnerMenu.sides} />
+                </div>
+              )}
+              {activeCategory === 'desserts' && (
+                <div>
+                  <SectionHeader title="Sweet Endings" icon={categoryIcons.desserts} />
+                  <MenuGrid items={dinnerMenu.desserts} />
+                </div>
+              )}
             </div>
           )}
 
           {activeTab === 'daytime' && (
-            <div>
-              <div className="bg-red-950/10 border border-red-900/20 p-6 text-center mb-12">
-                <p className="text-zinc-300 text-sm italic">Available 12:00 noon till 4:00 pm</p>
-              </div>
-              <MenuSection 
-                title="Starters" 
-                items={[
-                  { name: "Mixed Platter for Two", desc: "Tiger prawns, skewers, ribs, halloumi, croquettes", price: "19" },
-                  { name: "Smoked Salmon", desc: "Oak wood fired, capers, horseradish, garlic toast", price: "9" },
-                  { name: "Pan Fried Sea Scallops", desc: "Grilled asparagus, lime butter", price: "12" },
-                ]}
-              />
-              <MenuSection 
-                title="Mains" 
-                items={[
-                  { name: "8oz Porterhouse Burger", desc: "Topped with crispy bacon, salad and chips", price: "11" },
-                  { name: "Porterhouse Sandwich", desc: "Sliced tender beef in fresh baguette, horseradish", price: "11" },
-                  { name: "8oz Rib Eye Steak", desc: "Served with vegetables and chips", price: "20" },
-                  { name: "Pan Fried Sea Bass", desc: "Baby spinach, lime butter sauce", price: "16" },
-                ]}
-              />
-            </div>
-          )}
-
-          {activeTab === 'specials' && (
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="bg-zinc-900/50 p-10 border border-zinc-800 space-y-6">
-                <h3 className="text-3xl serif text-white">Chateaubriand Offer</h3>
-                <p className="text-red-700 text-xs font-bold uppercase tracking-widest">Sunday - Thursday | £74 for Two</p>
-                <p className="text-zinc-400 text-sm leading-loose">
-                  From the head of the prime fillet, lean and exquisitely tender. 
-                  Includes Grilled Halloumi & Asparagus starter, followed by 21oz Chateaubriand with all the trimmings.
-                </p>
-                <div className="pt-4">
-                  <span className="px-6 py-2 border border-zinc-700 text-xs text-white uppercase tracking-widest">Limited Time Only</span>
+            <div className="animate-fadeIn">
+              <div className="flex flex-col items-center mb-16 space-y-4">
+                <div className="px-6 py-2 bg-red-950/20 border border-red-900/30 text-red-700 text-[10px] font-black uppercase tracking-[0.3em]">
+                  Available 12:00 noon till 4:00 pm
                 </div>
               </div>
-              <div className="bg-red-950/20 p-10 border border-red-900/30 flex flex-col justify-center items-center text-center space-y-4">
-                <Snowflake size={48} className="text-red-700 mb-2" />
-                <h3 className="text-3xl serif text-white">Christmas Party 2025</h3>
-                <p className="text-zinc-300 text-sm">Our 2025 Festive Menus are now available for groups and parties.</p>
-                <p className="text-red-700 font-bold uppercase tracking-widest text-xs">Pre-orders only</p>
-                <button className="mt-4 px-8 py-3 bg-red-900 text-white text-xs font-bold uppercase tracking-widest hover:bg-red-800 transition-colors">
-                  Download Menu
-                </button>
-              </div>
+              <SectionHeader title="Lunch Selection" icon={categoryIcons.mains} />
+              <MenuGrid items={daytimeMenu.mains} />
             </div>
           )}
 
           {activeTab === 'drinks' && (
-            <div className="space-y-12">
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="space-y-6">
-                  <h4 className="text-xl serif text-white border-b border-zinc-800 pb-2">Champagne</h4>
-                  <ul className="space-y-4 text-sm">
-                    <li className="flex justify-between"><span>Francois Lavergne Brut</span> <span className="text-white">£41</span></li>
-                    <li className="flex justify-between"><span>Bollinger Special Cuvée</span> <span className="text-white">£75</span></li>
-                    <li className="flex justify-between text-red-700"><span>Laurent-Perrier Rosé</span> <span className="text-white">£95</span></li>
-                  </ul>
+            <div className="animate-fadeIn">
+              {activeCategory === 'malbec' && (
+                <div>
+                  <SectionHeader title="Argentinian Malbec" icon={categoryIcons.drinks} />
+                  <MenuGrid items={drinksMenu.malbec} />
                 </div>
-                <div className="space-y-6">
-                  <h4 className="text-xl serif text-white border-b border-zinc-800 pb-2">Featured Reds</h4>
-                  <ul className="space-y-4 text-sm">
-                    <li className="flex justify-between"><span>La Vuelta Malbec</span> <span className="text-white">£29</span></li>
-                    <li className="flex justify-between"><span>Rutini Altamira Malbec</span> <span className="text-white">£85</span></li>
-                    <li className="flex justify-between"><span>Saint Julien 2016</span> <span className="text-white">£95</span></li>
-                  </ul>
+              )}
+              {activeCategory === 'european' && (
+                <div>
+                  <SectionHeader title="European Selection" icon={categoryIcons.drinks} />
+                  <MenuGrid items={drinksMenu.european} />
                 </div>
-                <div className="space-y-6">
-                  <h4 className="text-xl serif text-white border-b border-zinc-800 pb-2">Aperitifs</h4>
-                  <ul className="space-y-4 text-sm">
-                    <li className="flex justify-between"><span>Winchester Twisted Nose Gin</span> <span className="text-white">£5.9</span></li>
-                    <li className="flex justify-between"><span>Peroni 330ml</span> <span className="text-white">£4.1</span></li>
-                    <li className="flex justify-between"><span>Alfred's Brewery CAN</span> <span className="text-white">£5.1</span></li>
-                  </ul>
+              )}
+              {activeCategory === 'digestifs' && (
+                <div>
+                  <SectionHeader title="Digestifs & Liqueurs" icon={categoryIcons.drinks} />
+                  <MenuGrid items={drinksMenu.digestifs} />
                 </div>
-              </div>
+              )}
+              {activeCategory === 'coffee' && (
+                <div>
+                  <SectionHeader title="Coffee & Tea" icon={categoryIcons.coffee} />
+                  <MenuGrid items={drinksMenu.coffee} />
+                </div>
+              )}
             </div>
           )}
+        </div>
+
+        {/* Footer Note */}
+        <div className="mt-32 pt-12 border-t border-zinc-900 flex flex-col items-center space-y-6">
+          <div className="flex items-center space-x-8 text-[9px] text-zinc-600 uppercase tracking-[0.2em]">
+            <span className="flex items-center"><span className="w-2 h-2 border border-zinc-700 mr-2"></span> GLUTEN FREE AVAILABLE</span>
+            <span className="flex items-center"><span className="w-2 h-2 border border-green-900/50 mr-2"></span> VEGETARIAN FRIENDLY</span>
+          </div>
+          <p className="max-w-2xl text-center text-[10px] text-zinc-500 italic leading-relaxed">
+            Please inform your server of any dietary requirements or allergies. 
+            We take every precaution but cannot guarantee a transition-free environment.
+          </p>
         </div>
       </div>
     </section>
@@ -193,3 +315,4 @@ const Menu: React.FC = () => {
 };
 
 export default Menu;
+

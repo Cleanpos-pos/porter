@@ -8,13 +8,23 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ReservationModal from './components/ReservationModal';
 import AIAssistant from './components/AIAssistant';
+import LegalModal from './components/LegalModal';
+import CookieConsent from './components/CookieConsent';
+import GiftCard from './components/GiftCard';
+import Blog from './components/Blog';
+import BlogPostDetail, { BlogPost } from './components/BlogPostDetail';
 
-export type View = 'home' | 'menu' | 'about' | 'contact';
+export type View = 'home' | 'menu' | 'about' | 'contact' | 'gift-card' | 'blog';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>('home');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [legalModal, setLegalModal] = useState<{ isOpen: boolean; type: 'privacy' | 'terms' }>({
+    isOpen: false,
+    type: 'privacy'
+  });
   const [scrolled, setScrolled] = useState(false);
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,8 +38,13 @@ const App: React.FC = () => {
     window.scrollTo(0, 0);
   }, [currentView]);
 
-  const openReservation = () => setIsModalOpen(true);
+  const openReservation = () => {
+    window.open('https://table-maestro-v2.web.app/public/booking?tenant=a8375505-b197-42c9-9d6e-1a06278d0902', '_blank');
+  };
   const closeReservation = () => setIsModalOpen(false);
+
+  const openLegal = (type: 'privacy' | 'terms') => setLegalModal({ isOpen: true, type });
+  const closeLegal = () => setLegalModal({ ...legalModal, isOpen: false });
 
   const renderView = () => {
     switch (currentView) {
@@ -39,6 +54,13 @@ const App: React.FC = () => {
         return <div className="pt-20"><About isFullPage /></div>;
       case 'contact':
         return <div className="pt-20"><Contact isFullPage /></div>;
+      case 'gift-card':
+        return <div className="pt-20"><GiftCard /></div>;
+      case 'blog':
+        if (selectedPost) {
+          return <BlogPostDetail post={selectedPost} onBack={() => setSelectedPost(null)} />;
+        }
+        return <div className="pt-20"><Blog onPostClick={setSelectedPost} /></div>;
       default:
         return (
           <>
@@ -53,21 +75,33 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] selection:bg-red-900 selection:text-white">
-      <Navbar 
-        scrolled={scrolled || currentView !== 'home'} 
+      <Navbar
+        scrolled={scrolled || currentView !== 'home'}
         currentView={currentView}
-        onViewChange={setCurrentView} 
-        onBookClick={openReservation} 
+        onViewChange={(view) => {
+          setCurrentView(view);
+          setSelectedPost(null);
+        }}
+        onBookClick={openReservation}
       />
-      
+
       <main className="animate-fadeIn">
         {renderView()}
       </main>
 
-      <Footer />
+      <Footer
+        onPrivacyClick={() => openLegal('privacy')}
+        onTermsClick={() => openLegal('terms')}
+      />
 
       <ReservationModal isOpen={isModalOpen} onClose={closeReservation} />
+      <LegalModal
+        isOpen={legalModal.isOpen}
+        onClose={closeLegal}
+        type={legalModal.type}
+      />
       <AIAssistant />
+      <CookieConsent />
     </div>
   );
 };

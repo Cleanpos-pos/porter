@@ -10,7 +10,7 @@ const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
   return (
     <div className="bg-[#0a0a0a]">
       <section className={`py-24 ${isFullPage ? 'md:py-32' : 'md:py-40'} px-6`}>
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 lg:gap-32 items-start">
           <div className="relative order-2 md:order-1">
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-red-900/10 rounded-full blur-3xl"></div>
             <img 
@@ -18,14 +18,14 @@ const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
               alt="Porterhouse Steakhouse Winchester" 
               className="relative z-10 w-full h-[500px] object-cover border border-zinc-800 shadow-2xl grayscale-[10%] hover:grayscale-0 transition-all duration-700"
             />
-            <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-48 h-48 bg-zinc-900 border border-zinc-800 hidden md:flex items-center justify-center p-8 shadow-2xl">
+            <div className="mt-6 bg-zinc-900 border border-zinc-800 flex items-center justify-center p-8 shadow-2xl">
               <p className="serif italic text-zinc-500 text-center leading-relaxed">
                 "Simple, honest, and better than anyone else."
               </p>
             </div>
           </div>
 
-          <div className="order-1 md:order-2 space-y-8">
+          <div className="order-1 md:order-2 space-y-8 md:pt-4">
             <div className="space-y-2">
               <h3 className="text-red-700 uppercase tracking-widest text-sm font-bold">Our Heritage</h3>
               <h2 className="text-4xl md:text-6xl serif text-white leading-tight">Our Philosophy</h2>

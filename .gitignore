@@ -21,4 +21,8 @@ dist-ssr
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+*.zip
+hostinger_node_app/
+.env
+.env.*
+!.env.example

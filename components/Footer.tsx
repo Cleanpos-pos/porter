@@ -2,7 +2,12 @@
 import React from 'react';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onPrivacyClick: () => void;
+  onTermsClick: () => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick }) => {
   return (
     <footer className="bg-[#0a0a0a] border-t border-zinc-900 pt-20 pb-10 px-6">
       <div className="max-w-7xl mx-auto space-y-12">
@@ -23,9 +28,8 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="text-sm font-medium tracking-widest uppercase text-zinc-500 flex space-x-8">
-             <a href="#" className="hover:text-zinc-100 transition-colors">Privacy</a>
-             <a href="#" className="hover:text-zinc-100 transition-colors">Terms</a>
-             <a href="#" className="hover:text-zinc-100 transition-colors">Careers</a>
+            <button onClick={onPrivacyClick} className="hover:text-zinc-100 transition-colors uppercase">Privacy</button>
+            <button onClick={onTermsClick} className="hover:text-zinc-100 transition-colors uppercase">Terms</button>
           </div>
         </div>
 
