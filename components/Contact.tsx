@@ -26,7 +26,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
       const templateParams = {
         from_name: formState.name,
         from_email: formState.email,
-        from_business: 'Porterhouse Steak Restaurant',
+        from_business: 'Porterhouse Steakhouse',
         subject: formState.subject,
         message: formState.message,
         to_email: 'winchester@posso.uk',
@@ -101,7 +101,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
                   <Mail className="text-red-900 mt-1 shrink-0" size={24} />
                   <div className="space-y-2">
                     <p className="font-bold text-white uppercase text-xs tracking-widest">Enquiries</p>
-                    <p className="text-zinc-400 text-sm break-all">winchester@porterhouserestaurant.co.uk</p>
+                    <p className="text-zinc-400 text-sm break-all">winchester@porterhousesteakhouse.co.uk</p>
                   </div>
                 </div>
               </div>
@@ -117,7 +117,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Porterhouse Winchester Location"
+                title="Porterhouse Steakhouse Winchester Location"
               ></iframe>
             </div>
           </div>
@@ -204,7 +204,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
               {/* Error Message */}
               {submitStatus === 'error' && (
                 <div className="p-4 bg-red-900/20 border border-red-900/50 text-red-400 text-sm">
-                  ✗ Failed to send message. Please try again or email us directly at winchester@porterhouserestaurant.co.uk
+                  ✗ Failed to send message. Please try again or email us directly at winchester@porterhousesteakhouse.co.uk
                 </div>
               )}
             </form>

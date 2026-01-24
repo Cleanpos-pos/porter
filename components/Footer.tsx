@@ -35,7 +35,7 @@ const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick }) => {
 
         <div className="pt-12 border-t border-zinc-900/50 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-zinc-600 text-xs tracking-widest uppercase">
-            Copyright &copy; 2025 Porterhouse Restaurant. All Rights Reserved.
+            Copyright &copy; 2025 Porterhouse Steakhouse. All Rights Reserved.
           </p>
           <p className="text-zinc-700 text-[10px] tracking-widest uppercase">
             Handcrafted for Winchester Excellence

@@ -33,7 +33,7 @@ const CookieConsent: React.FC = () => {
                     <div className="flex-1">
                         <h4 className="text-white font-bold tracking-widest uppercase text-xs mb-2">Cookie Privacy</h4>
                         <p className="text-zinc-500 text-[11px] leading-relaxed mb-4">
-                            We use refined digital cookies to enhance your journey through the Porterhouse experience.
+                            We use refined digital cookies to enhance your journey through the Porterhouse Steakhouse experience.
                             By continuing to explore, you agree to our culinary data use.
                         </p>
 

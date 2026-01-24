@@ -6,7 +6,7 @@ import { GoogleGenAI } from "@google/genai";
 const AIAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ role: 'user' | 'model', text: string }[]>([
-    { role: 'model', text: "Welcome to Porterhouse. I am your digital Sommelier. Would you like a pairing for our 32oz Porterhouse, or perhaps some details on our Freedown Hills Wagyu?" }
+    { role: 'model', text: "Welcome to Porterhouse Steakhouse. I am your digital Sommelier. Would you like a pairing for our 32oz Porterhouse, or perhaps some details on our Freedown Hills Wagyu?" }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -35,7 +35,7 @@ const AIAssistant: React.FC = () => {
           parts: [{ text: m.text }]
         })),
         config: {
-          systemInstruction: `You are the "Porterhouse Digital Sommelier & Steak Expert". 
+          systemInstruction: `You are the "Porterhouse Steakhouse Digital Sommelier & Steak Expert". 
           Location: 24 Jewry Street, Winchester.
           
           Specific Menu Data:

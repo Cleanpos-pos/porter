@@ -23,7 +23,7 @@ const GiftCard: React.FC = () => {
                             </div>
 
                             <p className="text-xl text-zinc-400 leading-relaxed font-light max-w-xl">
-                                Share the Porterhouse experience with your loved ones. Our gift vouchers are the perfect way to celebrate any occasion, from birthdays to anniversaries.
+                                Share the Porterhouse Steakhouse experience with your loved ones. Our gift vouchers are the perfect way to celebrate any occasion, from birthdays to anniversaries.
                             </p>
 
                             <div className="bg-zinc-900/50 border border-zinc-800 p-8 space-y-4 backdrop-blur-sm">
@@ -51,9 +51,12 @@ const GiftCard: React.FC = () => {
 
                                 <div className="relative z-10 space-y-6">
                                     <div className="flex flex-col items-center">
-                                        <h3 className="text-4xl md:text-6xl font-black tracking-[0.15em] text-[#c5a059] uppercase leading-none">
+                                        <h3 className="text-4xl md:text-5xl font-black tracking-[0.15em] text-[#c5a059] uppercase leading-none">
                                             Porterhouse
                                         </h3>
+                                        <p className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-red-700 font-semibold mt-1">
+                                            Steakhouse
+                                        </p>
                                         <div className="w-full h-px bg-gradient-to-r from-transparent via-[#c5a059]/30 to-transparent mt-4"></div>
                                     </div>
 
@@ -97,7 +100,7 @@ const GiftCard: React.FC = () => {
                             </div>
                             <h4 className="text-xl serif text-white uppercase tracking-widest">Premium Packaging</h4>
                             <p className="text-sm text-zinc-500 leading-relaxed">
-                                Every voucher comes in a premium Porterhouse presentation sleeve, making it a truly special physical gift to unwrap.
+                                Every voucher comes in a premium Porterhouse Steakhouse presentation sleeve, making it a truly special physical gift to unwrap.
                             </p>
                         </div>
                         <div className="space-y-4">

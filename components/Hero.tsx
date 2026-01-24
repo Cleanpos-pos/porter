@@ -23,11 +23,11 @@ const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
           Established Excellence
         </h2>
         <h1 className="text-5xl md:text-8xl serif text-white mb-6 leading-tight tracking-tight">
-          Winchester's Premier <br />
+          Porterhouse <br />
           <span className="italic font-normal">Steakhouse</span>
         </h1>
         <p className="text-lg md:text-2xl text-zinc-300 font-light tracking-wide mb-10 max-w-2xl mx-auto">
-          100% Grass-Fed, Naturally Reared Beef.
+          Winchester's Premier Destination for 100% Grass-Fed, Naturally Reared Beef.
         </p>
         <button
           onClick={onBookClick}

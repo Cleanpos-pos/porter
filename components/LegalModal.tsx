@@ -18,7 +18,7 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, type }) => {
             sections: [
                 {
                     h: "Our Philosophy",
-                    p: "At Porterhouse Winchester, your privacy is handled with as much care as our dry-aged cuts. We are committed to transparency in how we collect and use your data."
+                    p: "At Porterhouse Steakhouse, your privacy is handled with as much care as our dry-aged cuts. We are committed to transparency in how we collect and use your data."
                 },
                 {
                     h: "Information Collection",
@@ -30,7 +30,7 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, type }) => {
                 },
                 {
                     h: "Third-Party Services",
-                    p: "We may use trusted third-party services for reservations and analytics. Your data is never sold—it is only used to facilitate your visits to Porterhouse."
+                    p: "We may use trusted third-party services for reservations and analytics. Your data is never sold—it is only used to facilitate your visits to Porterhouse Steakhouse."
                 }
             ]
         },
@@ -83,7 +83,7 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, type }) => {
 
                     <div className="pt-8 border-t border-zinc-900">
                         <p className="text-[10px] text-zinc-600 uppercase tracking-widest text-center">
-                            Last Updated: January 2026 | Porterhouse Winchester
+                            Last Updated: January 2026 | Porterhouse Steakhouse
                         </p>
                     </div>
                 </div>

@@ -13,9 +13,9 @@ const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 lg:gap-32 items-start">
           <div className="relative order-2 md:order-1">
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-red-900/10 rounded-full blur-3xl"></div>
-            <img 
-              src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwBha8dc_-yAk6VkYUMUzrcbt1inbnNJWgpUQ4DWZnYc2_J21C0Hml0b8dW4sgYN8czhYdTvTkjt8nzjDaho3sOD-4JrY9YEF838_dZhzKScWXLn24DHqGE9pZf2kjj-Mm9CVOpHw=s680-w680-h510-rw" 
-              alt="Porterhouse Steakhouse Winchester" 
+            <img
+              src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwBha8dc_-yAk6VkYUMUzrcbt1inbnNJWgpUQ4DWZnYc2_J21C0Hml0b8dW4sgYN8czhYdTvTkjt8nzjDaho3sOD-4JrY9YEF838_dZhzKScWXLn24DHqGE9pZf2kjj-Mm9CVOpHw=s680-w680-h510-rw"
+              alt="Porterhouse Steakhouse Winchester"
               className="relative z-10 w-full h-[500px] object-cover border border-zinc-800 shadow-2xl grayscale-[10%] hover:grayscale-0 transition-all duration-700"
             />
             <div className="mt-6 bg-zinc-900 border border-zinc-800 flex items-center justify-center p-8 shadow-2xl">
@@ -32,7 +32,7 @@ const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
             </div>
             <div className="space-y-6">
               <p className="text-xl md:text-2xl serif italic text-zinc-100 leading-relaxed">
-                "Porterhouse is not about variety. It's not about being all things to all people. It's about doing something simple and doing it better than anyone else."
+                "Porterhouse Steakhouse is not about variety. It's not about being all things to all people. It's about doing something simple and doing it better than anyone else."
               </p>
               <p className="text-3xl md:text-5xl font-bold uppercase tracking-widest text-red-900 serif border-l-4 border-red-900 pl-8 py-4">
                 That something is Beef.
@@ -89,13 +89,13 @@ const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
               </div>
               <div className="space-y-8 text-zinc-400 text-lg font-light leading-relaxed">
                 <p>
-                  Porterhouse began with a simple observation: Winchester was missing a true temple to beef. We didn't want a generic bistro or a fusion experiment. We wanted a place where the steak was the star, treated with the reverence it deserves.
+                  Porterhouse Steakhouse began with a simple observation: Winchester was missing a true temple to beef. We didn't want a generic bistro or a fusion experiment. We wanted a place where the steak was the star, treated with the reverence it deserves.
                 </p>
                 <p>
                   Our journey took us to farms across Hampshire and beyond, searching for the perfect grass-fed cattle. We experimented with aging techniques until we found the "sweet spot" of 28 to 35 days, where tenderness and flavor reach their peak.
                 </p>
                 <p>
-                  Today, located next to the historic Theatre Royal, Porterhouse stands as a beacon for those who appreciate the finer things in life—exceptional meat, fine wine, and a rustic-modern atmosphere that feels both timeless and current.
+                  Today, located next to the historic Theatre Royal, Porterhouse Steakhouse stands as a beacon for those who appreciate the finer things in life—exceptional meat, fine wine, and a rustic-modern atmosphere that feels both timeless and current.
                 </p>
               </div>
             </div>
