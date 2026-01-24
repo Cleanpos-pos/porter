@@ -30,9 +30,9 @@ const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick }) => {
             </div>
             <p className="text-[11px] italic text-zinc-500 mb-4 max-w-[200px]">"We just love this place!"</p>
             <div className="flex space-x-8">
-              <a href="#" className="text-zinc-500 hover:text-red-700 transition-colors"><Instagram size={24} /></a>
-              <a href="#" className="text-zinc-500 hover:text-red-700 transition-colors"><Facebook size={24} /></a>
-              <a href="#" className="text-zinc-500 hover:text-red-700 transition-colors"><Twitter size={24} /></a>
+              <a href="#" className="text-zinc-500 hover:text-red-700 transition-colors" title="Instagram"><Instagram size={24} /></a>
+              <a href="https://www.facebook.com/PorterhouseSteakhouse" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-red-700 transition-colors" title="Facebook"><Facebook size={24} /></a>
+              <a href="https://x.com/Porterhouse_Win" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-red-700 transition-colors" title="X (Twitter)"><Twitter size={24} /></a>
             </div>
           </div>
 
