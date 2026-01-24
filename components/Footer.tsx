@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Facebook, Instagram, Twitter } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Star } from 'lucide-react';
 
 interface FooterProps {
   onPrivacyClick: () => void;
@@ -21,10 +21,19 @@ const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick }) => {
             </span>
           </div>
 
-          <div className="flex space-x-8">
-            <a href="#" className="text-zinc-500 hover:text-red-700 transition-colors"><Instagram size={24} /></a>
-            <a href="#" className="text-zinc-500 hover:text-red-700 transition-colors"><Facebook size={24} /></a>
-            <a href="#" className="text-zinc-500 hover:text-red-700 transition-colors"><Twitter size={24} /></a>
+          <div className="flex flex-col items-center md:items-start group cursor-default">
+            <div className="flex space-x-1 mb-2">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <Star key={star} size={14} className="fill-yellow-600 text-yellow-600" />
+              ))}
+              <span className="text-[10px] text-zinc-400 ml-2 font-bold uppercase tracking-widest">5.0 / 5.0</span>
+            </div>
+            <p className="text-[11px] italic text-zinc-500 mb-4 max-w-[200px]">"We just love this place!"</p>
+            <div className="flex space-x-8">
+              <a href="#" className="text-zinc-500 hover:text-red-700 transition-colors"><Instagram size={24} /></a>
+              <a href="#" className="text-zinc-500 hover:text-red-700 transition-colors"><Facebook size={24} /></a>
+              <a href="#" className="text-zinc-500 hover:text-red-700 transition-colors"><Twitter size={24} /></a>
+            </div>
           </div>
 
           <div className="text-sm font-medium tracking-widest uppercase text-zinc-500 flex space-x-8">

@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Utensils, Wine, Clock, Beef, Beer, Coffee, IceCream } from 'lucide-react';
+import { Utensils, Wine, Clock, Beef, Beer, Coffee, IceCream, Info as InfoIcon, X, Check } from 'lucide-react';
 
 interface MenuItem {
   name: string;
@@ -9,21 +9,48 @@ interface MenuItem {
   gf?: boolean;
   v?: boolean;
   notes?: string;
+  details?: string;
+  cookingOptions?: string[];
+  image?: string;
 }
 
 const Menu: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'dinner' | 'daytime' | 'drinks'>('dinner');
   const [activeCategory, setActiveCategory] = useState<string>('starters');
+  const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
   const dinnerMenu = {
     starters: [
-      { name: "Mixed Platter for Two", price: "19", desc: "Assorted platter of tiger prawns, beef skewers, chicken skewers, BBQ spare ribs, grilled halloumi cheese and vegetable croquettes." },
-      { name: "Smoked Salmon", price: "9", desc: "Oak wood chips - fired, fresh smoked salmon, served with onion, capers, lettuce, creamy horseradish and garlic toast.", gf: true },
-      { name: "Pan Fried Sea Scallops", price: "12", desc: "Sea scallops, grilled asparagus, lime butter." },
-      { name: "Grilled Calamari", price: "8.50", desc: "Rosemary marinated grilled calamari, cherry tomato salsa, garlic toast.", gf: true },
-      { name: "Teriyaki Beef Skewers", price: "8", desc: "Japanese style marinated strips of beef." },
-      { name: "Pan Fried Jumbo Tiger Prawns", price: "13", desc: "Garlic and chilli jumbo tiger prawns served with peppery lettuce.", gf: true },
-      { name: "Steak Tartar", price: "8.50", desc: "Seared fillet steak, capers, shallots, parsley, Worcestershire sauce, crushed mustard seeds, young rocket, truffle oil.", gf: true },
+      {
+        name: "Mixed Platter for Two",
+        price: "19",
+        desc: "Assortment of our finest appetizers.",
+        details: "A curated selection featuring our signature tiger prawns, tender beef and chicken skewers, slow-cooked BBQ ribs, grilled halloumi, and crisp vegetable croquettes. Perfect for sharing.",
+        image: "https://images.unsplash.com/photo-1544124499-58912cbddada?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        name: "Smoked Salmon",
+        price: "9",
+        desc: "Oak-fired salmon, served with traditional accompaniments.",
+        gf: true,
+        details: "Fresh Atlantic salmon, slowly smoked over oak wood chips. Served with capers, shallots, crisp lettuce, a creamy horseradish emulsion, and artisan garlic toast.",
+        image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        name: "Pan Fried Sea Scallops",
+        price: "12",
+        desc: "Hand-dived scallops with grilled asparagus.",
+        details: "Plump, pan-seared scallops served with tender seasonal asparagus and finished with a zesty clarified lime butter sauce.",
+        image: "https://images.unsplash.com/photo-1599458252573-56ae36120de1?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        name: "Steak Tartar",
+        price: "8.50",
+        desc: "Hand-cut fillet steak with truffle essence.",
+        gf: true,
+        details: "Finely chopped prime fillet steak, seasoned with capers, shallots, parsley, and Worcestershire sauce. Topped with a quail egg yolk and drizzled with white truffle oil.",
+        image: "https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?q=80&w=800&auto=format&fit=crop"
+      },
       { name: "Veggie Cakes", price: "6.50", desc: "Mix vegetable cakes with jalapeño, mozzarella, coriander-chipotle sauce.", v: true },
       { name: "BBQ Spare Ribs", price: "8.00", desc: "Served with mixed greens." },
       { name: "Spicy Fusion Chicken", price: "8.50", desc: "Fresh spring onion, coriander and chilli infused chicken mince balls." },
@@ -34,16 +61,48 @@ const Menu: React.FC = () => {
       { name: "Assorted Bread Basket", price: "3.25", v: true },
     ],
     steaks: [
-      { name: "Charred Tenderloin (Fillet) 10oz", price: "42", desc: "Lean, tender and elegant cut." },
-      { name: "Char-Grilled Sirloin 12oz", price: "38", desc: "Well-marbled and full of flavour." },
-      { name: "Char-Grilled Sirloin 16oz", price: "42" },
-      { name: "Char-Grilled Rib Eye 12oz", price: "38", desc: "Rich, juicy and exceptionally tender." },
-      { name: "Char-Grilled Rib Eye 16oz", price: "42" },
-      { name: "Char-Grilled Rump 16oz", price: "28", desc: "Firm texture and deep beef flavour." },
-      { name: "Char-Grilled T-Bone 18oz", price: "39", desc: "Fillet and Sirloin separated by the bone." },
-      { name: "Char-Grilled Prime Rib 20oz", price: "45", desc: "On the bone, juicy and extremely flavourful." },
-      { name: "32oz Porterhouse (For Two)", price: "72", desc: "Traditional cut of two muscles: top loin and buttery soft tenderloin.", notes: "Allow 30 minutes cooking time." },
-      { name: "Wagyu 14oz Rib Eye", price: "75", desc: "Freedown Hills UK Olive Fed Wagyu. Amazing umami experience.", notes: "Limited availability." },
+      {
+        name: "Charred Tenderloin (Fillet) 10oz",
+        price: "42",
+        desc: "Lean, tender and elegant cut.",
+        details: "The most tender of all steaks, our 10oz Fillet is lean with a delicate flavor. Sourced from grass-fed Hampshire beef and aged for 28 days.",
+        cookingOptions: ["Blue", "Rare", "Medium-Rare", "Medium", "Medium-Well"],
+        image: "https://images.unsplash.com/photo-1546241072-48010ad28c2c?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        name: "Char-Grilled Sirloin 12oz",
+        price: "38",
+        desc: "Well-marbled and full of flavour.",
+        details: "A classic cut with a rich rim of fat that renders beautifully when grilled, providing deep, beefy flavor and succulent texture.",
+        cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"],
+        image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        name: "Char-Grilled Rib Eye 12oz",
+        price: "38",
+        desc: "Rich, juicy and exceptionally tender.",
+        details: "A favorite among steak connoisseurs. The heavy marbling ensures a juicy and intensely flavorful steak. Best cooked medium-rear to allow the fat to caramelize.",
+        cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"],
+        image: "https://images.unsplash.com/photo-1546833998-877b37c2e5c6?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        name: "32oz Porterhouse (For Two)",
+        price: "72",
+        desc: "The ultimate steak experience.",
+        notes: "Allow 30 minutes cooking time.",
+        details: "The King of Steaks. A huge cut featuring both the Fillet and the Sirloin on the bone. Perfect for sharing between two true steak lovers.",
+        cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well"],
+        image: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        name: "Wagyu 14oz Rib Eye",
+        price: "75",
+        desc: "Ultra-premium olive-fed Wagyu.",
+        notes: "Limited availability.",
+        details: "Exquisite marbling from Freedown Hills UK Wagyu, finished on a diet of olives for 4 months. Delivers an unparalleled melt-in-the-mouth umami experience.",
+        cookingOptions: ["Rare", "Medium-Rare", "Medium"],
+        image: "https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?q=80&w=800&auto=format&fit=crop"
+      },
     ],
     sides: [
       { name: "Baked Broccoli & Cheddar", price: "5.90", v: true },
@@ -119,16 +178,23 @@ const Menu: React.FC = () => {
   );
 
   const MenuGrid = ({ items }: { items: MenuItem[] }) => (
-    <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
+    <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
       {items.map((item, idx) => (
-        <div key={idx} className="group relative flex flex-col">
+        <div
+          key={idx}
+          className="group relative flex flex-col cursor-pointer pb-2"
+          onClick={() => setSelectedItem(item)}
+        >
           <div className="flex justify-between items-baseline mb-1">
-            <h4 className="text-zinc-100 font-bold tracking-wide group-hover:text-red-700 transition-colors uppercase text-sm">
+            <h4 className="flex items-center text-zinc-100 font-bold tracking-wide group-hover:text-red-700 transition-colors uppercase text-sm">
               {item.name}
               <span className="ml-2 inline-flex gap-1">
                 {item.gf && <span className="text-[9px] border border-zinc-700 px-1 text-zinc-500 font-normal">GF</span>}
                 {item.v && <span className="text-[9px] border border-green-900/50 px-1 text-green-700 font-normal">V</span>}
               </span>
+              <div className="ml-3 opacity-0 group-hover:opacity-100 transition-opacity bg-red-900/10 p-1 rounded-full">
+                <InfoIcon size={12} className="text-red-700" />
+              </div>
             </h4>
             <div className="flex-1 mx-4 border-b border-dotted border-zinc-800 self-center"></div>
             <span className="serif text-white font-bold text-lg">£{item.price}</span>
@@ -182,11 +248,10 @@ const Menu: React.FC = () => {
                 if (tab.id === 'daytime') setActiveCategory('mains');
                 if (tab.id === 'drinks') setActiveCategory('malbec');
               }}
-              className={`group flex items-center space-x-3 px-10 py-4 transition-all duration-500 ${
-                activeTab === tab.id 
-                ? 'bg-red-900 text-white shadow-[0_0_30px_rgba(127,29,29,0.3)]' 
+              className={`group flex items-center space-x-3 px-10 py-4 transition-all duration-500 ${activeTab === tab.id
+                ? 'bg-red-900 text-white shadow-[0_0_30px_rgba(127,29,29,0.3)]'
                 : 'bg-zinc-900/50 text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900'
-              }`}
+                }`}
             >
               <span className={`transition-transform duration-500 ${activeTab === tab.id ? 'scale-110' : 'group-hover:scale-110'}`}>
                 {tab.icon}
@@ -199,23 +264,21 @@ const Menu: React.FC = () => {
         {/* Secondary Navigation (Categories) */}
         <div className="flex justify-center flex-wrap gap-8 mb-16 border-b border-zinc-900 pb-8">
           {activeTab === 'dinner' && ['starters', 'steaks', 'sides', 'desserts'].map(cat => (
-            <button 
+            <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${
-                activeCategory === cat ? 'text-red-700 scale-110' : 'text-zinc-600 hover:text-zinc-400'
-              }`}
+              className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${activeCategory === cat ? 'text-red-700 scale-110' : 'text-zinc-600 hover:text-zinc-400'
+                }`}
             >
               {cat}
             </button>
           ))}
           {activeTab === 'drinks' && ['malbec', 'european', 'digestifs', 'coffee'].map(cat => (
-            <button 
+            <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${
-                activeCategory === cat ? 'text-red-700 scale-110' : 'text-zinc-600 hover:text-zinc-400'
-              }`}
+              className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${activeCategory === cat ? 'text-red-700 scale-110' : 'text-zinc-600 hover:text-zinc-400'
+                }`}
             >
               {cat}
             </button>
@@ -305,11 +368,102 @@ const Menu: React.FC = () => {
             <span className="flex items-center"><span className="w-2 h-2 border border-green-900/50 mr-2"></span> VEGETARIAN FRIENDLY</span>
           </div>
           <p className="max-w-2xl text-center text-[10px] text-zinc-500 italic leading-relaxed">
-            Please inform your server of any dietary requirements or allergies. 
+            Please inform your server of any dietary requirements or allergies.
             We take every precaution but cannot guarantee a transition-free environment.
           </p>
         </div>
       </div>
+      {/* Item Detail Modal */}
+      {selectedItem && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-[#0a0a0a]/95 backdrop-blur-md animate-fadeIn">
+          <div
+            className="bg-[#121212] border border-zinc-800 w-full max-w-5xl overflow-hidden flex flex-col md:flex-row shadow-[0_0_100px_rgba(127,29,29,0.2)]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Image Section */}
+            <div className="w-full md:w-1/2 h-[300px] md:h-auto relative overflow-hidden">
+              <img
+                src={selectedItem.image || "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop"}
+                alt={selectedItem.name}
+                className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent md:hidden"></div>
+            </div>
+
+            {/* Content Section */}
+            <div className="w-full md:w-1/2 p-8 md:p-14 flex flex-col h-full bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')]">
+              <div className="flex justify-between items-start mb-8">
+                <div className="space-y-2">
+                  <h3 className="text-red-700 uppercase tracking-[0.3em] text-xs font-bold leading-none">Dish Details</h3>
+                  <h2 className="text-4xl md:text-5xl serif text-white tracking-tight">{selectedItem.name}</h2>
+                </div>
+                <button
+                  onClick={() => setSelectedItem(null)}
+                  className="p-2 text-zinc-500 hover:text-white transition-colors bg-zinc-900/50 rounded-full"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+
+              <div className="flex-1 space-y-10 overflow-y-auto custom-scrollbar pr-4">
+                <div className="space-y-4">
+                  <p className="text-xl serif italic text-zinc-100 leading-relaxed">
+                    {selectedItem.details || selectedItem.desc}
+                  </p>
+                  <div className="flex items-center space-x-4">
+                    <span className="serif text-white text-3xl font-bold">£{selectedItem.price}</span>
+                    <div className="h-4 w-px bg-zinc-800"></div>
+                    <div className="flex gap-2">
+                      {selectedItem.gf && <span className="text-[10px] border border-zinc-700 px-2 py-0.5 text-zinc-400 font-bold uppercase tracking-widest">Gluten Free</span>}
+                      {selectedItem.v && <span className="text-[10px] border border-green-900/50 px-2 py-0.5 text-green-700 font-bold uppercase tracking-widest">Vegetarian</span>}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Cooking Options for Steaks */}
+                {selectedItem.cookingOptions && (
+                  <div className="space-y-4 pt-10 border-t border-zinc-900">
+                    <div className="flex items-center space-x-3 text-red-700">
+                      <Beef size={18} />
+                      <h4 className="text-xs font-black uppercase tracking-[0.3em]">Cooking Options</h4>
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                      {selectedItem.cookingOptions.map((opt) => (
+                        <div key={opt} className="flex items-center space-x-2 bg-zinc-900/50 border border-zinc-800 p-3">
+                          <Check size={14} className="text-red-900" />
+                          <span className="text-[10px] text-zinc-300 font-bold uppercase tracking-tighter">{opt}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-[10px] text-zinc-500 italic mt-4">
+                      All our steaks are seasoned with sea salt and cracked black pepper, then finished with herb-infused butter.
+                    </p>
+                  </div>
+                )}
+
+                {/* General Note */}
+                <div className="pt-10 border-t border-zinc-900">
+                  <div className="flex items-start space-x-3 bg-red-900/5 border border-red-900/10 p-4">
+                    <Clock size={16} className="text-red-900 mt-0.5" />
+                    <p className="text-[10px] text-zinc-400 leading-relaxed uppercase tracking-widest">
+                      Every dish is prepared fresh to order. Please inform your waiter of any allergies or specific dietary preferences before ordering.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-12">
+                <button
+                  onClick={() => setSelectedItem(null)}
+                  className="w-full py-5 bg-red-900 text-white font-bold uppercase tracking-[0.2em] text-xs shadow-xl"
+                >
+                  Return to Menu
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
