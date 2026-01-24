@@ -19,7 +19,7 @@ export type View = 'home' | 'menu' | 'about' | 'contact' | 'gift-card' | 'blog';
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>('home');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [legalModal, setLegalModal] = useState<{ isOpen: boolean; type: 'privacy' | 'terms' }>({
+  const [legalModal, setLegalModal] = useState<{ isOpen: boolean; type: 'privacy' | 'terms' | 'disclaimer' }>({
     isOpen: false,
     type: 'privacy'
   });
@@ -43,7 +43,7 @@ const App: React.FC = () => {
   };
   const closeReservation = () => setIsModalOpen(false);
 
-  const openLegal = (type: 'privacy' | 'terms') => setLegalModal({ isOpen: true, type });
+  const openLegal = (type: 'privacy' | 'terms' | 'disclaimer') => setLegalModal({ isOpen: true, type });
   const closeLegal = () => setLegalModal({ ...legalModal, isOpen: false });
 
   const renderView = () => {
@@ -92,6 +92,7 @@ const App: React.FC = () => {
       <Footer
         onPrivacyClick={() => openLegal('privacy')}
         onTermsClick={() => openLegal('terms')}
+        onDisclaimerClick={() => openLegal('disclaimer')}
       />
 
       <ReservationModal isOpen={isModalOpen} onClose={closeReservation} />

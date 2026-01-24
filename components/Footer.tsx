@@ -5,9 +5,10 @@ import { Facebook, Instagram, Twitter, Star } from 'lucide-react';
 interface FooterProps {
   onPrivacyClick: () => void;
   onTermsClick: () => void;
+  onDisclaimerClick: () => void;
 }
 
-const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick }) => {
+const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick, onDisclaimerClick }) => {
   return (
     <footer className="bg-[#0a0a0a] border-t border-zinc-900 pt-20 pb-10 px-6">
       <div className="max-w-7xl mx-auto space-y-12">
@@ -41,9 +42,10 @@ const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick }) => {
             </div>
           </div>
 
-          <div className="text-sm font-medium tracking-widest uppercase text-zinc-500 flex space-x-8">
+          <div className="text-sm font-medium tracking-widest uppercase text-zinc-500 flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4">
             <button onClick={onPrivacyClick} className="hover:text-zinc-100 transition-colors uppercase">Privacy</button>
             <button onClick={onTermsClick} className="hover:text-zinc-100 transition-colors uppercase">Terms</button>
+            <button onClick={onDisclaimerClick} className="hover:text-zinc-100 transition-colors uppercase">Disclaimer</button>
           </div>
         </div>
 
