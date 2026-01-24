@@ -29,10 +29,15 @@ const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick }) => {
               <span className="text-[10px] text-zinc-400 ml-2 font-bold uppercase tracking-widest">5.0 / 5.0</span>
             </div>
             <p className="text-[11px] italic text-zinc-500 mb-4 max-w-[200px]">"We just love this place!"</p>
-            <div className="flex space-x-8">
+            <div className="flex space-x-8 items-center">
               <a href="#" className="text-zinc-500 hover:text-red-700 transition-colors" title="Instagram"><Instagram size={24} /></a>
               <a href="https://www.facebook.com/PorterhouseSteakhouse" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-red-700 transition-colors" title="Facebook"><Facebook size={24} /></a>
               <a href="https://x.com/Porterhouse_Win" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-red-700 transition-colors" title="X (Twitter)"><Twitter size={24} /></a>
+              <a href="https://www.tripadvisor.co.uk/Restaurant_Review-g186300-d787977-Reviews-The_Porterhouse-Winchester_Hampshire_England.html" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-red-700 transition-colors" title="TripAdvisor">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                  <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10-10-4.477-10-10 4.477-10 10-10zm0 4c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm-4.5 4.5c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zm9 0c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5zM12 15c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5z" />
+                </svg>
+              </a>
             </div>
           </div>
 
