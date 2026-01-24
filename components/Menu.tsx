@@ -11,7 +11,6 @@ interface MenuItem {
   notes?: string;
   details?: string;
   cookingOptions?: string[];
-  image?: string;
 }
 
 const Menu: React.FC = () => {
@@ -25,31 +24,27 @@ const Menu: React.FC = () => {
         name: "Mixed Platter for Two",
         price: "19",
         desc: "Assortment of our finest appetizers.",
-        details: "A curated selection featuring our signature tiger prawns, tender beef and chicken skewers, slow-cooked BBQ ribs, grilled halloumi, and crisp vegetable croquettes. Perfect for sharing.",
-        image: "https://images.unsplash.com/photo-1544124499-58912cbddada?q=80&w=800&auto=format&fit=crop"
+        details: "A curated selection featuring our signature tiger prawns, tender beef and chicken skewers, slow-cooked BBQ ribs, grilled halloumi, and crisp vegetable croquettes. Perfect for sharing."
       },
       {
         name: "Smoked Salmon",
         price: "9",
         desc: "Oak-fired salmon, served with traditional accompaniments.",
         gf: true,
-        details: "Fresh Atlantic salmon, slowly smoked over oak wood chips. Served with capers, shallots, crisp lettuce, a creamy horseradish emulsion, and artisan garlic toast.",
-        image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=800&auto=format&fit=crop"
+        details: "Fresh Atlantic salmon, slowly smoked over oak wood chips. Served with capers, shallots, crisp lettuce, a creamy horseradish emulsion, and artisan garlic toast."
       },
       {
         name: "Pan Fried Sea Scallops",
         price: "12",
         desc: "Hand-dived scallops with grilled asparagus.",
-        details: "Plump, pan-seared scallops served with tender seasonal asparagus and finished with a zesty clarified lime butter sauce.",
-        image: "https://images.unsplash.com/photo-1599458252573-56ae36120de1?q=80&w=800&auto=format&fit=crop"
+        details: "Plump, pan-seared scallops served with tender seasonal asparagus and finished with a zesty clarified lime butter sauce."
       },
       {
         name: "Steak Tartar",
         price: "8.50",
         desc: "Hand-cut fillet steak with truffle essence.",
         gf: true,
-        details: "Finely chopped prime fillet steak, seasoned with capers, shallots, parsley, and Worcestershire sauce. Topped with a quail egg yolk and drizzled with white truffle oil.",
-        image: "https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?q=80&w=800&auto=format&fit=crop"
+        details: "Finely chopped prime fillet steak, seasoned with capers, shallots, parsley, and Worcestershire sauce. Topped with a quail egg yolk and drizzled with white truffle oil."
       },
       { name: "Veggie Cakes", price: "6.50", desc: "Mix vegetable cakes with jalapeño, mozzarella, coriander-chipotle sauce.", v: true },
       { name: "BBQ Spare Ribs", price: "8.00", desc: "Served with mixed greens." },
@@ -66,24 +61,21 @@ const Menu: React.FC = () => {
         price: "42",
         desc: "Lean, tender and elegant cut.",
         details: "The most tender of all steaks, our 10oz Fillet is lean with a delicate flavor. Sourced from grass-fed Hampshire beef and aged for 28 days.",
-        cookingOptions: ["Blue", "Rare", "Medium-Rare", "Medium", "Medium-Well"],
-        image: "https://images.unsplash.com/photo-1546241072-48010ad28c2c?q=80&w=800&auto=format&fit=crop"
+        cookingOptions: ["Blue", "Rare", "Medium-Rare", "Medium", "Medium-Well"]
       },
       {
         name: "Char-Grilled Sirloin 12oz",
         price: "38",
         desc: "Well-marbled and full of flavour.",
         details: "A classic cut with a rich rim of fat that renders beautifully when grilled, providing deep, beefy flavor and succulent texture.",
-        cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"],
-        image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=800&auto=format&fit=crop"
+        cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"]
       },
       {
         name: "Char-Grilled Rib Eye 12oz",
         price: "38",
         desc: "Rich, juicy and exceptionally tender.",
         details: "A favorite among steak connoisseurs. The heavy marbling ensures a juicy and intensely flavorful steak. Best cooked medium-rear to allow the fat to caramelize.",
-        cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"],
-        image: "https://images.unsplash.com/photo-1546833998-877b37c2e5c6?q=80&w=800&auto=format&fit=crop"
+        cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"]
       },
       {
         name: "32oz Porterhouse (For Two)",
@@ -91,8 +83,7 @@ const Menu: React.FC = () => {
         desc: "The ultimate steak experience.",
         notes: "Allow 30 minutes cooking time.",
         details: "The King of Steaks. A huge cut featuring both the Fillet and the Sirloin on the bone. Perfect for sharing between two true steak lovers.",
-        cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well"],
-        image: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=800&auto=format&fit=crop"
+        cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well"]
       },
       {
         name: "Wagyu 14oz Rib Eye",
@@ -100,8 +91,7 @@ const Menu: React.FC = () => {
         desc: "Ultra-premium olive-fed Wagyu.",
         notes: "Limited availability.",
         details: "Exquisite marbling from Freedown Hills UK Wagyu, finished on a diet of olives for 4 months. Delivers an unparalleled melt-in-the-mouth umami experience.",
-        cookingOptions: ["Rare", "Medium-Rare", "Medium"],
-        image: "https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?q=80&w=800&auto=format&fit=crop"
+        cookingOptions: ["Rare", "Medium-Rare", "Medium"]
       },
     ],
     sides: [
@@ -192,8 +182,8 @@ const Menu: React.FC = () => {
                 {item.gf && <span className="text-[9px] border border-zinc-700 px-1 text-zinc-500 font-normal">GF</span>}
                 {item.v && <span className="text-[9px] border border-green-900/50 px-1 text-green-700 font-normal">V</span>}
               </span>
-              <div className="ml-3 opacity-0 group-hover:opacity-100 transition-opacity bg-red-900/10 p-1 rounded-full">
-                <InfoIcon size={12} className="text-red-700" />
+              <div className="ml-3 transition-all duration-300 bg-amber-900/10 group-hover:bg-amber-600/20 p-1.5 rounded-full border border-amber-600/0 group-hover:border-amber-600/30">
+                <InfoIcon size={14} className="text-amber-600 group-hover:text-amber-500 transition-colors shadow-[0_0_10px_rgba(217,119,6,0.2)]" />
               </div>
             </h4>
             <div className="flex-1 mx-4 border-b border-dotted border-zinc-800 self-center"></div>
@@ -380,18 +370,8 @@ const Menu: React.FC = () => {
             className="bg-[#121212] border border-zinc-800 w-full max-w-5xl overflow-hidden flex flex-col md:flex-row shadow-[0_0_100px_rgba(127,29,29,0.2)]"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Image Section */}
-            <div className="w-full md:w-1/2 h-[300px] md:h-auto relative overflow-hidden">
-              <img
-                src={selectedItem.image || "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop"}
-                alt={selectedItem.name}
-                className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent md:hidden"></div>
-            </div>
-
             {/* Content Section */}
-            <div className="w-full md:w-1/2 p-8 md:p-14 flex flex-col h-full bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')]">
+            <div className="w-full p-8 md:p-14 flex flex-col h-full bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')]">
               <div className="flex justify-between items-start mb-8">
                 <div className="space-y-2">
                   <h3 className="text-red-700 uppercase tracking-[0.3em] text-xs font-bold leading-none">Dish Details</h3>
@@ -407,7 +387,7 @@ const Menu: React.FC = () => {
 
               <div className="flex-1 space-y-10 overflow-y-auto custom-scrollbar pr-4">
                 <div className="space-y-4">
-                  <p className="text-xl serif italic text-zinc-100 leading-relaxed">
+                  <p className="text-xl serif italic text-zinc-100 leading-relaxed md:max-w-3xl">
                     {selectedItem.details || selectedItem.desc}
                   </p>
                   <div className="flex items-center space-x-4">
@@ -427,7 +407,7 @@ const Menu: React.FC = () => {
                       <Beef size={18} />
                       <h4 className="text-xs font-black uppercase tracking-[0.3em]">Cooking Options</h4>
                     </div>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
                       {selectedItem.cookingOptions.map((opt) => (
                         <div key={opt} className="flex items-center space-x-2 bg-zinc-900/50 border border-zinc-800 p-3">
                           <Check size={14} className="text-red-900" />
@@ -455,7 +435,7 @@ const Menu: React.FC = () => {
               <div className="mt-12">
                 <button
                   onClick={() => setSelectedItem(null)}
-                  className="w-full py-5 bg-red-900 text-white font-bold uppercase tracking-[0.2em] text-xs shadow-xl"
+                  className="w-full md:w-max px-12 py-5 bg-red-900 text-white font-bold uppercase tracking-[0.2em] text-xs shadow-xl"
                 >
                   Return to Menu
                 </button>
