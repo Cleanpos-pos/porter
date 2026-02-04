@@ -47,14 +47,14 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
   return (
     <section id="contact" className={`relative ${isFullPage ? 'py-20 bg-[#0a0a0a]' : 'py-24 bg-[#0a0a0a]'} overflow-hidden`}>
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-red-950/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gold-dark/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-20">
 
           <div className="space-y-12">
             <div className="space-y-4">
-              <h3 className="text-red-700 uppercase tracking-widest text-sm font-bold">Visit Us</h3>
+              <h3 className="text-gold uppercase tracking-widest text-sm font-bold">Visit Us</h3>
               <h2 className="text-4xl md:text-6xl serif text-white leading-tight">Location & Hours</h2>
               <p className="text-zinc-400 max-w-md text-lg font-light leading-relaxed">
                 Join us in the heart of Winchester for an unforgettable dining experience.
@@ -65,7 +65,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
             <div className="grid sm:grid-cols-2 gap-10">
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <MapPin className="text-red-900 mt-1 shrink-0" size={24} />
+                  <MapPin className="text-gold-dark mt-1 shrink-0" size={24} />
                   <div className="space-y-2">
                     <p className="font-bold text-white uppercase text-xs tracking-widest">Address</p>
                     <p className="text-zinc-400 text-sm leading-relaxed">
@@ -77,7 +77,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Clock className="text-red-900 mt-1 shrink-0" size={24} />
+                  <Clock className="text-gold-dark mt-1 shrink-0" size={24} />
                   <div className="space-y-2">
                     <p className="font-bold text-white uppercase text-xs tracking-widest">Opening Hours</p>
                     <div className="text-zinc-400 text-sm space-y-1">
@@ -90,7 +90,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <Phone className="text-red-900 mt-1 shrink-0" size={24} />
+                  <Phone className="text-gold-dark mt-1 shrink-0" size={24} />
                   <div className="space-y-2">
                     <p className="font-bold text-white uppercase text-xs tracking-widest">Reservations</p>
                     <p className="text-zinc-100 font-medium text-lg">01962 810532</p>
@@ -98,7 +98,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Mail className="text-red-900 mt-1 shrink-0" size={24} />
+                  <Mail className="text-gold-dark mt-1 shrink-0" size={24} />
                   <div className="space-y-2">
                     <p className="font-bold text-white uppercase text-xs tracking-widest">Enquiries</p>
                     <p className="text-zinc-400 text-sm break-all">winchester@porterhousesteakhouse.co.uk</p>
@@ -124,7 +124,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
 
           <div className="bg-zinc-900/30 border border-zinc-800 p-8 md:p-12 space-y-8">
             <div className="space-y-2">
-              <h3 className="text-red-700 uppercase tracking-widest text-xs font-bold">Contact Form</h3>
+              <h3 className="text-gold uppercase tracking-widest text-xs font-bold">Contact Form</h3>
               <h2 className="text-3xl md:text-4xl serif text-white">Send Us A Message</h2>
               <p className="text-zinc-500 text-sm font-light">Have a question or special request? We're here to help.</p>
             </div>
@@ -138,7 +138,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
                     required
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                    className="w-full bg-zinc-900/50 border border-zinc-800 py-4 px-4 text-white focus:outline-none focus:border-red-900 transition-colors"
+                    className="w-full bg-zinc-900/50 border border-zinc-800 py-4 px-4 text-white focus:outline-none focus:border-gold-dark transition-colors"
                     placeholder="e.g. Alexander Hamilton"
                   />
                 </div>
@@ -149,7 +149,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
                     required
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                    className="w-full bg-zinc-900/50 border border-zinc-800 py-4 px-4 text-white focus:outline-none focus:border-red-900 transition-colors"
+                    className="w-full bg-zinc-900/50 border border-zinc-800 py-4 px-4 text-white focus:outline-none focus:border-gold-dark transition-colors"
                     placeholder="e.g. alex@example.com"
                   />
                 </div>
@@ -162,7 +162,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
                   required
                   value={formState.subject}
                   onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                  className="w-full bg-zinc-900/50 border border-zinc-800 py-4 px-4 text-white focus:outline-none focus:border-red-900 transition-colors"
+                  className="w-full bg-zinc-900/50 border border-zinc-800 py-4 px-4 text-white focus:outline-none focus:border-gold-dark transition-colors"
                   placeholder="Inquiry about private dining"
                 />
               </div>
@@ -174,7 +174,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
                   required
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                  className="w-full bg-zinc-900/50 border border-zinc-800 py-4 px-4 text-white focus:outline-none focus:border-red-900 transition-colors resize-none"
+                  className="w-full bg-zinc-900/50 border border-zinc-800 py-4 px-4 text-white focus:outline-none focus:border-gold-dark transition-colors resize-none"
                   placeholder="Tell us more about your inquiry..."
                 />
               </div>
@@ -182,7 +182,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-5 bg-red-900 hover:bg-red-800 text-white font-bold uppercase tracking-[0.2em] transition-all shadow-xl flex items-center justify-center space-x-3 disabled:opacity-50"
+                className="w-full py-5 bg-gold-dark hover:bg-gold text-white font-bold uppercase tracking-[0.2em] transition-all shadow-xl flex items-center justify-center space-x-3 disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
@@ -203,7 +203,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
 
               {/* Error Message */}
               {submitStatus === 'error' && (
-                <div className="p-4 bg-red-900/20 border border-red-900/50 text-red-400 text-sm">
+                <div className="p-4 bg-gold-dark/20 border border-gold-dark/50 text-gold text-sm">
                   ✗ Failed to send message. Please try again or email us directly at winchester@porterhousesteakhouse.co.uk
                 </div>
               )}

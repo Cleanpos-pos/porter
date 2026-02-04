@@ -12,7 +12,7 @@ const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
       <section className={`py-24 ${isFullPage ? 'md:py-32' : 'md:py-40'} px-6`}>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 lg:gap-32 items-start">
           <div className="relative order-2 md:order-1">
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-red-900/10 rounded-full blur-3xl"></div>
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-gold-dark/10 rounded-full blur-3xl"></div>
             <img
               src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwBha8dc_-yAk6VkYUMUzrcbt1inbnNJWgpUQ4DWZnYc2_J21C0Hml0b8dW4sgYN8czhYdTvTkjt8nzjDaho3sOD-4JrY9YEF838_dZhzKScWXLn24DHqGE9pZf2kjj-Mm9CVOpHw=s680-w680-h510-rw"
               alt="Porterhouse Steakhouse Winchester"
@@ -27,14 +27,14 @@ const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
 
           <div className="order-1 md:order-2 space-y-8 md:pt-4">
             <div className="space-y-2">
-              <h3 className="text-red-700 uppercase tracking-widest text-sm font-bold">Our Heritage</h3>
+              <h3 className="text-gold uppercase tracking-widest text-sm font-bold">Our Heritage</h3>
               <h2 className="text-4xl md:text-6xl serif text-white leading-tight">Our Philosophy</h2>
             </div>
             <div className="space-y-6">
               <p className="text-xl md:text-2xl serif italic text-zinc-100 leading-relaxed">
                 "Porterhouse Steakhouse is not about variety. It's not about being all things to all people. It's about doing something simple and doing it better than anyone else."
               </p>
-              <p className="text-3xl md:text-5xl font-bold uppercase tracking-widest text-red-900 serif border-l-4 border-red-900 pl-8 py-4">
+              <p className="text-3xl md:text-5xl font-bold uppercase tracking-widest text-gold-dark serif border-l-4 border-gold-dark pl-8 py-4">
                 That something is Beef.
               </p>
               <p className="text-zinc-400 leading-loose text-lg font-light">
@@ -51,8 +51,8 @@ const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid md:grid-cols-3 gap-12">
                 <div className="space-y-4 text-center">
-                  <div className="w-16 h-16 bg-red-900/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <ShieldCheck className="text-red-700" size={32} />
+                  <div className="w-16 h-16 bg-gold-dark/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <ShieldCheck className="text-gold" size={32} />
                   </div>
                   <h4 className="text-xl serif text-white uppercase tracking-widest">Quality Guaranteed</h4>
                   <p className="text-sm text-zinc-500 leading-relaxed">
@@ -60,8 +60,8 @@ const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
                   </p>
                 </div>
                 <div className="space-y-4 text-center">
-                  <div className="w-16 h-16 bg-red-900/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Target className="text-red-700" size={32} />
+                  <div className="w-16 h-16 bg-gold-dark/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Target className="text-gold" size={32} />
                   </div>
                   <h4 className="text-xl serif text-white uppercase tracking-widest">Expert Sourcing</h4>
                   <p className="text-sm text-zinc-500 leading-relaxed">
@@ -69,8 +69,8 @@ const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
                   </p>
                 </div>
                 <div className="space-y-4 text-center">
-                  <div className="w-16 h-16 bg-red-900/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Heart className="text-red-700" size={32} />
+                  <div className="w-16 h-16 bg-gold-dark/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Heart className="text-gold" size={32} />
                   </div>
                   <h4 className="text-xl serif text-white uppercase tracking-widest">A Passion for Beef</h4>
                   <p className="text-sm text-zinc-500 leading-relaxed">
@@ -85,7 +85,7 @@ const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
             <div className="max-w-4xl mx-auto space-y-12">
               <div className="text-center space-y-4">
                 <h2 className="text-4xl md:text-5xl serif text-white">The Porterhouse Story</h2>
-                <div className="w-20 h-1 bg-red-900 mx-auto"></div>
+                <div className="w-20 h-1 bg-gold-dark mx-auto"></div>
               </div>
               <div className="space-y-8 text-zinc-400 text-lg font-light leading-relaxed">
                 <p>

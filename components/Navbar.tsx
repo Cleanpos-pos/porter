@@ -37,8 +37,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, currentView, onViewChange, on
           <span className="text-2xl md:text-3xl font-bold serif tracking-tight text-white leading-none">
             Porterhouse
           </span>
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-red-700 font-semibold ml-0.5">
-            Steakhouse
+          <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-white font-semibold ml-0.5">
+            Winchester's Premiere Steakhouse
           </span>
         </button>
 
@@ -48,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, currentView, onViewChange, on
             <button
               key={link.name}
               onClick={() => handleNavClick(link.view)}
-              className={`text-sm font-medium tracking-widest uppercase transition-colors duration-200 ${currentView === link.view ? 'text-red-700' : 'text-zinc-400 hover:text-white'
+              className={`text-sm font-medium tracking-widest uppercase transition-colors duration-200 ${currentView === link.view ? 'text-gold' : 'text-zinc-400 hover:text-white'
                 }`}
             >
               {link.name}
@@ -56,7 +56,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, currentView, onViewChange, on
           ))}
           <button
             onClick={onBookClick}
-            className="px-6 py-2.5 bg-red-900 hover:bg-red-800 text-white text-xs font-bold uppercase tracking-widest transition-all duration-300 transform active:scale-95 shadow-lg shadow-red-900/20"
+            className="px-6 py-2.5 bg-gold-dark hover:bg-gold text-white text-xs font-bold uppercase tracking-widest transition-all duration-300 transform active:scale-95 shadow-lg shadow-gold-dark/20"
           >
             Reservations
           </button>
@@ -78,7 +78,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, currentView, onViewChange, on
             <button
               key={link.name}
               onClick={() => handleNavClick(link.view)}
-              className={`text-2xl font-medium serif tracking-wide text-left ${currentView === link.view ? 'text-red-700' : 'text-zinc-100'
+              className={`text-2xl font-medium serif tracking-wide text-left ${currentView === link.view ? 'text-gold' : 'text-zinc-100'
                 }`}
             >
               {link.name}
@@ -89,7 +89,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, currentView, onViewChange, on
               onBookClick();
               setIsOpen(false);
             }}
-            className="w-full py-5 bg-red-900 text-white font-bold uppercase tracking-widest text-sm shadow-xl"
+            className="w-full py-5 bg-gold-dark text-white font-bold uppercase tracking-widest text-sm shadow-xl"
           >
             Reservations
           </button>

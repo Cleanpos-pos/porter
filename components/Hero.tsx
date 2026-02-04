@@ -19,19 +19,19 @@ const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
       </div>
 
       <div className="relative z-10 text-center max-w-4xl px-6">
-        <h2 className="text-red-700 uppercase tracking-[0.4em] text-sm md:text-base mb-4 font-bold animate-fadeIn">
+        <h2 className="text-gold uppercase tracking-[0.4em] text-sm md:text-base mb-4 font-bold animate-fadeIn">
           Established Excellence
         </h2>
         <h1 className="text-5xl md:text-8xl serif text-white mb-6 leading-tight tracking-tight">
           Porterhouse <br />
-          <span className="italic font-normal">Steakhouse</span>
+          <span className="italic font-normal text-gold">Steakhouse</span>
         </h1>
-        <p className="text-lg md:text-2xl text-zinc-300 font-light tracking-wide mb-10 max-w-2xl mx-auto">
-          Winchester's Premier Destination for 100% Grass-Fed, Naturally Reared Beef.
+        <p className="text-lg md:text-2xl text-white font-light tracking-wide mb-10 max-w-2xl mx-auto">
+          Winchester's Premiere Steakhouse
         </p>
         <button
           onClick={onBookClick}
-          className="group relative px-10 py-5 bg-red-900 hover:bg-red-800 text-white font-bold uppercase tracking-[0.2em] transition-all duration-300 shadow-2xl overflow-hidden"
+          className="group relative px-10 py-5 bg-gold-dark hover:bg-gold text-white font-bold uppercase tracking-[0.2em] transition-all duration-300 shadow-2xl overflow-hidden"
         >
           <span className="relative z-10">Book A Table</span>
           <div className="absolute inset-0 w-full h-full bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>

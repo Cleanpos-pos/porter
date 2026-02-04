@@ -162,7 +162,7 @@ const Menu: React.FC = () => {
 
   const SectionHeader = ({ title, icon }: { title: string, icon?: React.ReactNode }) => (
     <div className="flex items-center space-x-3 mb-10 border-b border-zinc-800 pb-4">
-      {icon && <div className="text-red-700">{icon}</div>}
+      {icon && <div className="text-gold">{icon}</div>}
       <h3 className="text-3xl serif text-white tracking-wide">{title}</h3>
     </div>
   );
@@ -176,7 +176,7 @@ const Menu: React.FC = () => {
           onClick={() => setSelectedItem(item)}
         >
           <div className="flex justify-between items-baseline mb-1">
-            <h4 className="flex items-center text-zinc-100 font-bold tracking-wide group-hover:text-red-700 transition-colors uppercase text-sm">
+            <h4 className="flex items-center text-zinc-100 font-bold tracking-wide group-hover:text-gold transition-colors uppercase text-sm">
               {item.name}
               <span className="ml-2 inline-flex gap-1">
                 {item.gf && <span className="text-[9px] border border-zinc-700 px-1 text-zinc-500 font-normal">GF</span>}
@@ -190,7 +190,7 @@ const Menu: React.FC = () => {
             <span className="serif text-white font-bold text-lg">£{item.price}</span>
           </div>
           {item.desc && <p className="text-xs text-zinc-500 leading-relaxed italic">{item.desc}</p>}
-          {item.notes && <p className="text-[10px] text-red-900/80 uppercase tracking-widest mt-1 font-bold">{item.notes}</p>}
+          {item.notes && <p className="text-[10px] text-gold-dark/80 uppercase tracking-widest mt-1 font-bold">{item.notes}</p>}
         </div>
       ))}
     </div>
@@ -209,14 +209,14 @@ const Menu: React.FC = () => {
   return (
     <section id="menu" className="relative py-32 bg-[#080808] overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-red-900/30 to-transparent"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-dark/30 to-transparent"></div>
       <div className="absolute top-1/2 left-0 -translate-y-1/2 opacity-5 pointer-events-none">
         <h2 className="text-[200px] serif text-white rotate-90 select-none">PORTERHOUSE</h2>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
-          <p className="text-red-700 uppercase tracking-[0.5em] text-[10px] font-black mb-4">Established Excellence</p>
+          <p className="text-gold uppercase tracking-[0.5em] text-[10px] font-black mb-4">Established Excellence</p>
           <h2 className="text-6xl md:text-8xl serif text-white mb-6">Our Menu</h2>
           <p className="text-zinc-500 max-w-lg mx-auto text-sm font-light uppercase tracking-widest">
             100% Grass-Fed, Naturally Reared Beef. We do one thing better than anyone else: Beef.
@@ -239,7 +239,7 @@ const Menu: React.FC = () => {
                 if (tab.id === 'drinks') setActiveCategory('malbec');
               }}
               className={`group flex items-center space-x-3 px-10 py-4 transition-all duration-500 ${activeTab === tab.id
-                ? 'bg-red-900 text-white shadow-[0_0_30px_rgba(127,29,29,0.3)]'
+                ? 'bg-gold-dark text-white shadow-[0_0_30px_rgba(153,101,21,0.3)]'
                 : 'bg-zinc-900/50 text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900'
                 }`}
             >
@@ -257,7 +257,7 @@ const Menu: React.FC = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${activeCategory === cat ? 'text-red-700 scale-110' : 'text-zinc-600 hover:text-zinc-400'
+              className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${activeCategory === cat ? 'text-gold scale-110' : 'text-zinc-600 hover:text-zinc-400'
                 }`}
             >
               {cat}
@@ -267,7 +267,7 @@ const Menu: React.FC = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${activeCategory === cat ? 'text-red-700 scale-110' : 'text-zinc-600 hover:text-zinc-400'
+              className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${activeCategory === cat ? 'text-gold scale-110' : 'text-zinc-600 hover:text-zinc-400'
                 }`}
             >
               {cat}
@@ -288,7 +288,7 @@ const Menu: React.FC = () => {
               {activeCategory === 'steaks' && (
                 <div>
                   <SectionHeader title="The Cuts" icon={categoryIcons.steaks} />
-                  <div className="bg-red-950/5 border border-red-900/20 p-6 mb-12 text-center">
+                  <div className="bg-gold-dark/5 border border-gold-dark/20 p-6 mb-12 text-center">
                     <p className="text-[10px] text-zinc-400 uppercase tracking-[0.4em]">All steaks are served with chips and house sauces of the day</p>
                   </div>
                   <MenuGrid items={dinnerMenu.steaks} />
@@ -312,7 +312,7 @@ const Menu: React.FC = () => {
           {activeTab === 'daytime' && (
             <div className="animate-fadeIn">
               <div className="flex flex-col items-center mb-16 space-y-4">
-                <div className="px-6 py-2 bg-red-950/20 border border-red-900/30 text-red-700 text-[10px] font-black uppercase tracking-[0.3em]">
+                <div className="px-6 py-2 bg-gold-dark/20 border border-gold-dark/30 text-gold text-[10px] font-black uppercase tracking-[0.3em]">
                   Available 12:00 noon till 4:00 pm
                 </div>
               </div>
@@ -367,14 +367,14 @@ const Menu: React.FC = () => {
       {selectedItem && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-[#0a0a0a]/95 backdrop-blur-md animate-fadeIn">
           <div
-            className="bg-[#121212] border border-zinc-800 w-full max-w-5xl overflow-hidden flex flex-col md:flex-row shadow-[0_0_100px_rgba(127,29,29,0.2)]"
+            className="bg-[#121212] border border-zinc-800 w-full max-w-5xl overflow-hidden flex flex-col md:flex-row shadow-[0_0_100px_rgba(153,101,21,0.2)]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Content Section */}
             <div className="w-full p-8 md:p-14 flex flex-col h-full bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')]">
               <div className="flex justify-between items-start mb-8">
                 <div className="space-y-2">
-                  <h3 className="text-red-700 uppercase tracking-[0.3em] text-xs font-bold leading-none">Dish Details</h3>
+                  <h3 className="text-gold uppercase tracking-[0.3em] text-xs font-bold leading-none">Dish Details</h3>
                   <h2 className="text-4xl md:text-5xl serif text-white tracking-tight">{selectedItem.name}</h2>
                 </div>
                 <button
@@ -403,14 +403,14 @@ const Menu: React.FC = () => {
                 {/* Cooking Options for Steaks */}
                 {selectedItem.cookingOptions && (
                   <div className="space-y-4 pt-10 border-t border-zinc-900">
-                    <div className="flex items-center space-x-3 text-red-700">
+                    <div className="flex items-center space-x-3 text-gold">
                       <Beef size={18} />
                       <h4 className="text-xs font-black uppercase tracking-[0.3em]">Cooking Options</h4>
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
                       {selectedItem.cookingOptions.map((opt) => (
                         <div key={opt} className="flex items-center space-x-2 bg-zinc-900/50 border border-zinc-800 p-3">
-                          <Check size={14} className="text-red-900" />
+                          <Check size={14} className="text-gold-dark" />
                           <span className="text-[10px] text-zinc-300 font-bold uppercase tracking-tighter">{opt}</span>
                         </div>
                       ))}
@@ -423,8 +423,8 @@ const Menu: React.FC = () => {
 
                 {/* General Note */}
                 <div className="pt-10 border-t border-zinc-900">
-                  <div className="flex items-start space-x-3 bg-red-900/5 border border-red-900/10 p-4">
-                    <Clock size={16} className="text-red-900 mt-0.5" />
+                  <div className="flex items-start space-x-3 bg-gold-dark/5 border border-gold-dark/10 p-4">
+                    <Clock size={16} className="text-gold-dark mt-0.5" />
                     <p className="text-[10px] text-zinc-400 leading-relaxed uppercase tracking-widest">
                       Every dish is prepared fresh to order. Please inform your waiter of any allergies or specific dietary preferences before ordering.
                     </p>
@@ -435,7 +435,7 @@ const Menu: React.FC = () => {
               <div className="mt-12">
                 <button
                   onClick={() => setSelectedItem(null)}
-                  className="w-full md:w-max px-12 py-5 bg-red-900 text-white font-bold uppercase tracking-[0.2em] text-xs shadow-xl"
+                  className="w-full md:w-max px-12 py-5 bg-gold-dark text-white font-bold uppercase tracking-[0.2em] text-xs shadow-xl"
                 >
                   Return to Menu
                 </button>

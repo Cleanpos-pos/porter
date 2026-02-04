@@ -35,12 +35,12 @@ const MenuHighlights: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="space-y-2">
-            <h3 className="text-red-700 uppercase tracking-widest text-sm font-bold">From The Grill</h3>
+            <h3 className="text-gold uppercase tracking-widest text-sm font-bold">From The Grill</h3>
             <h2 className="text-4xl md:text-6xl serif text-white">Menu Highlights</h2>
           </div>
-          
+
           <div className="bg-zinc-900/50 p-6 border border-zinc-800 flex items-center space-x-4 max-w-sm">
-            <div className="p-3 bg-red-950/40 rounded-full text-red-700">
+            <div className="p-3 bg-gold-dark/40 rounded-full text-gold">
               <Wine size={24} />
             </div>
             <div>
@@ -52,14 +52,14 @@ const MenuHighlights: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map((item, index) => (
-            <div 
-              key={index} 
-              className="group bg-zinc-900/30 border border-zinc-800 overflow-hidden hover:border-red-900/50 transition-all duration-500"
+            <div
+              key={index}
+              className="group bg-zinc-900/30 border border-zinc-800 overflow-hidden hover:border-gold/50 transition-all duration-500"
             >
               <div className="relative overflow-hidden h-64">
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
+                <img
+                  src={item.image}
+                  alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0"
                 />
                 <div className="absolute top-4 right-4 px-3 py-1 bg-[#0a0a0a]/80 backdrop-blur-md border border-zinc-700 text-[10px] uppercase tracking-widest text-zinc-400">
@@ -67,7 +67,7 @@ const MenuHighlights: React.FC = () => {
                 </div>
               </div>
               <div className="p-6 space-y-3">
-                <h4 className="text-xl serif text-white group-hover:text-red-700 transition-colors">
+                <h4 className="text-xl serif text-white group-hover:text-gold transition-colors">
                   {item.title}
                 </h4>
                 <p className="text-sm text-zinc-500 leading-relaxed font-light">
@@ -79,7 +79,7 @@ const MenuHighlights: React.FC = () => {
         </div>
 
         <div className="mt-20 text-center">
-          <button className="px-10 py-4 border border-zinc-700 hover:border-red-900 hover:text-red-700 text-zinc-400 text-sm font-bold uppercase tracking-widest transition-all duration-300">
+          <button className="px-10 py-4 border border-zinc-700 hover:border-gold hover:text-gold text-zinc-400 text-sm font-bold uppercase tracking-widest transition-all duration-300">
             View Full Menu
           </button>
         </div>

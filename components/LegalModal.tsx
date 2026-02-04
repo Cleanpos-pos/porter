@@ -14,7 +14,7 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, type }) => {
     const content = {
         privacy: {
             title: "Cookie & Privacy Policy",
-            icon: <Shield className="text-red-700" size={24} />,
+            icon: <Shield className="text-gold" size={24} />,
             sections: [
                 {
                     h: "Our Philosophy",
@@ -36,7 +36,7 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, type }) => {
         },
         terms: {
             title: "Terms & Conditions",
-            icon: <FileText className="text-red-700" size={24} />,
+            icon: <FileText className="text-gold" size={24} />,
             sections: [
                 {
                     h: "Reservations",
@@ -58,7 +58,7 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, type }) => {
         },
         disclaimer: {
             title: "Legal Disclaimer",
-            icon: <AlertTriangle className="text-red-700" size={24} />,
+            icon: <AlertTriangle className="text-gold" size={24} />,
             sections: [
                 {
                     h: "1. Introduction",
@@ -119,7 +119,7 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, type }) => {
             <div className="bg-[#121212] border border-zinc-800 w-full max-w-2xl max-h-[80vh] overflow-hidden flex flex-col shadow-2xl">
                 <div className="p-6 border-b border-zinc-800 flex justify-between items-center bg-zinc-900/50">
                     <div className="flex items-center space-x-4">
-                        <div className="p-2 bg-red-900/10 rounded-lg">{current.icon}</div>
+                        <div className="p-2 bg-gold-dark/10 rounded-lg">{current.icon}</div>
                         <h2 className="text-xl serif text-white tracking-widest uppercase">{current.title}</h2>
                     </div>
                     <button onClick={onClose} className="text-zinc-500 hover:text-white transition-colors">
@@ -130,7 +130,7 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, type }) => {
                 <div className="flex-1 overflow-y-auto p-8 space-y-8 custom-scrollbar">
                     {current.sections.map((s, i) => (
                         <div key={i} className="space-y-3">
-                            <h3 className="text-red-700 text-xs font-black uppercase tracking-[0.3em]">{s.h}</h3>
+                            <h3 className="text-gold text-xs font-black uppercase tracking-[0.3em]">{s.h}</h3>
                             <p className="text-zinc-400 text-sm leading-relaxed font-light">{s.p}</p>
                         </div>
                     ))}
@@ -145,7 +145,7 @@ const LegalModal: React.FC<LegalModalProps> = ({ isOpen, onClose, type }) => {
                 <div className="p-6 border-t border-zinc-800 bg-zinc-900/50 flex justify-end">
                     <button
                         onClick={onClose}
-                        className="px-10 py-3 bg-red-900 text-white text-xs font-bold uppercase tracking-widest hover:bg-red-800 transition-colors"
+                        className="px-10 py-3 bg-gold-dark text-white text-xs font-bold uppercase tracking-widest hover:bg-gold transition-colors"
                     >
                         Close Policy
                     </button>

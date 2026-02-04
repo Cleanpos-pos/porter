@@ -69,23 +69,23 @@ export const blogPosts: BlogPost[] = [
             <>
                 <p>A great steak deserves an equally great companion. Our cellar is curated to offer the perfect backbone to our premium Hampshire beef. Here are our sommelier's top five picks from our actual wine list.</p>
                 <ul className="space-y-6 mt-12">
-                    <li className="border-l-2 border-red-900 pl-6 group/wine transition-all hover:bg-zinc-900/40 py-4">
+                    <li className="border-l-2 border-gold-dark pl-6 group/wine transition-all hover:bg-zinc-900/40 py-4">
                         <strong className="text-white block text-2xl font-serif">1. Rutini Altamira Single (Malbec, Argentina)</strong>
                         <p className="mt-2 text-zinc-400 font-light">The ultimate luxury pairing. This Mendoza icon brings immense structure and dark velvet fruits that stand up to our Wagyu Rib Eye with effortless grace.</p>
                     </li>
-                    <li className="border-l-2 border-red-900 pl-6 group/wine transition-all hover:bg-zinc-900/40 py-4">
+                    <li className="border-l-2 border-gold-dark pl-6 group/wine transition-all hover:bg-zinc-900/40 py-4">
                         <strong className="text-white block text-2xl font-serif">2. Saint Julien 2016 (Bordeaux, France)</strong>
                         <p className="mt-2 text-zinc-400 font-light">A powerhouse from the left bank. Its firm tannins and graphite notes are the classic choice for a 32oz Porterhouse, cutting through the richness with surgical precision.</p>
                     </li>
-                    <li className="border-l-2 border-red-900 pl-6 group/wine transition-all hover:bg-zinc-900/40 py-4">
+                    <li className="border-l-2 border-gold-dark pl-6 group/wine transition-all hover:bg-zinc-900/40 py-4">
                         <strong className="text-white block text-2xl font-serif">3. Cruz Alta Grand Reserve (Malbec, Argentina)</strong>
                         <p className="mt-2 text-zinc-400 font-light">A sommelier favorite. Deeply concentrated with hints of vanilla and tobacco, it provides a warm, smoky embrace for our 28-day aged Rib Eye.</p>
                     </li>
-                    <li className="border-l-2 border-red-900 pl-6 group/wine transition-all hover:bg-zinc-900/40 py-4">
+                    <li className="border-l-2 border-gold-dark pl-6 group/wine transition-all hover:bg-zinc-900/40 py-4">
                         <strong className="text-white block text-2xl font-serif">4. Lacrimus 5 Tempranillo (Rioja, Spain)</strong>
                         <p className="mt-2 text-zinc-400 font-light">For those who enjoy a brighter profile. The vibrant cherry notes and subtle oak of this Rioja beautifully highlight the natural sweetness of our pasture-raised Sirloin.</p>
                     </li>
-                    <li className="border-l-2 border-red-900 pl-6 group/wine transition-all hover:bg-zinc-900/40 py-4">
+                    <li className="border-l-2 border-gold-dark pl-6 group/wine transition-all hover:bg-zinc-900/40 py-4">
                         <strong className="text-white block text-2xl font-serif">5. Tenuta Cappallotto (Piedmont, Italy)</strong>
                         <p className="mt-2 text-zinc-400 font-light">Elegance in a glass. This Nebbiolo’s refined tannins and rose-petal aromatics are a delicate but sure-footed match for our lean, buttery Tenderloin fillet.</p>
                     </li>
@@ -140,8 +140,8 @@ const Blog: React.FC<BlogProps> = ({ onPostClick }) => {
             <section className="relative py-32 md:py-48 px-6 border-b border-zinc-900 bg-[url('https://images.unsplash.com/photo-1550966841-3ee29648b30d?q=80&w=2070&auto=format&fit=crop')] bg-fixed bg-center bg-cover">
                 <div className="absolute inset-0 bg-black/80 backdrop-blur-[2px]"></div>
                 <div className="max-w-7xl mx-auto relative z-10 text-center space-y-6">
-                    <h3 className="text-red-700 uppercase tracking-[0.5em] text-sm font-bold animate-fadeInUp">The Journal</h3>
-                    <h1 className="text-6xl md:text-8xl serif text-white leading-tight">The <span className="text-red-900">Porterhouse</span> Blog</h1>
+                    <h3 className="text-gold uppercase tracking-[0.5em] text-sm font-bold animate-fadeInUp">The Journal</h3>
+                    <h1 className="text-6xl md:text-8xl serif text-white leading-tight">The <span className="text-gold-dark">Porterhouse</span> Blog</h1>
                     <p className="text-zinc-400 text-xl font-light tracking-wide max-w-2xl mx-auto">
                         Stories of passion, provenance, and the pursuit of the perfect steak.
                     </p>
@@ -161,8 +161,8 @@ const Blog: React.FC<BlogProps> = ({ onPostClick }) => {
                         />
                     </div>
                     <div className="md:w-1/2 p-12 flex flex-col justify-center space-y-6">
-                        <span className="text-red-700 uppercase tracking-widest text-xs font-bold">{blogPosts[0].category}</span>
-                        <h2 className="text-4xl serif text-white group-hover:text-red-700 transition-colors duration-300">
+                        <span className="text-gold uppercase tracking-widest text-xs font-bold">{blogPosts[0].category}</span>
+                        <h2 className="text-4xl serif text-white group-hover:text-gold transition-colors duration-300">
                             {blogPosts[0].title}
                         </h2>
                         <p className="text-zinc-400 text-lg leading-relaxed font-light">
@@ -177,14 +177,14 @@ const Blog: React.FC<BlogProps> = ({ onPostClick }) => {
                                 <User size={14} />
                                 <span>{blogPosts[0].author}</span>
                             </div>
-                            <div className="flex items-center space-x-2 text-red-700/80">
+                            <div className="flex items-center space-x-2 text-gold/80">
                                 <Clock size={14} />
                                 <span>{blogPosts[0].readTime}</span>
                             </div>
                         </div>
                         <button className="flex items-center space-x-3 text-white uppercase tracking-widest text-sm font-bold group-hover:translate-x-3 transition-transform duration-300">
                             <span>Read Story</span>
-                            <ArrowRight size={18} className="text-red-700" />
+                            <ArrowRight size={18} className="text-gold" />
                         </button>
                     </div>
                 </div>
@@ -194,7 +194,7 @@ const Blog: React.FC<BlogProps> = ({ onPostClick }) => {
                 <div className="flex justify-between items-end mb-16">
                     <div className="space-y-4">
                         <h3 className="text-white text-3xl serif italic">Recent Articles</h3>
-                        <div className="w-20 h-1 bg-red-900"></div>
+                        <div className="w-20 h-1 bg-gold-dark"></div>
                     </div>
                 </div>
 
@@ -218,7 +218,7 @@ const Blog: React.FC<BlogProps> = ({ onPostClick }) => {
                                 </div>
                             </div>
                             <div className="space-y-4">
-                                <h3 className="text-2xl md:text-3xl serif text-white group-hover:text-red-700 transition-colors duration-300 leading-snug">
+                                <h3 className="text-2xl md:text-3xl serif text-white group-hover:text-gold transition-colors duration-300 leading-snug">
                                     {post.title}
                                 </h3>
                                 <p className="text-zinc-500 line-clamp-2 leading-relaxed font-light">
@@ -230,7 +230,7 @@ const Blog: React.FC<BlogProps> = ({ onPostClick }) => {
                                         <span>•</span>
                                         <span>{post.readTime}</span>
                                     </div>
-                                    <Share2 size={16} className="text-zinc-700 hover:text-red-700 cursor-pointer transition-colors" />
+                                    <Share2 size={16} className="text-zinc-700 hover:text-gold cursor-pointer transition-colors" />
                                 </div>
                             </div>
                         </div>
@@ -241,7 +241,7 @@ const Blog: React.FC<BlogProps> = ({ onPostClick }) => {
             <section className="py-32 bg-[#0d0d0d] border-t border-zinc-900">
                 <div className="max-w-4xl mx-auto px-6 text-center space-y-12">
                     <div className="space-y-4">
-                        <h2 className="text-4xl md:text-6xl serif text-white">Join the <span className="text-red-900 italic">Rare</span> Circle</h2>
+                        <h2 className="text-4xl md:text-6xl serif text-white">Join the <span className="text-gold-dark italic">Rare</span> Circle</h2>
                         <p className="text-zinc-400 text-lg font-light tracking-wide max-w-xl mx-auto">
                             Subscribe for exclusive insights, event invitations, and a deep dive into the world of premium beef.
                         </p>
@@ -255,11 +255,11 @@ const Blog: React.FC<BlogProps> = ({ onPostClick }) => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="ENTER YOUR EMAIL"
-                                className="flex-grow bg-transparent border border-zinc-800 px-6 py-4 text-white text-xs tracking-widest focus:border-red-900 outline-none transition-colors"
+                                className="flex-grow bg-transparent border border-zinc-800 px-6 py-4 text-white text-xs tracking-widest focus:border-gold-dark outline-none transition-colors"
                             />
                             <button
                                 disabled={isSubmitting}
-                                className="bg-red-900 hover:bg-red-800 text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-all disabled:opacity-50 flex items-center justify-center min-w-[140px]"
+                                className="bg-gold-dark hover:bg-gold text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-all disabled:opacity-50 flex items-center justify-center min-w-[140px]"
                             >
                                 {isSubmitting ? (
                                     <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
@@ -275,7 +275,7 @@ const Blog: React.FC<BlogProps> = ({ onPostClick }) => {
                         )}
 
                         {status === 'error' && (
-                            <div className="flex items-center justify-center space-x-2 text-red-500 text-sm animate-fadeIn">
+                            <div className="flex items-center justify-center space-x-2 text-gold text-sm animate-fadeIn">
                                 <AlertCircle size={16} />
                                 <span>Something went wrong. Please try again.</span>
                             </div>

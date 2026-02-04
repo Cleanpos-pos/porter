@@ -74,7 +74,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] selection:bg-red-900 selection:text-white">
+    <div className="min-h-screen bg-[#0a0a0a] selection:bg-gold-dark selection:text-white">
       <Navbar
         scrolled={scrolled || currentView !== 'home'}
         currentView={currentView}

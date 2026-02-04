@@ -17,7 +17,7 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onClose }) 
       <div className="relative bg-[#121212] border border-zinc-800 w-full max-w-5xl h-[90vh] shadow-2xl overflow-hidden flex flex-col">
         <div className="flex items-center justify-between p-4 border-b border-zinc-800 bg-[#0a0a0a]">
           <div>
-            <h3 className="text-red-700 uppercase tracking-widest text-xs font-bold">Reserve</h3>
+            <h3 className="text-gold uppercase tracking-widest text-xs font-bold">Reserve</h3>
             <h2 className="text-2xl serif text-white">Book Your Table</h2>
           </div>
           <button

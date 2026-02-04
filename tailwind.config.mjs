@@ -7,6 +7,13 @@ export default {
     ],
     theme: {
         extend: {
+            colors: {
+                gold: {
+                    DEFAULT: '#D4AF37',
+                    light: '#F5D76E',
+                    dark: '#996515',
+                }
+            },
             animation: {
                 'fadeIn': 'fadeIn 1s ease-out forwards',
                 'bounce': 'bounce 1s infinite',

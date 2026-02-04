@@ -23,11 +23,11 @@ const CookieConsent: React.FC = () => {
     return (
         <div className="fixed bottom-6 left-6 right-6 md:left-auto md:right-32 md:w-[400px] z-[100] animate-fadeIn">
             <div className="bg-[#121212] border border-zinc-800 p-6 shadow-2xl relative overflow-hidden group">
-                <div className="absolute top-0 left-0 w-1 h-full bg-red-900"></div>
+                <div className="absolute top-0 left-0 w-1 h-full bg-gold-dark"></div>
 
                 <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-red-900/10 rounded-lg shrink-0">
-                        <Cookie className="text-red-700" size={24} />
+                    <div className="p-3 bg-gold-dark/10 rounded-lg shrink-0">
+                        <Cookie className="text-gold" size={24} />
                     </div>
 
                     <div className="flex-1">
@@ -40,7 +40,7 @@ const CookieConsent: React.FC = () => {
                         <div className="flex space-x-3">
                             <button
                                 onClick={handleAccept}
-                                className="px-6 py-2 bg-red-900 text-white text-[10px] font-bold uppercase tracking-widest hover:bg-red-800 transition-colors"
+                                className="px-6 py-2 bg-gold-dark text-white text-[10px] font-bold uppercase tracking-widest hover:bg-gold transition-colors"
                             >
                                 Accept Selection
                             </button>

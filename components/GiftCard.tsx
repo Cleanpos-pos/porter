@@ -8,7 +8,7 @@ const GiftCard: React.FC = () => {
             {/* Hero Section */}
             <section className="relative py-24 md:py-32 px-6 overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full">
-                    <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-red-900/10 rounded-full blur-[120px] animate-pulse"></div>
+                    <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-gold-dark/10 rounded-full blur-[120px] animate-pulse"></div>
                     <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-zinc-900/20 rounded-full blur-[100px]"></div>
                 </div>
 
@@ -16,9 +16,9 @@ const GiftCard: React.FC = () => {
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8">
                             <div className="space-y-2">
-                                <h3 className="text-red-700 uppercase tracking-[0.3em] text-sm font-bold">Exclusive Vouchers</h3>
+                                <h3 className="text-gold uppercase tracking-[0.3em] text-sm font-bold">Exclusive Vouchers</h3>
                                 <h2 className="text-5xl md:text-7xl serif text-white leading-tight">
-                                    Give the Gift of <span className="text-red-900 italic">Excellence</span>
+                                    Give the Gift of <span className="text-gold-dark italic">Excellence</span>
                                 </h2>
                             </div>
 
@@ -28,13 +28,13 @@ const GiftCard: React.FC = () => {
 
                             <div className="bg-zinc-900/50 border border-zinc-800 p-8 space-y-4 backdrop-blur-sm">
                                 <div className="flex items-start space-x-4">
-                                    <div className="bg-red-900/20 p-3 rounded-full mt-1">
-                                        <Info className="text-red-700" size={24} />
+                                    <div className="bg-gold-dark/20 p-3 rounded-full mt-1">
+                                        <Info className="text-gold" size={24} />
                                     </div>
                                     <div className="space-y-2">
                                         <h4 className="text-white text-lg font-bold uppercase tracking-wider">In-Store Purchase</h4>
                                         <p className="text-zinc-400 leading-relaxed">
-                                            Please note that all gift card purchases must be made <span className="text-white font-semibold underline decoration-red-700">in-person at our restaurant</span>. This allows us to provide you with a beautifully presented voucher ready for gifting.
+                                            Please note that all gift card purchases must be made <span className="text-white font-semibold underline decoration-gold">in-person at our restaurant</span>. This allows us to provide you with a beautifully presented voucher ready for gifting.
                                         </p>
                                     </div>
                                 </div>
@@ -42,7 +42,7 @@ const GiftCard: React.FC = () => {
                         </div>
 
                         <div className="relative group">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-yellow-700/50 to-red-900/50 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+                            <div className="absolute -inset-1 bg-gradient-to-r from-yellow-700/50 to-gold-dark/50 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
 
                             {/* Digital Voucher Preview */}
                             <div className="relative bg-[#1a1a1a] aspect-[1.6/1] rounded-xl overflow-hidden shadow-2xl border border-zinc-800 flex flex-col items-center justify-center p-12 text-center space-y-4">
@@ -54,8 +54,8 @@ const GiftCard: React.FC = () => {
                                         <h3 className="text-4xl md:text-5xl font-black tracking-[0.15em] text-[#c5a059] uppercase leading-none">
                                             Porterhouse
                                         </h3>
-                                        <p className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-red-700 font-semibold mt-1">
-                                            Steakhouse
+                                        <p className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-white font-semibold mt-1">
+                                            Winchester's Premiere Steakhouse
                                         </p>
                                         <div className="w-full h-px bg-gradient-to-r from-transparent via-[#c5a059]/30 to-transparent mt-4"></div>
                                     </div>
@@ -73,7 +73,7 @@ const GiftCard: React.FC = () => {
                             </div>
 
                             {/* Floating Decoration */}
-                            <div className="absolute -bottom-6 -right-6 bg-red-900 p-6 shadow-2xl hidden md:block rounded-sm">
+                            <div className="absolute -bottom-6 -right-6 bg-gold-dark p-6 shadow-2xl hidden md:block rounded-sm">
                                 <Gift className="text-white" size={40} />
                             </div>
                         </div>
@@ -86,8 +86,8 @@ const GiftCard: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid md:grid-cols-3 gap-12">
                         <div className="space-y-4">
-                            <div className="w-12 h-12 bg-red-900/10 rounded-lg flex items-center justify-center mb-6">
-                                <CreditCard className="text-red-700" size={24} />
+                            <div className="w-12 h-12 bg-gold-dark/10 rounded-lg flex items-center justify-center mb-6">
+                                <CreditCard className="text-gold" size={24} />
                             </div>
                             <h4 className="text-xl serif text-white uppercase tracking-widest">Flexible Values</h4>
                             <p className="text-sm text-zinc-500 leading-relaxed">
@@ -95,8 +95,8 @@ const GiftCard: React.FC = () => {
                             </p>
                         </div>
                         <div className="space-y-4">
-                            <div className="w-12 h-12 bg-red-900/10 rounded-lg flex items-center justify-center mb-6">
-                                <ShoppingBag className="text-red-700" size={24} />
+                            <div className="w-12 h-12 bg-gold-dark/10 rounded-lg flex items-center justify-center mb-6">
+                                <ShoppingBag className="text-gold" size={24} />
                             </div>
                             <h4 className="text-xl serif text-white uppercase tracking-widest">Premium Packaging</h4>
                             <p className="text-sm text-zinc-500 leading-relaxed">
@@ -104,8 +104,8 @@ const GiftCard: React.FC = () => {
                             </p>
                         </div>
                         <div className="space-y-4">
-                            <div className="w-12 h-12 bg-red-900/10 rounded-lg flex items-center justify-center mb-6">
-                                <Info className="text-red-700" size={24} />
+                            <div className="w-12 h-12 bg-gold-dark/10 rounded-lg flex items-center justify-center mb-6">
+                                <Info className="text-gold" size={24} />
                             </div>
                             <h4 className="text-xl serif text-white uppercase tracking-widest">Terms of Use</h4>
                             <p className="text-sm text-zinc-500 leading-relaxed">

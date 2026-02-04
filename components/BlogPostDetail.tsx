@@ -46,7 +46,7 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post, onBack }) => {
                         </button>
 
                         <div className="space-y-4">
-                            <span className="bg-red-900 text-white px-4 py-1 text-[10px] uppercase tracking-[0.2em] font-bold inline-block">
+                            <span className="bg-gold-dark text-white px-4 py-1 text-[10px] uppercase tracking-[0.2em] font-bold inline-block">
                                 {post.category}
                             </span>
                             <h1 className="text-4xl md:text-7xl serif text-white leading-tight max-w-4xl">
@@ -56,15 +56,15 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post, onBack }) => {
 
                         <div className="flex flex-wrap items-center gap-6 text-zinc-400 text-sm border-t border-zinc-800 pt-8 mt-8">
                             <div className="flex items-center space-x-2">
-                                <User size={16} className="text-red-700" />
+                                <User size={16} className="text-gold" />
                                 <span>{post.author}</span>
                             </div>
                             <div className="flex items-center space-x-2">
-                                <Calendar size={16} className="text-red-700" />
+                                <Calendar size={16} className="text-gold" />
                                 <span>{post.date}</span>
                             </div>
                             <div className="flex items-center space-x-2">
-                                <Clock size={16} className="text-red-700" />
+                                <Clock size={16} className="text-gold" />
                                 <span>{post.readTime}</span>
                             </div>
                         </div>
@@ -74,7 +74,7 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post, onBack }) => {
 
             {/* Content Section */}
             <article className="max-w-4xl mx-auto px-6 mt-16 md:mt-24">
-                <div className="prose prose-invert prose-red max-w-none">
+                <div className="prose prose-invert prose-gold max-w-none">
                     <div className="text-zinc-300 leading-relaxed text-lg md:text-xl font-light space-y-8">
                         {post.content}
                     </div>
@@ -85,7 +85,7 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post, onBack }) => {
                     <div className="flex space-x-4">
                         <span className="text-zinc-500 uppercase tracking-widest text-xs font-bold">Share this story:</span>
                         <div className="flex space-x-4 text-zinc-400">
-                            <Share2 size={18} className="hover:text-red-700 cursor-pointer transition-colors" />
+                            <Share2 size={18} className="hover:text-gold cursor-pointer transition-colors" />
                         </div>
                     </div>
                 </div>
@@ -98,7 +98,7 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post, onBack }) => {
                     <p className="text-zinc-400 font-light">Join us at Porterhouse and taste the dedication in every bite.</p>
                     <button
                         onClick={() => window.open('https://table-maestro-v2.web.app/public/booking?tenant=a8375505-b197-42c9-9d6e-1a06278d0902', '_blank')}
-                        className="px-8 py-4 bg-red-900 hover:bg-red-800 text-white text-xs font-bold uppercase tracking-widest transition-all"
+                        className="px-8 py-4 bg-gold-dark hover:bg-gold text-white text-xs font-bold uppercase tracking-widest transition-all"
                     >
                         Reserve a Table
                     </button>

@@ -72,7 +72,7 @@ const AIAssistant: React.FC = () => {
         <div className="bg-[#121212] border border-zinc-800 w-[350px] md:w-[400px] h-[500px] shadow-2xl flex flex-col overflow-hidden animate-fadeIn">
           <div className="bg-zinc-900 p-4 border-b border-zinc-800 flex justify-between items-center">
             <div className="flex items-center space-x-3">
-              <div className="p-2 bg-red-900/20 rounded-lg"><Sparkles className="text-red-700" size={18} /></div>
+              <div className="p-2 bg-gold-dark/20 rounded-lg"><Sparkles className="text-gold" size={18} /></div>
               <div>
                 <h4 className="text-sm font-bold text-white uppercase tracking-widest leading-none">Sommelier Expert</h4>
                 <p className="text-[10px] text-zinc-500 uppercase mt-1 tracking-tighter">AI Concierge</p>
@@ -83,20 +83,20 @@ const AIAssistant: React.FC = () => {
           <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')]">
             {messages.map((m, i) => (
               <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[85%] p-3 text-sm leading-relaxed ${m.role === 'user' ? 'bg-red-900 text-white rounded-l-xl rounded-tr-xl' : 'bg-zinc-800 text-zinc-200 rounded-r-xl rounded-tl-xl'}`}>{m.text}</div>
+                <div className={`max-w-[85%] p-3 text-sm leading-relaxed ${m.role === 'user' ? 'bg-gold-dark text-white rounded-l-xl rounded-tr-xl' : 'bg-zinc-800 text-zinc-200 rounded-r-xl rounded-tl-xl'}`}>{m.text}</div>
               </div>
             ))}
             {isLoading && <div className="flex space-x-1 p-2"><div className="w-1.5 h-1.5 bg-zinc-500 rounded-full animate-bounce"></div><div className="w-1.5 h-1.5 bg-zinc-500 rounded-full animate-bounce [animation-delay:0.2s]"></div></div>}
           </div>
           <div className="p-4 border-t border-zinc-800 bg-zinc-900/50">
             <div className="relative">
-              <input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()} placeholder="Ask about wine or steaks..." className="w-full bg-[#0a0a0a] border border-zinc-800 py-3 pl-4 pr-12 text-sm text-white focus:outline-none focus:border-red-900" />
-              <button onClick={handleSendMessage} disabled={isLoading} className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-red-700"><Send size={18} /></button>
+              <input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()} placeholder="Ask about wine or steaks..." className="w-full bg-[#0a0a0a] border border-zinc-800 py-3 pl-4 pr-12 text-sm text-white focus:outline-none focus:border-gold-dark" />
+              <button onClick={handleSendMessage} disabled={isLoading} className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-gold"><Send size={18} /></button>
             </div>
           </div>
         </div>
       ) : (
-        <button onClick={() => setIsOpen(true)} className="bg-red-900 hover:bg-red-800 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 flex items-center space-x-2 group">
+        <button onClick={() => setIsOpen(true)} className="bg-gold-dark hover:bg-gold text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 flex items-center space-x-2 group">
           <MessageSquare size={24} /><span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 whitespace-nowrap text-xs font-bold uppercase tracking-widest pl-0 group-hover:pl-2">Ask Sommelier</span>
         </button>
       )}
