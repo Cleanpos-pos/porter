@@ -14,8 +14,8 @@ const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
           <div className="relative order-2 md:order-1">
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-gold-dark/10 rounded-full blur-3xl"></div>
             <img
-              src="/gallery/lamb-rack-wine.jpg"
-              alt="Porterhouse Steakhouse Winchester Signature Lamb Rack"
+              src="/gallery/t-bone-steak.jpg"
+              alt="Porterhouse Steakhouse Signature T-Bone Steak"
               className="relative z-10 w-full h-[500px] object-cover border border-zinc-800 shadow-2xl grayscale-[10%] hover:grayscale-0 transition-all duration-700"
             />
             <div className="mt-6 bg-zinc-900 border border-zinc-800 flex items-center justify-center p-8 shadow-2xl">
