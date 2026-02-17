@@ -24,6 +24,11 @@ export default {
                     '100%': { opacity: '1', transform: 'translateY(0)' },
                 }
             },
+            fontFamily: {
+                serif: ['Playfair Display', 'serif'],
+                sans: ['Inter', 'sans-serif'],
+                display: ['Russo One', 'sans-serif'],
+            },
         },
     },
     plugins: [],

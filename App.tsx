@@ -70,6 +70,7 @@ const App: React.FC = () => {
             <Hero onBookClick={openReservation} />
             <About />
             <Menu />
+            <Gallery />
             <Contact />
           </>
         );

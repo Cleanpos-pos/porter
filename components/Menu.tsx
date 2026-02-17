@@ -284,7 +284,7 @@ const Menu: React.FC = () => {
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-dark/30 to-transparent"></div>
       <div className="absolute top-1/2 left-0 -translate-y-1/2 opacity-5 pointer-events-none">
-        <h2 className="text-[200px] serif text-white rotate-90 select-none">PORTERHOUSE</h2>
+        <h2 className="text-[200px] font-display text-white rotate-90 select-none">PORTERHOUSE</h2>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

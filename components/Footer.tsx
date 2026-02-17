@@ -14,8 +14,8 @@ const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick, onDisclai
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
           <div className="flex flex-col">
-            <span className="text-3xl md:text-4xl font-bold serif tracking-tight text-white leading-none">
-              Porterhouse
+            <span className="text-3xl md:text-4xl font-bold font-display tracking-tight text-white leading-none">
+              PORTERHOUSE
             </span>
             <span className="text-xs uppercase tracking-[0.3em] text-white font-semibold mt-1">
               Winchester's Premiere Steakhouse

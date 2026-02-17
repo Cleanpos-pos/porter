@@ -82,8 +82,8 @@ const Gallery: React.FC = () => {
 
                             {/* PORTERHOUSE Logo */}
                             <div className="absolute bottom-3 left-4">
-                                <p className="text-white text-[10px] md:text-xs font-serif font-bold tracking-[0.2em] opacity-80">
-                                    Porterhouse
+                                <p className="text-white text-[10px] md:text-xs font-display font-bold tracking-[0.2em] opacity-80">
+                                    PORTERHOUSE
                                 </p>
                             </div>
                         </div>
@@ -141,8 +141,8 @@ const Gallery: React.FC = () => {
 
                             {/* PORTERHOUSE Logo */}
                             <div className="absolute bottom-4 left-6">
-                                <p className="text-white text-xs md:text-sm font-serif font-bold tracking-[0.2em] opacity-80">
-                                    Porterhouse
+                                <p className="text-white text-xs md:text-sm font-display font-bold tracking-[0.2em] opacity-80">
+                                    PORTERHOUSE
                                 </p>
                             </div>
                         </div>
