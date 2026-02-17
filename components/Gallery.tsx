@@ -8,16 +8,21 @@ interface GalleryImage {
 }
 
 const galleryImages: GalleryImage[] = [
-    { src: '/gallery/dining-room-1.jpg', alt: 'Elegant dining room with warm ambiance', category: 'Ambiance' },
-    { src: '/gallery/dining-room-2.jpg', alt: 'Spacious dining area with premium seating', category: 'Ambiance' },
-    { src: '/gallery/dining-room-3.jpg', alt: 'Intimate dining space with sophisticated decor', category: 'Ambiance' },
-    { src: '/gallery/signature-dish-1.jpg', alt: 'Premium lamb chops with seasonal vegetables', category: 'Signature Dishes' },
-    { src: '/gallery/signature-dish-2.jpg', alt: 'Exquisite rack of lamb with flaming sauce', category: 'Signature Dishes' },
-    { src: '/gallery/signature-salmon.jpg', alt: 'Pan-seared salmon with cherry tomatoes and asparagus', category: 'Signature Dishes' },
-    { src: '/gallery/vegetable-tower.jpg', alt: 'Artfully stacked vegetable tower with grilled eggplant', category: 'Signature Dishes' },
-    { src: '/gallery/chef-portrait.jpg', alt: 'Our talented chef presenting a masterpiece', category: 'Our Team' },
-    { src: '/gallery/kitchen-action.jpg', alt: 'Chefs at work in our professional kitchen', category: 'Our Team' },
-    { src: '/gallery/sauce-presentation.jpg', alt: 'Premium sauce selection with wine pairing', category: 'Ambiance' },
+    // Ambiance - Tables and chairs inside (2 images)
+    { src: '/gallery/dining-room-1.jpg', alt: 'Dining Room', category: 'Ambiance' },
+    { src: '/gallery/dining-room-2.jpg', alt: 'Dining Room', category: 'Ambiance' },
+
+    // Our Team - People images (3 images)
+    { src: '/gallery/dining-room-3.jpg', alt: 'Team', category: 'Our Team' },
+    { src: '/gallery/chef-portrait.jpg', alt: 'Chef', category: 'Our Team' },
+    { src: '/gallery/kitchen-action.jpg', alt: 'Kitchen', category: 'Our Team' },
+
+    // Signature Dishes - Food images (5 images)
+    { src: '/gallery/signature-dish-1.jpg', alt: 'Signature Dish', category: 'Signature Dishes' },
+    { src: '/gallery/signature-dish-2.jpg', alt: 'Signature Dish', category: 'Signature Dishes' },
+    { src: '/gallery/signature-salmon.jpg', alt: 'Signature Salmon', category: 'Signature Dishes' },
+    { src: '/gallery/vegetable-tower.jpg', alt: 'Vegetable Tower', category: 'Signature Dishes' },
+    { src: '/gallery/sauce-presentation.jpg', alt: 'Sauce Presentation', category: 'Signature Dishes' },
 ];
 
 const Gallery: React.FC = () => {
