@@ -14,13 +14,14 @@ const galleryImages: GalleryImage[] = [
     { src: '/gallery/meat-aging.jpg', alt: 'Meat Aging Cabinet', category: 'Ambiance' },
     { src: '/gallery/porterhouse-sign.jpg', alt: 'Porterhouse Sign', category: 'Ambiance' },
 
-    // Our Team - People images (4 images)
+    // Our Team - People images (5 images)
     { src: '/gallery/wine-display.jpg', alt: 'Chef', category: 'Our Team' },
     { src: '/gallery/chef-portrait.jpg', alt: 'Chef', category: 'Our Team' },
     { src: '/gallery/kitchen-action.jpg', alt: 'Kitchen', category: 'Our Team' },
     { src: '/gallery/chef-plating.jpg', alt: 'Chef Plating', category: 'Our Team' },
+    { src: '/gallery/smiling-waiter.jpg', alt: 'Our Friendly Staff', category: 'Our Team' },
 
-    // Signature Dishes - Food images (7 images)
+    // Signature Dishes - Food images (11 images)
     { src: '/gallery/dining-room-1.jpg', alt: 'Exquisite Dish', category: 'Signature Dishes' },
     { src: '/gallery/signature-dish-1.jpg', alt: 'Signature Dish', category: 'Signature Dishes' },
     { src: '/gallery/signature-dish-2.jpg', alt: 'Signature Dish', category: 'Signature Dishes' },
@@ -28,6 +29,10 @@ const galleryImages: GalleryImage[] = [
     { src: '/gallery/signature-salmon.jpg', alt: 'Signature Salmon', category: 'Signature Dishes' },
     { src: '/gallery/vegetable-tower.jpg', alt: 'Vegetable Tower', category: 'Signature Dishes' },
     { src: '/gallery/sauce-presentation.jpg', alt: 'Sauce Presentation', category: 'Signature Dishes' },
+    { src: '/gallery/salmon-scallops.jpg', alt: 'Salmon and Scallops', category: 'Signature Dishes' },
+    { src: '/gallery/king-prawns.jpg', alt: 'King Prawns', category: 'Signature Dishes' },
+    { src: '/gallery/t-bone-steak.jpg', alt: 'T-Bone Steak', category: 'Signature Dishes' },
+    { src: '/gallery/premium-steak.jpg', alt: 'Premium Steak', category: 'Signature Dishes' },
 ];
 
 const Gallery: React.FC = () => {
@@ -73,12 +78,12 @@ const Gallery: React.FC = () => {
                             />
 
                             {/* Subtle bottom gradient for logo */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
                             {/* PORTERHOUSE Logo */}
-                            <div className="absolute bottom-0 left-0 right-0 p-6">
-                                <p className="text-yellow-400 text-2xl md:text-3xl font-serif font-bold tracking-widest text-center">
-                                    PORTERHOUSE
+                            <div className="absolute bottom-3 left-4">
+                                <p className="text-white text-[10px] md:text-xs font-serif font-bold tracking-[0.2em] opacity-80">
+                                    Porterhouse
                                 </p>
                             </div>
                         </div>
@@ -135,9 +140,9 @@ const Gallery: React.FC = () => {
                             />
 
                             {/* PORTERHOUSE Logo */}
-                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8 rounded-b-lg">
-                                <p className="text-yellow-400 text-3xl md:text-4xl font-serif font-bold tracking-widest text-center">
-                                    PORTERHOUSE
+                            <div className="absolute bottom-4 left-6">
+                                <p className="text-white text-xs md:text-sm font-serif font-bold tracking-[0.2em] opacity-80">
+                                    Porterhouse
                                 </p>
                             </div>
                         </div>
