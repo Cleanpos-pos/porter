@@ -353,11 +353,11 @@ const Menu: React.FC = () => {
 
         {/* Footer Note */}
         <div className="mt-32 pt-12 border-t border-zinc-900 flex flex-col items-center space-y-6">
-          <div className="flex items-center space-x-8 text-[9px] text-zinc-600 uppercase tracking-[0.2em]">
+          <div className="flex items-center space-x-8 text-[9px] text-zinc-300 uppercase tracking-[0.2em]">
             <span className="flex items-center"><span className="w-2 h-2 border border-zinc-700 mr-2"></span> GLUTEN FREE AVAILABLE</span>
             <span className="flex items-center"><span className="w-2 h-2 border border-green-900/50 mr-2"></span> VEGETARIAN FRIENDLY</span>
           </div>
-          <p className="max-w-2xl text-center text-[10px] text-zinc-500 italic leading-relaxed">
+          <p className="max-w-2xl text-center text-[10px] text-zinc-200 italic leading-relaxed">
             Please inform your server of any dietary requirements or allergies.
             We take every precaution but cannot guarantee a transition-free environment.
           </p>
