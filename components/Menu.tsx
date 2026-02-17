@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Utensils, Wine, Clock, Beef, Beer, Coffee, IceCream, Info as InfoIcon, X, Check } from 'lucide-react';
+import { Utensils, Wine, Clock, Beef, Beer, Coffee, IceCream, Info as InfoIcon, X, Check, Star } from 'lucide-react';
 
 interface MenuItem {
   name: string;
@@ -14,7 +14,7 @@ interface MenuItem {
 }
 
 const Menu: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'dinner' | 'daytime' | 'drinks'>('dinner');
+  const [activeTab, setActiveTab] = useState<'dinner' | 'daytime' | 'specials' | 'drinks'>('dinner');
   const [activeCategory, setActiveCategory] = useState<string>('starters');
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
@@ -116,16 +116,89 @@ const Menu: React.FC = () => {
   };
 
   const daytimeMenu = {
+    starters: [
+      {
+        name: "Mixed Platter for Two",
+        price: "19",
+        desc: "Assortment of tiger prawns, beef skewers, chicken skewers, BBQ spare ribs, grilled halloumi cheese and vegetable croquets."
+      },
+      {
+        name: "Smoked Salmon",
+        price: "9",
+        desc: "Oak wood chips - fired. Fresh smoked salmon, served with onion, capers, lettuce, creamy horseradish and garlic toast."
+      },
+      { name: "BBQ Spare Ribs", price: "8", desc: "Served with mixed greens." },
+      { name: "Pan Fried Jumbo Tiger Prawns", price: "13", desc: "Garlic and chilli jumbo tiger prawns served with peppery lettuce." },
+      { name: "Grilled Calamari", price: "8.50", desc: "Rosemary marinated grilled calamari, cherry tomato salsa, garlic baguette." },
+      { name: "Teriyaki Beef Skewers", price: "8", desc: "Japanese style marinated strips of beef." },
+      { name: "Pan Fried Sea Scallops", price: "12", desc: "Sea scallops, grilled asparagus, lime butter." },
+      {
+        name: "Steak Tartar",
+        price: "8.50",
+        desc: "Seared fillet steak, capers, shallots, parsley, Worcestershire sauce, crushed mustard seeds with young wild rocket and citrus truffle dressing."
+      },
+      { name: "Spicy Fusion Chicken", price: "8.50", desc: "Fresh spring onion, coriander and chilli infused chicken mince balls." },
+      { name: "Tomato Mozzarella Salad", price: "6.50", desc: "With aged balsamic dressing." },
+      { name: "Greek Salad", price: "5.50", desc: "Topped with feta cheese." },
+      { name: "Garlic Breads", price: "3.25" },
+      { name: "Mediterranean Olives", price: "4.50" },
+      { name: "Soup of the Day", price: "4.50", desc: "Served with bread and butter." },
+      { name: "Bread Basket", price: "3.25" },
+    ],
     mains: [
       { name: "8oz Rib Eye Steak", price: "20", desc: "Served with a selection of vegetables and chips." },
       { name: "8oz Rump Steak", price: "15", desc: "Served with a selection of vegetables and chips." },
-      { name: "8oz Sirloin Steak", price: "20", desc: "Served with a selection of vegetables and chips." },
-      { name: "8oz Grilled Gammon Steak", price: "9.50", desc: "Served with vegetables, chips and grilled pineapple or fried egg." },
+      { name: "8oz Sirloin Steak", price: "20", desc: "Served with selection of vegetable and chips." },
+      {
+        name: "8oz Grilled Gammon Steak",
+        price: "9.50",
+        desc: "Served with a selection of vegetables and chips and garnished with grilled pineapple or a fried egg."
+      },
       { name: "8oz Porterhouse Burger", price: "11", desc: "Topped with crispy bacon, served with a salad and chips." },
-      { name: "Grilled Breast of Chicken", price: "14.50", desc: "White wine and mushroom sauce, vegetables and chips." },
-      { name: "Porterhouse Sandwich", price: "11", desc: "Sliced tender beef, baguette with horseradish, salad and chips." },
-      { name: "Penne Arrabiata", price: "11", desc: "Penne pasta made in a rich spicy tomato sauce.", v: true },
-      { name: "Pan Fried Sea Bass", price: "16", desc: "Sea Bass Fillet, Baby Spinach, Lime Butter Sauce.", gf: true },
+      {
+        name: "Grilled Breast of Chicken",
+        price: "14.50",
+        desc: "With a white wine and mushroom sauce, served with a selection of vegetables and chips."
+      },
+      {
+        name: "Porterhouse Sandwich",
+        price: "11",
+        desc: "Sliced tender beef, grilled and served in a fresh baguette with horseradish, with crispy salad and chips."
+      },
+      { name: "Penne Arrabiata", price: "11", desc: "Penne pasta made in a rich spicy tomato sauce." },
+      { name: "Pan Fried Sea Bass", price: "16", desc: "Sea bass fillet, baby spinach, lime butter sauce." },
+      {
+        name: "Chateaubriand For Two",
+        price: "74",
+        desc: "From the head of the prime fillet, lean and exquisitely tender.",
+        details: "To start grilled halloumi, aspragus & mixed green salad. Followed by 21oz Chateaubriand. Served with roasted vegetables, roasted potatoes and chips with béarnaise & peppercorn sauces."
+      }
+    ]
+  };
+
+  const specialsMenu = {
+    starters: [
+      { name: "Pan Fried Prawns", price: "Special", desc: "Garlic and chilli prawns served with peppery lettuce." },
+      { name: "Trio of Skewers", price: "Special", desc: "Chicken, beef and grilled calamari served with crunchy salad." },
+      { name: "Seafood Medley", price: "Special", desc: "Pan fried scallop, grilled prawn and smoked salmon." },
+      { name: "Greek Salad", price: "Special", desc: "Crisp, fresh salad tossed in herbs, vinaigrette and topped with feta cheese." },
+      { name: "Soup of the Day", price: "Special", desc: "Served with bread and butter." },
+    ],
+    mains: [
+      { name: "8 oz Rump Steak", price: "Special" },
+      { name: "5 oz Fillet Steak", price: "Add 5.95" },
+      { name: "8 oz Sirloin Steak", price: "Add 5.95" },
+      { name: "8 oz Ribeye Steak", price: "Add 5.95" },
+      { name: "Grilled Breast of Chicken", price: "Special", desc: "With a white wine and mushroom sauce, roasted vegetables and chips." },
+      { name: "Pan Fried Sea Bass", price: "Special", desc: "Sea bass fillet, baby spinach, lime butter sauce." },
+      { name: "Mix Vegetable Pasta", price: "Special", desc: "Made with a spicy tomato sauce OR a creamy mushroom sauce." },
+    ],
+    desserts: [
+      { name: "Bailey's Cheese Cake", price: "Special" },
+      { name: "Chocolate Brownie", price: "Special", desc: "Served with vanilla ice cream." },
+      { name: "Mint Chocolate Ice Cream", price: "Special" },
+      { name: "Blackcurrant Sorbet", price: "Special" },
+      { name: "Vanilla Ice Cream", price: "Special" },
     ]
   };
 
@@ -228,6 +301,7 @@ const Menu: React.FC = () => {
           {[
             { id: 'dinner', label: 'Dinner Menu', icon: <Utensils size={14} /> },
             { id: 'daytime', label: 'Day Time', icon: <Clock size={14} /> },
+            { id: 'specials', label: 'Specials', icon: <Star size={14} /> },
             { id: 'drinks', label: 'Beverages', icon: <Wine size={14} /> },
           ].map((tab) => (
             <button
@@ -235,7 +309,8 @@ const Menu: React.FC = () => {
               onClick={() => {
                 setActiveTab(tab.id as any);
                 if (tab.id === 'dinner') setActiveCategory('starters');
-                if (tab.id === 'daytime') setActiveCategory('mains');
+                if (tab.id === 'daytime') setActiveCategory('starters');
+                if (tab.id === 'specials') setActiveCategory('starters');
                 if (tab.id === 'drinks') setActiveCategory('malbec');
               }}
               className={`group flex items-center space-x-3 px-10 py-4 transition-all duration-500 ${activeTab === tab.id
@@ -254,6 +329,26 @@ const Menu: React.FC = () => {
         {/* Secondary Navigation (Categories) */}
         <div className="flex justify-center flex-wrap gap-8 mb-16 border-b border-zinc-900 pb-8">
           {activeTab === 'dinner' && ['starters', 'steaks', 'sides', 'desserts'].map(cat => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${activeCategory === cat ? 'text-gold scale-110' : 'text-zinc-600 hover:text-zinc-400'
+                }`}
+            >
+              {cat}
+            </button>
+          ))}
+          {activeTab === 'daytime' && ['starters', 'mains'].map(cat => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${activeCategory === cat ? 'text-gold scale-110' : 'text-zinc-600 hover:text-zinc-400'
+                }`}
+            >
+              {cat}
+            </button>
+          ))}
+          {activeTab === 'specials' && ['starters', 'mains', 'desserts'].map(cat => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
@@ -310,14 +405,74 @@ const Menu: React.FC = () => {
           )}
 
           {activeTab === 'daytime' && (
-            <div className="animate-fadeIn">
-              <div className="flex flex-col items-center mb-16 space-y-4">
+            <div className="animate-fadeIn space-y-20">
+              <div className="flex flex-col items-center space-y-4">
                 <div className="px-6 py-2 bg-gold-dark/20 border border-gold-dark/30 text-gold text-[10px] font-black uppercase tracking-[0.3em]">
                   Available 12:00 noon till 4:00 pm
                 </div>
               </div>
-              <SectionHeader title="Lunch Selection" icon={categoryIcons.mains} />
-              <MenuGrid items={daytimeMenu.mains} />
+              {activeCategory === 'starters' && (
+                <div>
+                  <SectionHeader title="Lunch Starters" icon={categoryIcons.starters} />
+                  <MenuGrid items={daytimeMenu.starters} />
+                </div>
+              )}
+              {activeCategory === 'mains' && (
+                <div>
+                  <SectionHeader title="Lunch Mains" icon={categoryIcons.mains} />
+                  <MenuGrid items={daytimeMenu.mains} />
+                </div>
+              )}
+            </div>
+          )}
+
+          {activeTab === 'specials' && (
+            <div className="animate-fadeIn space-y-20">
+              <div className="flex flex-col items-center space-y-4 text-center">
+                <div className="px-6 py-2 bg-gold-dark/20 border border-gold-dark/30 text-gold text-[10px] font-black uppercase tracking-[0.3em]">
+                  Served Sunday - Thursday 12:00 noon - 10:00 pm
+                </div>
+                <div className="mt-8 p-8 border border-gold-dark/20 bg-gold-dark/5 max-w-3xl">
+                  <h3 className="text-2xl serif text-white mb-2">Chateaubriand For Two at only £74.00</h3>
+                  <p className="text-zinc-400 text-sm italic mb-4">From the head of the prime fillet, lean and exquisitely tender</p>
+                  <div className="grid md:grid-cols-2 gap-8 text-left border-t border-gold-dark/10 pt-6">
+                    <div>
+                      <h4 className="text-gold text-[10px] font-black uppercase tracking-widest mb-2">To start</h4>
+                      <p className="text-zinc-300 text-xs">Grilled Halloumi, Asparagus & Mixed Green Salad</p>
+                    </div>
+                    <div>
+                      <h4 className="text-gold text-[10px] font-black uppercase tracking-widest mb-2">Followed by</h4>
+                      <p className="text-zinc-300 text-xs text-bold">21 oz Chateaubriand</p>
+                      <p className="text-zinc-500 text-[10px] mt-1 italic">Served with roasted vegetables, roasted potatoes and chips with Béarnaise & Peppercorn sauces</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="text-white text-xl serif italic mt-12 bg-zinc-900/50 px-8 py-4 border border-zinc-800">
+                  2 Courses £22.95 | 3 Courses £27.95
+                </div>
+              </div>
+
+              {activeCategory === 'starters' && (
+                <div>
+                  <SectionHeader title="Specials Starters" icon={categoryIcons.starters} />
+                  <MenuGrid items={specialsMenu.starters} />
+                </div>
+              )}
+              {activeCategory === 'mains' && (
+                <div>
+                  <SectionHeader title="Specials Mains" icon={categoryIcons.mains} />
+                  <div className="mb-8 p-4 bg-zinc-900/30 border-l-2 border-gold-dark">
+                    <p className="text-zinc-400 text-[10px] uppercase tracking-[0.2em] font-bold">• All steaks are served with roasted vegetables, chips and two sauces of the day</p>
+                  </div>
+                  <MenuGrid items={specialsMenu.mains} />
+                </div>
+              )}
+              {activeCategory === 'desserts' && (
+                <div>
+                  <SectionHeader title="Specials Desserts" icon={categoryIcons.desserts} />
+                  <MenuGrid items={specialsMenu.desserts} />
+                </div>
+              )}
             </div>
           )}
 

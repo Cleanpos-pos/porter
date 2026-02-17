@@ -14,15 +14,15 @@ export const blogPosts: BlogPost[] = [
         excerpt: "Discover the secrets behind our legendary steaks. From temperature control to the importance of resting your meat, we reveal it all.",
         date: "January 24, 2026",
         author: "Chef de Cuisine",
-        image: "/gallery/signature-dish-1.jpg",
+        image: "/gallery/t-bone-steak.jpg",
         category: "Masterclass",
         readTime: "5 min read",
         content: (
             <>
                 <p>There is nothing quite like the sound of a steak hitting a piping hot grill. But achieving that perfect, caramelised crust while maintaining a tender, juicy interior is an art form that takes years to master. Today, our Master Chef shares the foundational secrets of the Porterhouse sear.</p>
                 <div className="my-12 relative h-96 overflow-hidden rounded-lg">
-                    <img src="/gallery/signature-dish-1.jpg" alt="Perfectly Seared Filet Mignon" className="w-full h-full object-cover" />
-                    <p className="text-[10px] uppercase tracking-widest text-zinc-500 mt-2 text-center">The Chef's Choice: A perfectly seared 10oz Filet Mignon seasoned with sea salt and thyme</p>
+                    <img src="/gallery/t-bone-steak.jpg" alt="Perfectly Seared T-Bone Steak" className="w-full h-full object-cover" />
+                    <p className="text-[10px] uppercase tracking-widest text-zinc-500 mt-2 text-center">The Chef's Choice: A perfectly seared T-Bone Steak seasoned with sea salt and thyme</p>
                 </div>
                 <h3 className="text-2xl font-serif text-white mt-8 mb-4">1. Temperature is Everything</h3>
                 <p>Never take a steak straight from the fridge to the flame. We temper our cuts for at least 30-40 minutes, allowing the internal temperature to rise. This ensures even cooking and prevents the exterior from burning before the center is ready.</p>
