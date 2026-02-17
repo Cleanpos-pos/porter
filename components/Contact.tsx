@@ -1,7 +1,5 @@
-
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 
 interface ContactProps {
   isFullPage?: boolean;
@@ -18,26 +16,22 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
     setSubmitStatus('idle');
 
     try {
-      // EmailJS configuration
-      const serviceId = 'service_gb7pqtd';
-      const templateId = 'template_wyex1ya';
-      const publicKey = 'S8TJnWXuMsqfDaOJr';
+      const response = await fetch('/contact.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      });
 
-      const templateParams = {
-        from_name: formState.name,
-        from_email: formState.email,
-        from_business: 'Porterhouse Steakhouse',
-        subject: formState.subject,
-        message: formState.message,
-        to_email: 'winchester@posso.uk',
-      };
-
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
-
-      setSubmitStatus('success');
-      setFormState({ name: '', email: '', subject: '', message: '' });
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormState({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
     } catch (error) {
-      console.error('Email send error:', error);
+      console.error('Submission error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
