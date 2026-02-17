@@ -105,7 +105,10 @@ const App: React.FC = () => {
         type={legalModal.type}
       />
       <AIAssistant />
-      <CookieConsent />
+      <CookieConsent
+        onTermsClick={() => openLegal('terms')}
+        onPrivacyClick={() => openLegal('privacy')}
+      />
     </div>
   );
 };
