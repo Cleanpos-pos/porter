@@ -13,8 +13,9 @@ import CookieConsent from './components/CookieConsent';
 import GiftCard from './components/GiftCard';
 import Blog from './components/Blog';
 import BlogPostDetail, { BlogPost } from './components/BlogPostDetail';
+import Gallery from './components/Gallery';
 
-export type View = 'home' | 'menu' | 'about' | 'contact' | 'gift-card' | 'blog';
+export type View = 'home' | 'menu' | 'about' | 'contact' | 'gift-card' | 'blog' | 'gallery';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>('home');
@@ -61,6 +62,8 @@ const App: React.FC = () => {
           return <BlogPostDetail post={selectedPost} onBack={() => setSelectedPost(null)} />;
         }
         return <div className="pt-20"><Blog onPostClick={setSelectedPost} /></div>;
+      case 'gallery':
+        return <div className="pt-20"><Gallery /></div>;
       default:
         return (
           <>

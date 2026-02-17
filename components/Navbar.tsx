@@ -16,6 +16,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, currentView, onViewChange, on
   const navLinks: { name: string; view: View }[] = [
     { name: 'Home', view: 'home' },
     { name: 'Menu', view: 'menu' },
+    { name: 'Gallery', view: 'gallery' },
     { name: 'Gift Cards', view: 'gift-card' },
     { name: 'The Blog', view: 'blog' },
     { name: 'About Us', view: 'about' },
