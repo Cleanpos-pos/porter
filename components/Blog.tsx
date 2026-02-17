@@ -14,14 +14,14 @@ export const blogPosts: BlogPost[] = [
         excerpt: "Discover the secrets behind our legendary steaks. From temperature control to the importance of resting your meat, we reveal it all.",
         date: "January 24, 2026",
         author: "Chef de Cuisine",
-        image: "/filet_mignon_sear.png",
+        image: "/gallery/signature-dish-1.jpg",
         category: "Masterclass",
         readTime: "5 min read",
         content: (
             <>
                 <p>There is nothing quite like the sound of a steak hitting a piping hot grill. But achieving that perfect, caramelised crust while maintaining a tender, juicy interior is an art form that takes years to master. Today, our Master Chef shares the foundational secrets of the Porterhouse sear.</p>
                 <div className="my-12 relative h-96 overflow-hidden rounded-lg">
-                    <img src="/filet_mignon_sear.png" alt="Perfectly Seared Filet Mignon" className="w-full h-full object-cover" />
+                    <img src="/gallery/signature-dish-1.jpg" alt="Perfectly Seared Filet Mignon" className="w-full h-full object-cover" />
                     <p className="text-[10px] uppercase tracking-widest text-zinc-500 mt-2 text-center">The Chef's Choice: A perfectly seared 10oz Filet Mignon seasoned with sea salt and thyme</p>
                 </div>
                 <h3 className="text-2xl font-serif text-white mt-8 mb-4">1. Temperature is Everything</h3>
@@ -39,14 +39,14 @@ export const blogPosts: BlogPost[] = [
         excerpt: "A deep dive into our partnership with local farmers and why grass-fed makes all the difference in flavor and quality.",
         date: "January 15, 2026",
         author: "The Butcher",
-        image: "/sirloin_blog.png",
+        image: "/gallery/signature-dish-2.jpg",
         category: "Our Heritage",
         readTime: "7 min read",
         content: (
             <>
                 <p>At Porterhouse, we believe that exceptional flavor starts long before the kitchen. It starts in the rolling hills of Hampshire, where our cattle graze on nutrient-rich pasture for the duration of their lives.</p>
                 <div className="my-12 relative h-96 overflow-hidden rounded-lg">
-                    <img src="/sirloin_blog.png" alt="Sliced Sirloin Steak with Red Wine and Greens" className="w-full h-full object-cover" />
+                    <img src="/gallery/signature-dish-2.jpg" alt="Sliced Sirloin Steak with Red Wine and Greens" className="w-full h-full object-cover" />
                     <p className="text-[10px] uppercase tracking-widest text-zinc-500 mt-2 text-center">Our premium 28-day aged Sirloin, sliced and served with fresh Hampshire micro-greens</p>
                 </div>
                 <h3 className="text-2xl font-serif text-white mt-8 mb-4">Why Grass-Fed Matters</h3>

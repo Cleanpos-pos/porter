@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface GalleryImage {
     src: string;
@@ -32,13 +32,6 @@ const galleryImages: GalleryImage[] = [
 
 const Gallery: React.FC = () => {
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
-    const [filter, setFilter] = useState<string>('All');
-
-    const categories = ['All', ...Array.from(new Set(galleryImages.map(img => img.category)))];
-
-    const filteredImages = filter === 'All'
-        ? galleryImages
-        : galleryImages.filter(img => img.category === filter);
 
     const openLightbox = (index: number) => {
         setSelectedImage(index);
@@ -54,8 +47,8 @@ const Gallery: React.FC = () => {
         if (selectedImage === null) return;
 
         const newIndex = direction === 'prev'
-            ? (selectedImage - 1 + filteredImages.length) % filteredImages.length
-            : (selectedImage + 1) % filteredImages.length;
+            ? (selectedImage - 1 + galleryImages.length) % galleryImages.length
+            : (selectedImage + 1) % galleryImages.length;
 
         setSelectedImage(newIndex);
     };
@@ -63,35 +56,9 @@ const Gallery: React.FC = () => {
     return (
         <section className="py-20 px-6 bg-gradient-to-b from-neutral-900 via-neutral-950 to-black">
             <div className="max-w-7xl mx-auto">
-                {/* Header */}
-                <div className="text-center mb-16">
-                    <h2 className="text-5xl md:text-6xl font-serif text-amber-500 mb-4 tracking-wide">
-                        Our Gallery
-                    </h2>
-                    <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
-                        Experience the elegance and artistry of Porterhouse through our curated collection
-                    </p>
-                </div>
-
-                {/* Category Filter */}
-                <div className="flex flex-wrap justify-center gap-4 mb-12">
-                    {categories.map((category) => (
-                        <button
-                            key={category}
-                            onClick={() => setFilter(category)}
-                            className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${filter === category
-                                ? 'bg-amber-600 text-white shadow-lg shadow-amber-600/50 scale-105'
-                                : 'bg-neutral-800/50 text-neutral-300 hover:bg-neutral-700/50 backdrop-blur-sm'
-                                }`}
-                        >
-                            {category}
-                        </button>
-                    ))}
-                </div>
-
                 {/* Gallery Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredImages.map((image, index) => (
+                    {galleryImages.map((image, index) => (
                         <div
                             key={index}
                             className="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer transform transition-all duration-500 hover:scale-105 hover:z-10"
@@ -105,26 +72,15 @@ const Gallery: React.FC = () => {
                                 loading="lazy"
                             />
 
-                            {/* Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
+                            {/* Subtle bottom gradient for logo */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
-                            {/* Glassmorphism Overlay on Hover */}
-                            <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                            {/* Content */}
-                            <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                <div className="flex items-center justify-between">
-                                    <div>
-                                        <p className="text-amber-400 text-sm font-medium mb-1">{image.category}</p>
-                                        <p className="text-white text-lg font-serif">{image.alt}</p>
-                                    </div>
-                                    <ZoomIn className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={24} />
-                                </div>
+                            {/* PORTERHOUSE Logo */}
+                            <div className="absolute bottom-0 left-0 right-0 p-6">
+                                <p className="text-yellow-400 text-2xl md:text-3xl font-serif font-bold tracking-widest text-center">
+                                    PORTERHOUSE
+                                </p>
                             </div>
-
-                            {/* Decorative Corner Accent */}
-                            <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-amber-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            <div className="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-amber-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
                     ))}
                 </div>
@@ -173,21 +129,15 @@ const Gallery: React.FC = () => {
                             onClick={(e) => e.stopPropagation()}
                         >
                             <img
-                                src={filteredImages[selectedImage].src}
-                                alt={filteredImages[selectedImage].alt}
+                                src={galleryImages[selectedImage].src}
+                                alt={galleryImages[selectedImage].alt}
                                 className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
                             />
 
-                            {/* Image Info */}
-                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6 rounded-b-lg">
-                                <p className="text-amber-400 text-sm font-medium mb-1">
-                                    {filteredImages[selectedImage].category}
-                                </p>
-                                <p className="text-white text-xl font-serif">
-                                    {filteredImages[selectedImage].alt}
-                                </p>
-                                <p className="text-neutral-400 text-sm mt-2">
-                                    {selectedImage + 1} / {filteredImages.length}
+                            {/* PORTERHOUSE Logo */}
+                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8 rounded-b-lg">
+                                <p className="text-yellow-400 text-3xl md:text-4xl font-serif font-bold tracking-widest text-center">
+                                    PORTERHOUSE
                                 </p>
                             </div>
                         </div>
