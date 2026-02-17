@@ -176,14 +176,14 @@ const Menu: React.FC = () => {
           onClick={() => setSelectedItem(item)}
         >
           <div className="flex justify-between items-baseline mb-1">
-            <h4 className="flex items-center text-zinc-100 font-bold tracking-wide group-hover:text-gold transition-colors uppercase text-sm">
+            <h4 className="flex items-center text-zinc-100 font-bold tracking-wide group-hover:text-gold transition-colors uppercase text-base">
               {item.name}
               <span className="ml-2 inline-flex gap-1">
-                {item.gf && <span className="text-[9px] border border-zinc-700 px-1 text-zinc-500 font-normal">GF</span>}
+                {item.gf && <span className="text-[9px] border border-zinc-700 px-1 text-white font-bold">GF</span>}
                 {item.v && <span className="text-[9px] border border-green-900/50 px-1 text-green-700 font-normal">V</span>}
               </span>
-              <div className="ml-3 transition-all duration-300 bg-amber-900/10 group-hover:bg-amber-600/20 p-1.5 rounded-full border border-amber-600/0 group-hover:border-amber-600/30">
-                <InfoIcon size={14} className="text-amber-600 group-hover:text-amber-500 transition-colors shadow-[0_0_10px_rgba(217,119,6,0.2)]" />
+              <div className="ml-4 transition-all duration-300 bg-amber-900/10 group-hover:bg-amber-600/20 p-2 rounded-full border border-amber-600/0 group-hover:border-amber-600/30">
+                <InfoIcon size={20} className="text-amber-600 group-hover:text-amber-500 transition-colors shadow-[0_0_10px_rgba(217,119,6,0.2)]" />
               </div>
             </h4>
             <div className="flex-1 mx-4 border-b border-dotted border-zinc-800 self-center"></div>
