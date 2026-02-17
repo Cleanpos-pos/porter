@@ -8,20 +8,20 @@ interface GalleryImage {
 }
 
 const galleryImages: GalleryImage[] = [
-    // Ambiance - Tables, chairs, and restaurant features (7 images)
-    { src: '/gallery/dining-room-1.jpg', alt: 'Dining Room', category: 'Ambiance' },
-    { src: '/gallery/dining-room-2.jpg', alt: 'Dining Room', category: 'Ambiance' },
+    // Ambiance - Tables, chairs, and restaurant features (6 images)
+    { src: '/gallery/dining-room-2.jpg', alt: 'Plated Food Display', category: 'Ambiance' },
     { src: '/gallery/dining-room-3.jpg', alt: 'Dining Room', category: 'Ambiance' },
-    { src: '/gallery/wine-display.jpg', alt: 'Wine Display', category: 'Ambiance' },
     { src: '/gallery/meat-aging.jpg', alt: 'Meat Aging Cabinet', category: 'Ambiance' },
     { src: '/gallery/porterhouse-sign.jpg', alt: 'Porterhouse Sign', category: 'Ambiance' },
 
-    // Our Team - People images (3 images)
+    // Our Team - People images (4 images)
+    { src: '/gallery/wine-display.jpg', alt: 'Chef', category: 'Our Team' },
     { src: '/gallery/chef-portrait.jpg', alt: 'Chef', category: 'Our Team' },
     { src: '/gallery/kitchen-action.jpg', alt: 'Kitchen', category: 'Our Team' },
     { src: '/gallery/chef-plating.jpg', alt: 'Chef Plating', category: 'Our Team' },
 
-    // Signature Dishes - Food images (6 images)
+    // Signature Dishes - Food images (7 images)
+    { src: '/gallery/dining-room-1.jpg', alt: 'Exquisite Dish', category: 'Signature Dishes' },
     { src: '/gallery/signature-dish-1.jpg', alt: 'Signature Dish', category: 'Signature Dishes' },
     { src: '/gallery/signature-dish-2.jpg', alt: 'Signature Dish', category: 'Signature Dishes' },
     { src: '/gallery/lamb-rack-wine.jpg', alt: 'Lamb Rack', category: 'Signature Dishes' },
