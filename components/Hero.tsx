@@ -38,9 +38,9 @@ const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
         <h2 className="text-gold uppercase tracking-[0.4em] text-sm md:text-base mb-4 font-bold animate-fadeIn">
           Established Excellence
         </h2>
-        <h1 className="text-5xl md:text-8xl font-display text-white mb-6 leading-tight tracking-[0.12em]" style={{ fontWeight: 200 }}>
+        <h1 className="text-[2.5rem] sm:text-5xl md:text-7xl lg:text-8xl font-display text-white mb-6 leading-tight tracking-[0.05em] sm:tracking-[0.08em] md:tracking-[0.12em]" style={{ fontWeight: 200 }}>
           PORTERHOUSE <br />
-          <span className="italic font-normal font-serif text-gold">Steakhouse</span>
+          <span className="italic font-normal font-serif text-gold text-3xl sm:text-4xl md:text-6xl lg:text-7xl">Steakhouse</span>
         </h1>
         <p className="text-lg md:text-2xl text-white font-light tracking-wide mb-10 max-w-2xl mx-auto">
           Winchester's Premiere Steakhouse

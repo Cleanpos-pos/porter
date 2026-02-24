@@ -35,10 +35,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, currentView, onViewChange, on
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <button onClick={() => handleNavClick('home')} className="flex flex-col text-left">
-          <span className="text-2xl md:text-3xl font-display tracking-[0.08em] text-white leading-none" style={{ fontWeight: 200 }}>
+          <span className="text-xl sm:text-2xl md:text-3xl font-display tracking-[0.05em] sm:tracking-[0.08em] text-white leading-none" style={{ fontWeight: 200 }}>
             PORTERHOUSE
           </span>
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-white font-semibold ml-0.5">
+          <span className="text-[8px] sm:text-[10px] md:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-white font-semibold ml-0.5">
             Winchester's Premiere Steakhouse
           </span>
         </button>
