@@ -5,7 +5,7 @@ interface HeroProps {
   onBookClick: () => void;
 }
 
-const heroImages = ['/H1.jpeg', '/h2.jpeg', '/hero-steak.jpg'];
+const heroImages = ['/H1.jpeg', '/h2.jpeg'];
 
 const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -38,7 +38,7 @@ const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
         <h2 className="text-gold uppercase tracking-[0.4em] text-sm md:text-base mb-4 font-bold animate-fadeIn">
           Established Excellence
         </h2>
-        <h1 className="text-5xl md:text-8xl font-display text-white mb-6 leading-tight tracking-[0.08em]" style={{ fontWeight: 300 }}>
+        <h1 className="text-5xl md:text-8xl font-display text-white mb-6 leading-tight tracking-[0.12em]" style={{ fontWeight: 200 }}>
           PORTERHOUSE <br />
           <span className="italic font-normal font-serif text-gold">Steakhouse</span>
         </h1>

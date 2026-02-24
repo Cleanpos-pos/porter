@@ -35,7 +35,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, currentView, onViewChange, on
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <button onClick={() => handleNavClick('home')} className="flex flex-col text-left">
-          <span className="text-2xl md:text-3xl font-bold font-display tracking-tight text-white leading-none">
+          <span className="text-2xl md:text-3xl font-display tracking-[0.08em] text-white leading-none" style={{ fontWeight: 200 }}>
             PORTERHOUSE
           </span>
           <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-white font-semibold ml-0.5">

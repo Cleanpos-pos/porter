@@ -21,10 +21,8 @@ const galleryImages: GalleryImage[] = [
     { src: '/gallery/chef-plating.jpg', alt: 'Chef Plating', category: 'Our Team' },
     { src: '/gallery/smiling-waiter.jpg', alt: 'Our Friendly Staff', category: 'Our Team' },
 
-    // Signature Dishes - Food images (11 images)
-    { src: '/gallery/dining-room-1.jpg', alt: 'Exquisite Dish', category: 'Signature Dishes' },
+    // Signature Dishes - Food images
     { src: '/gallery/signature-dish-1.jpg', alt: 'Signature Dish', category: 'Signature Dishes' },
-    { src: '/gallery/signature-dish-2.jpg', alt: 'Signature Dish', category: 'Signature Dishes' },
     { src: '/gallery/lamb-rack-wine.jpg', alt: 'Lamb Rack', category: 'Signature Dishes' },
     { src: '/gallery/signature-salmon.jpg', alt: 'Signature Salmon', category: 'Signature Dishes' },
     { src: '/gallery/vegetable-tower.jpg', alt: 'Vegetable Tower', category: 'Signature Dishes' },
