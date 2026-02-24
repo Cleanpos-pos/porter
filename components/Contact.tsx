@@ -95,7 +95,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
                   <Mail className="text-gold-dark mt-1 shrink-0" size={24} />
                   <div className="space-y-2">
                     <p className="font-bold text-white uppercase text-xs tracking-widest">Enquiries</p>
-                    <p className="text-zinc-400 text-sm break-all">winchester@porterhousesteakhouse.co.uk</p>
+                    <p className="text-zinc-400 text-sm break-all">info@porterhousesteakhouse.co.uk</p>
                   </div>
                 </div>
               </div>
@@ -198,7 +198,7 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
               {/* Error Message */}
               {submitStatus === 'error' && (
                 <div className="p-4 bg-gold-dark/20 border border-gold-dark/50 text-gold text-sm">
-                  ✗ Failed to send message. Please try again or email us directly at winchester@porterhousesteakhouse.co.uk
+                  ✗ Failed to send message. Please try again or email us directly at info@porterhousesteakhouse.co.uk
                 </div>
               )}
             </form>
