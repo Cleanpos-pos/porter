@@ -1,23 +1,41 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShieldCheck, Target, Heart } from 'lucide-react';
 
 interface AboutProps {
   isFullPage?: boolean;
 }
 
+const aboutImages = ['/gallery/k1.jpeg', '/gallery/K2.jpeg', '/gallery/lamb-rack-wine.jpg'];
+
 const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % aboutImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="bg-[#0a0a0a]">
       <section className={`py-24 ${isFullPage ? 'md:py-32' : 'md:py-40'} px-6`}>
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 lg:gap-32 items-start">
           <div className="relative order-2 md:order-1">
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-gold-dark/10 rounded-full blur-3xl"></div>
-            <img
-              src="/gallery/t-bone-steak.jpg"
-              alt="Porterhouse Steakhouse Signature T-Bone Steak"
-              className="relative z-10 w-full h-[500px] object-cover border border-zinc-800 shadow-2xl grayscale-[10%] hover:grayscale-0 transition-all duration-700"
-            />
+            <div className="relative z-10 w-full h-[500px] border border-zinc-800 shadow-2xl overflow-hidden">
+              {aboutImages.map((image, index) => (
+                <img
+                  key={image}
+                  src={image}
+                  alt="Porterhouse Steakhouse Signature Dish"
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 grayscale-[10%] hover:grayscale-0 ${
+                    index === currentImage ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
+              ))}
+            </div>
             <div className="mt-6 bg-zinc-900 border border-zinc-800 flex items-center justify-center p-8 shadow-2xl">
               <p className="serif italic text-zinc-500 text-center leading-relaxed">
                 "Simple, honest, and better than anyone else."

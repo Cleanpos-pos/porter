@@ -22,6 +22,7 @@ const galleryImages: GalleryImage[] = [
     { src: '/gallery/smiling-waiter.jpg', alt: 'Our Friendly Staff', category: 'Our Team' },
 
     // Signature Dishes - Food images
+    { src: '/gallery/dining-room-1.jpg', alt: 'Signature Steak', category: 'Signature Dishes' },
     { src: '/gallery/signature-dish-1.jpg', alt: 'Signature Dish', category: 'Signature Dishes' },
     { src: '/gallery/lamb-rack-wine.jpg', alt: 'Lamb Rack', category: 'Signature Dishes' },
     { src: '/gallery/signature-salmon.jpg', alt: 'Signature Salmon', category: 'Signature Dishes' },
@@ -29,10 +30,10 @@ const galleryImages: GalleryImage[] = [
     { src: '/gallery/sauce-presentation.jpg', alt: 'Sauce Presentation', category: 'Signature Dishes' },
     { src: '/gallery/salmon-scallops.jpg', alt: 'Salmon and Scallops', category: 'Signature Dishes' },
     { src: '/gallery/king-prawns.jpg', alt: 'King Prawns', category: 'Signature Dishes' },
-    { src: '/gallery/t-bone-steak.jpg', alt: 'T-Bone Steak', category: 'Signature Dishes' },
-    { src: '/gallery/premium-steak.jpg', alt: 'Premium Steak', category: 'Signature Dishes' },
     { src: '/gallery/k1.jpeg', alt: 'Signature Dish', category: 'Signature Dishes' },
     { src: '/gallery/K2.jpeg', alt: 'Signature Dish', category: 'Signature Dishes' },
+    { src: '/gallery/H1.jpeg', alt: 'Restaurant Scene', category: 'Ambiance' },
+    { src: '/gallery/h2.jpeg', alt: 'Culinary Creation', category: 'Signature Dishes' },
 ];
 
 const Gallery: React.FC = () => {
