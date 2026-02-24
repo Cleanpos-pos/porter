@@ -7,7 +7,6 @@ import Menu from './components/Menu';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ReservationModal from './components/ReservationModal';
-import AIAssistant from './components/AIAssistant';
 import LegalModal from './components/LegalModal';
 import CookieConsent from './components/CookieConsent';
 import GiftCard from './components/GiftCard';
@@ -105,7 +104,6 @@ const App: React.FC = () => {
         onClose={closeLegal}
         type={legalModal.type}
       />
-      <AIAssistant />
       <CookieConsent
         onTermsClick={() => openLegal('terms')}
         onPrivacyClick={() => openLegal('privacy')}

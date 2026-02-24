@@ -14,10 +14,10 @@ const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick, onDisclai
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
           <div className="flex flex-col">
-            <span className="text-3xl md:text-4xl font-bold font-display tracking-tight text-white leading-none">
+            <span className="text-2xl sm:text-3xl md:text-4xl font-display tracking-[0.05em] sm:tracking-[0.08em] text-white leading-none" style={{ fontWeight: 200 }}>
               PORTERHOUSE
             </span>
-            <span className="text-xs uppercase tracking-[0.3em] text-white font-semibold mt-1">
+            <span className="text-[8px] sm:text-[10px] md:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-white font-semibold mt-1">
               Winchester's Premiere Steakhouse
             </span>
           </div>
