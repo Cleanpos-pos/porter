@@ -1,28 +1,44 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface HeroProps {
   onBookClick: () => void;
 }
 
+const heroImages = ['/H1.jpeg', '/h2.jpeg', '/hero-steak.jpg'];
+
 const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with parallax effect simulation */}
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0 scale-105 transition-transform duration-1000"
-        style={{
-          backgroundImage: `url('/hero-steak.jpg')`,
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/70 via-[#0a0a0a]/50 to-[#0a0a0a]"></div>
-      </div>
+      {/* Background images with crossfade */}
+      {heroImages.map((image, index) => (
+        <div
+          key={image}
+          className={`absolute inset-0 bg-cover bg-center z-0 scale-105 transition-opacity duration-1000 ${
+            index === currentImage ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{
+            backgroundImage: `url('${image}')`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/70 via-[#0a0a0a]/50 to-[#0a0a0a]"></div>
+        </div>
+      ))}
 
       <div className="relative z-10 text-center max-w-4xl px-6">
         <h2 className="text-gold uppercase tracking-[0.4em] text-sm md:text-base mb-4 font-bold animate-fadeIn">
           Established Excellence
         </h2>
-        <h1 className="text-5xl md:text-8xl font-display text-white mb-6 leading-tight tracking-tight">
+        <h1 className="text-5xl md:text-8xl font-display text-white mb-6 leading-tight tracking-[0.08em]" style={{ fontWeight: 300 }}>
           PORTERHOUSE <br />
           <span className="italic font-normal font-serif text-gold">Steakhouse</span>
         </h1>

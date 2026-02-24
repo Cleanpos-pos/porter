@@ -33,6 +33,8 @@ const galleryImages: GalleryImage[] = [
     { src: '/gallery/king-prawns.jpg', alt: 'King Prawns', category: 'Signature Dishes' },
     { src: '/gallery/t-bone-steak.jpg', alt: 'T-Bone Steak', category: 'Signature Dishes' },
     { src: '/gallery/premium-steak.jpg', alt: 'Premium Steak', category: 'Signature Dishes' },
+    { src: '/gallery/k1.jpeg', alt: 'Signature Dish', category: 'Signature Dishes' },
+    { src: '/gallery/K2.jpeg', alt: 'Signature Dish', category: 'Signature Dishes' },
 ];
 
 const Gallery: React.FC = () => {
@@ -82,7 +84,7 @@ const Gallery: React.FC = () => {
 
                             {/* PORTERHOUSE Logo */}
                             <div className="absolute bottom-3 left-4">
-                                <p className="text-white text-[10px] md:text-xs font-display font-bold tracking-[0.2em] opacity-80">
+                                <p className="text-white text-[10px] md:text-xs font-display tracking-[0.15em] opacity-70" style={{ fontWeight: 300 }}>
                                     PORTERHOUSE
                                 </p>
                             </div>
@@ -141,7 +143,7 @@ const Gallery: React.FC = () => {
 
                             {/* PORTERHOUSE Logo */}
                             <div className="absolute bottom-4 left-6">
-                                <p className="text-white text-xs md:text-sm font-display font-bold tracking-[0.2em] opacity-80">
+                                <p className="text-white text-xs md:text-sm font-display tracking-[0.15em] opacity-70" style={{ fontWeight: 300 }}>
                                     PORTERHOUSE
                                 </p>
                             </div>
