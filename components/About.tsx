@@ -7,12 +7,12 @@ interface AboutProps {
 }
 
 const aboutImages = [
-  '/gallery/about/s1.jpeg',
-  '/gallery/about/s2.jpeg',
-  '/gallery/about/s3.jpeg',
-  '/gallery/about/s4.jpeg',
-  '/gallery/about/s5.jpeg',
-  '/gallery/about/s6.jpeg',
+  'gallery/about/s1.jpeg',
+  'gallery/about/s2.jpeg',
+  'gallery/about/s3.jpeg',
+  'gallery/about/s4.jpeg',
+  'gallery/about/s5.jpeg',
+  'gallery/about/s6.jpeg',
 ];
 
 const About: React.FC<AboutProps> = ({ isFullPage = false }) => {

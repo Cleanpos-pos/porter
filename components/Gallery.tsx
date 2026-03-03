@@ -9,31 +9,31 @@ interface GalleryImage {
 
 const galleryImages: GalleryImage[] = [
     // Ambiance - Tables, chairs, and restaurant features (6 images)
-    { src: '/gallery/dining-room-2.jpg', alt: 'Plated Food Display', category: 'Ambiance' },
-    { src: '/gallery/dining-room-3.jpg', alt: 'Dining Room', category: 'Ambiance' },
-    { src: '/gallery/meat-aging.jpg', alt: 'Meat Aging Cabinet', category: 'Ambiance' },
-    { src: '/gallery/porterhouse-sign.jpg', alt: 'Porterhouse Sign', category: 'Ambiance' },
+    { src: 'gallery/dining-room-2.jpg', alt: 'Plated Food Display', category: 'Ambiance' },
+    { src: 'gallery/dining-room-3.jpg', alt: 'Dining Room', category: 'Ambiance' },
+    { src: 'gallery/meat-aging.jpg', alt: 'Meat Aging Cabinet', category: 'Ambiance' },
+    { src: 'gallery/porterhouse-sign.jpg', alt: 'Porterhouse Sign', category: 'Ambiance' },
 
     // Our Team - People images (5 images)
-    { src: '/gallery/wine-display.jpg', alt: 'Chef', category: 'Our Team' },
-    { src: '/gallery/chef-portrait.jpg', alt: 'Chef', category: 'Our Team' },
-    { src: '/gallery/kitchen-action.jpg', alt: 'Kitchen', category: 'Our Team' },
-    { src: '/gallery/chef-plating.jpg', alt: 'Chef Plating', category: 'Our Team' },
-    { src: '/gallery/smiling-waiter.jpg', alt: 'Our Friendly Staff', category: 'Our Team' },
+    { src: 'gallery/wine-display.jpg', alt: 'Chef', category: 'Our Team' },
+    { src: 'gallery/chef-portrait.jpg', alt: 'Chef', category: 'Our Team' },
+    { src: 'gallery/kitchen-action.jpg', alt: 'Kitchen', category: 'Our Team' },
+    { src: 'gallery/chef-plating.jpg', alt: 'Chef Plating', category: 'Our Team' },
+    { src: 'gallery/smiling-waiter.jpg', alt: 'Our Friendly Staff', category: 'Our Team' },
 
     // Signature Dishes - Food images
-    { src: '/gallery/dining-room-1.jpg', alt: 'Signature Steak', category: 'Signature Dishes' },
-    { src: '/gallery/signature-dish-1.jpg', alt: 'Signature Dish', category: 'Signature Dishes' },
-    { src: '/gallery/lamb-rack-wine.jpg', alt: 'Lamb Rack', category: 'Signature Dishes' },
-    { src: '/gallery/signature-salmon.jpg', alt: 'Signature Salmon', category: 'Signature Dishes' },
-    { src: '/gallery/vegetable-tower.jpg', alt: 'Vegetable Tower', category: 'Signature Dishes' },
-    { src: '/gallery/sauce-presentation.jpg', alt: 'Sauce Presentation', category: 'Signature Dishes' },
-    { src: '/gallery/salmon-scallops.jpg', alt: 'Salmon and Scallops', category: 'Signature Dishes' },
-    { src: '/gallery/king-prawns.jpg', alt: 'King Prawns', category: 'Signature Dishes' },
-    { src: '/gallery/k1.jpeg', alt: 'Signature Dish', category: 'Signature Dishes' },
-    { src: '/gallery/K2.jpeg', alt: 'Signature Dish', category: 'Signature Dishes' },
-    { src: '/gallery/H1.jpeg', alt: 'Restaurant Scene', category: 'Ambiance' },
-    { src: '/gallery/h2.jpeg', alt: 'Culinary Creation', category: 'Signature Dishes' },
+    { src: 'gallery/dining-room-1.jpg', alt: 'Signature Steak', category: 'Signature Dishes' },
+    { src: 'gallery/signature-dish-1.jpg', alt: 'Signature Dish', category: 'Signature Dishes' },
+    { src: 'gallery/lamb-rack-wine.jpg', alt: 'Lamb Rack', category: 'Signature Dishes' },
+    { src: 'gallery/signature-salmon.jpg', alt: 'Signature Salmon', category: 'Signature Dishes' },
+    { src: 'gallery/vegetable-tower.jpg', alt: 'Vegetable Tower', category: 'Signature Dishes' },
+    { src: 'gallery/sauce-presentation.jpg', alt: 'Sauce Presentation', category: 'Signature Dishes' },
+    { src: 'gallery/salmon-scallops.jpg', alt: 'Salmon and Scallops', category: 'Signature Dishes' },
+    { src: 'gallery/king-prawns.jpg', alt: 'King Prawns', category: 'Signature Dishes' },
+    { src: 'gallery/k1.jpeg', alt: 'Signature Dish', category: 'Signature Dishes' },
+    { src: 'gallery/K2.jpeg', alt: 'Signature Dish', category: 'Signature Dishes' },
+    { src: 'gallery/H1.jpeg', alt: 'Restaurant Scene', category: 'Ambiance' },
+    { src: 'gallery/h2.jpeg', alt: 'Culinary Creation', category: 'Signature Dishes' },
 ];
 
 const Gallery: React.FC = () => {

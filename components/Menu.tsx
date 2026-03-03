@@ -203,20 +203,55 @@ const Menu: React.FC = () => {
   };
 
   const drinksMenu = {
+    sparkling: [
+      { name: "La Tordera Saomi Prosecco", price: "30", notes: "Veneto, Italy | 125ml: £7.1", desc: "An elegant and refined wine from a family-owned estate." },
+      { name: "La Tordera Tor Se Prosecco Rose", price: "30", notes: "Veneto, Italy | 125ml: £7.1", desc: "A pink and bubbly selection from high-altitude vineyards." },
+      { name: "Copenhagen Bla Organic Sparkling Tea", price: "38", notes: "Copenhagen, Denmark", desc: "A non-alcoholic, complex, and aromatic option made from Jasmine, White Tea, and Darjeeling." },
+      { name: "Francois Lavergne Classic Champagne", price: "44", notes: "Champagne, France", desc: "Rounded and toasty with citrus and brioche notes." },
+      { name: "Bollinger Special Cuvée", price: "82", notes: "Champagne, France", desc: "A traditional and robust champagne made predominantly from Pinot Noir." },
+      { name: "Laurent-Perrier Cuvée Rosé", price: "110", notes: "Champagne, France", desc: "Elegant and soft with consistent bubbles and berry fruit notes." },
+    ],
+    white: [
+      { name: "La Huppe du Midi Organic Chardonnay", price: "31", notes: "Pays d'Oc, France", desc: "Stylish and rich with vanilla and tropical fruit from oak aging." },
+      { name: "Domaine Durand Sancerre", price: "45", notes: "Loire Valley, France", desc: "A pure and expressive Sauvignon Blanc." },
+      { name: "Domaine Long-Depaquit Chablis", price: "55", notes: "Burgundy, France", desc: "Round and generous with lemon notes and minerality." },
+      { name: "Colognola ai Colli Pinot Grigio", price: "29", notes: "Veneto, Italy | 175ml: £7.4", desc: "Floral and dry with a Sauvignon Blanc twist." },
+      { name: "Quintas Las Cabras", price: "29", notes: "Cachapoal, Chile | 175ml: £7.4", desc: "Floral and dry with a Sauvignon Blanc twist." },
+      { name: "Gigo Alvarinho", price: "34", notes: "Vinho Verde, Portugal", desc: "Fragrant and reserved." },
+      { name: "Kaituna Vineyard Sauvignon Blanc", price: "35", notes: "Marlborough, New Zealand | 175ml: £8.3", desc: "Tropical and succulent." },
+    ],
+    rose: [
+      { name: "Cruz Alta Malbec Rosé", price: "29", notes: "Mendoza, Argentina | 175ml: £7.4", desc: "Delicate and aromatic from mountain vineyards." },
+      { name: "Apres au soleil et al la neige", price: "45", notes: "Provence, France", desc: "Balanced with peach, pear, and exotic fruit." },
+      { name: "Mirabeau en Classic Rosé (Magnum)", price: "85", notes: "375ml: n/a | 150cl Magnum", desc: "A quintessential Provence rosé." },
+    ],
     malbec: [
-      { name: "La Vuelta Malbec", price: "30", notes: "Mendoza Argentina" },
-      { name: "San Felipe Malbec Roble", price: "34", notes: "Mendoza Argentina | 175ml: £8.1" },
-      { name: "Los Haroldos Chacabuco", price: "36", notes: "Mendoza Argentina" },
-      { name: "Cruz Alta Grand Reserve", price: "44", notes: "Mendoza Argentina" },
-      { name: "Rutini Altamira Single", price: "85", notes: "Mendoza Argentina" },
+      { name: "La Vuelta Malbec", price: "31", notes: "Mendoza, Argentina", desc: "Round and juicy with red fruit notes." },
+      { name: "San Felipe Malbec Roble", price: "35", notes: "Mendoza, Argentina | 175ml: £8.3", desc: "Elegant and lightly spiced with chocolate hints." },
+      { name: "Los Haroldos Chacabuco Malbec", price: "37", notes: "Mendoza, Argentina", desc: "Smooth and simple with upfront fruit and spice." },
+      { name: "Cruz Alta Grand Reserve Malbec", price: "45", notes: "Mendoza, Argentina", desc: "Bold and mature, aged in French and American oak." },
+      { name: "Rutini Altamira Single Vineyard", price: "85", notes: "Mendoza, Argentina", desc: "Classic and powerful, aged for 12 months in oak." },
     ],
     european: [
-      { name: "Lacrimus 5 Tempranillo", price: "34", notes: "Rioja Spain | 175ml: £8.1" },
-      { name: "Domaine Sarrelon Rhone", price: "39", notes: "Rhone France | 175ml: £9.5" },
-      { name: "Altitude de Duorum", price: "36", notes: "Douro Portugal" },
-      { name: "Valpolicella Ripasso", price: "37", notes: "Veneto Italy" },
-      { name: "Tenuta Cappallotto", price: "48", notes: "Piedmont Italy" },
-      { name: "Saint Julien 2016", price: "95", notes: "Bordeaux France" },
+      { name: "Linteo Primitivo Appassimento", price: "32", notes: "Puglia, Italy", desc: "Rich and concentrated with plum and cherry." },
+      { name: "Pouca Roupa", price: "33", notes: "Alentejo, Portugal", desc: "Rounded with cassis and blackberry notes." },
+      { name: "Lacrimus 5 Tempranillo", price: "35", notes: "Rioja, Spain | 175ml: £8.3", desc: "Modern and elegant, grown on fossil riverbeds." },
+      { name: "Casa al Pruno Valpolicella Ripasso", price: "37", notes: "Veneto, Italy", desc: "Deep and full with raisin spice." },
+      { name: "Domaine Sarrelon Côtes du Rhone", price: "39", notes: "Rhone, France | 175ml: £9.5", desc: "Organic and expressive." },
+      { name: "Chateau Barre Gentillot", price: "45", notes: "Bordeaux, France", desc: "An approachable and mellow Merlot blend." },
+      { name: "Pagos del Rey Arnegui Rioja", price: "51", notes: "Rioja, Spain", desc: "Intense with sweet spice." },
+      { name: "Domaine Albert Bichot Beaune", price: "70", notes: "Burgundy, France", desc: "Floral with cherry, red fruit, and clove notes." },
+      { name: "Chateau Moulin de La Rose", price: "85", notes: "Saint Julien, France", desc: "Generous and structural with cedar and blackcurrant." },
+      { name: "Tenuta Cappollotto Barolo Riserva", price: "95", notes: "Piedmont, Italy", desc: "Robust with notes of liquorice, truffle, and leather." },
+    ],
+    worldReds: [
+      { name: "Quinta Las Cabras", price: "29", notes: "Cachapoal, Chile | 175ml: £7.4", desc: "Light and ripe with plum flavors." },
+      { name: "Riebeek Pinotage", price: "29", notes: "Swartland, South Africa", desc: "Soft and expressive with supple tannins." },
+      { name: "Cepa Tradicional Blend", price: "32", notes: "Mendoza, Argentina", desc: "Complex and harmonious with spicy notes." },
+      { name: "Cumbres Pinot Noir Reserve", price: "37", notes: "Curico Valley, Chile", desc: "Warming and juicy with a smoky finish." },
+      { name: "Leese-Fitch Zinfandel", price: "43", notes: "California, USA", desc: "Plush and brambly with toasted coconut notes." },
+      { name: "Three Bridges Shiraz", price: "46", notes: "Barossa Valley, Australia", desc: "Generous and rich with a peppery finish." },
+      { name: "Meerlust Red (Magnum)", price: "95", notes: "Stellenbosch, South Africa | 150cl Magnum", desc: "Grown near False Bay." },
     ],
     digestifs: [
       { name: "Hennessy XO Cognac", price: "16.5", notes: "France" },
@@ -311,7 +346,7 @@ const Menu: React.FC = () => {
                 if (tab.id === 'dinner') setActiveCategory('starters');
                 if (tab.id === 'daytime') setActiveCategory('starters');
                 if (tab.id === 'specials') setActiveCategory('starters');
-                if (tab.id === 'drinks') setActiveCategory('malbec');
+                if (tab.id === 'drinks') setActiveCategory('sparkling');
               }}
               className={`group flex items-center space-x-3 px-10 py-4 transition-all duration-500 ${activeTab === tab.id
                 ? 'bg-gold-dark text-white shadow-[0_0_30px_rgba(153,101,21,0.3)]'
@@ -358,14 +393,14 @@ const Menu: React.FC = () => {
               {cat}
             </button>
           ))}
-          {activeTab === 'drinks' && ['malbec', 'european', 'digestifs', 'coffee'].map(cat => (
+          {activeTab === 'drinks' && ['sparkling', 'white', 'rose', 'malbec', 'european', 'worldReds', 'digestifs', 'coffee'].map(cat => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${activeCategory === cat ? 'text-gold scale-110' : 'text-zinc-600 hover:text-zinc-400'
                 }`}
             >
-              {cat}
+              {cat === 'worldReds' ? 'World Red' : cat}
             </button>
           ))}
         </div>
@@ -478,6 +513,24 @@ const Menu: React.FC = () => {
 
           {activeTab === 'drinks' && (
             <div className="animate-fadeIn">
+              {activeCategory === 'sparkling' && (
+                <div>
+                  <SectionHeader title="Sparkling & Champagne" icon={categoryIcons.drinks} />
+                  <MenuGrid items={drinksMenu.sparkling} />
+                </div>
+              )}
+              {activeCategory === 'white' && (
+                <div>
+                  <SectionHeader title="White Wine" icon={categoryIcons.drinks} />
+                  <MenuGrid items={drinksMenu.white} />
+                </div>
+              )}
+              {activeCategory === 'rose' && (
+                <div>
+                  <SectionHeader title="Rosé Wine" icon={categoryIcons.drinks} />
+                  <MenuGrid items={drinksMenu.rose} />
+                </div>
+              )}
               {activeCategory === 'malbec' && (
                 <div>
                   <SectionHeader title="Argentinian Malbec" icon={categoryIcons.drinks} />
@@ -486,8 +539,14 @@ const Menu: React.FC = () => {
               )}
               {activeCategory === 'european' && (
                 <div>
-                  <SectionHeader title="European Selection" icon={categoryIcons.drinks} />
+                  <SectionHeader title="European Reds" icon={categoryIcons.drinks} />
                   <MenuGrid items={drinksMenu.european} />
+                </div>
+              )}
+              {activeCategory === 'worldReds' && (
+                <div>
+                  <SectionHeader title="World Reds" icon={categoryIcons.drinks} />
+                  <MenuGrid items={drinksMenu.worldReds} />
                 </div>
               )}
               {activeCategory === 'digestifs' && (
@@ -515,6 +574,8 @@ const Menu: React.FC = () => {
           <p className="max-w-2xl text-center text-[10px] text-zinc-200 italic leading-relaxed">
             Please inform your server of any dietary requirements or allergies.
             We take every precaution but cannot guarantee a transition-free environment.
+            <br />
+            All wines available by the glass can be served in 125ml measures upon request.
           </p>
         </div>
       </div>

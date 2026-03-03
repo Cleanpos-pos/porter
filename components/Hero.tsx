@@ -5,7 +5,7 @@ interface HeroProps {
   onBookClick: () => void;
 }
 
-const heroImages = ['/H1.jpeg', '/h2.jpeg'];
+const heroImages = ['H1.jpeg', 'h2.jpeg'];
 
 const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -23,9 +23,8 @@ const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
       {heroImages.map((image, index) => (
         <div
           key={image}
-          className={`absolute inset-0 bg-cover bg-center z-0 scale-105 transition-opacity duration-1000 ${
-            index === currentImage ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`absolute inset-0 bg-cover bg-center z-0 scale-105 transition-opacity duration-1000 ${index === currentImage ? 'opacity-100' : 'opacity-0'
+            }`}
           style={{
             backgroundImage: `url('${image}')`,
           }}

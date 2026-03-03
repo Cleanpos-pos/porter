@@ -39,7 +39,7 @@ const App: React.FC = () => {
   }, [currentView]);
 
   const openReservation = () => {
-    window.open('https://table-maestro-v2.web.app/public/booking?tenant=a8375505-b197-42c9-9d6e-1a06278d0902', '_blank');
+    setIsModalOpen(true);
   };
   const closeReservation = () => setIsModalOpen(false);
 
