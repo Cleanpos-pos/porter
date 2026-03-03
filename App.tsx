@@ -49,16 +49,18 @@ const App: React.FC = () => {
   const renderView = () => {
     switch (currentView) {
       case 'menu':
-        return <div className="pt-20"><Menu /></div>;
+        return <div className="pt-20"><Menu onBookClick={openReservation} /></div>;
+
       case 'about':
-        return <div className="pt-20"><About isFullPage /></div>;
+        return <div className="pt-20"><About isFullPage onBookClick={openReservation} /></div>;
       case 'contact':
-        return <div className="pt-20"><Contact isFullPage /></div>;
+        return <div className="pt-20"><Contact isFullPage onBookClick={openReservation} /></div>;
       case 'gift-card':
         return <div className="pt-20"><GiftCard /></div>;
       case 'blog':
         if (selectedPost) {
-          return <BlogPostDetail post={selectedPost} onBack={() => setSelectedPost(null)} />;
+          return <BlogPostDetail post={selectedPost} onBack={() => setSelectedPost(null)} onBookClick={openReservation} />;
+
         }
         return <div className="pt-20"><Blog onPostClick={setSelectedPost} /></div>;
       case 'gallery':
@@ -67,10 +69,12 @@ const App: React.FC = () => {
         return (
           <>
             <Hero onBookClick={openReservation} />
-            <About />
-            <Menu />
+            <About onBookClick={openReservation} />
+            <Menu onBookClick={openReservation} />
+
             <Gallery />
-            <Contact />
+            <Contact onBookClick={openReservation} />
+
           </>
         );
     }

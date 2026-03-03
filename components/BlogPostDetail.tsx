@@ -17,9 +17,12 @@ export interface BlogPost {
 interface BlogPostDetailProps {
     post: BlogPost;
     onBack: () => void;
+    onBookClick: () => void;
 }
 
-const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post, onBack }) => {
+
+const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post, onBack, onBookClick }) => {
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -97,7 +100,8 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post, onBack }) => {
                     <h3 className="text-3xl serif text-white">Experience it yourself</h3>
                     <p className="text-zinc-400 font-light">Join us at Porterhouse and taste the dedication in every bite.</p>
                     <button
-                        onClick={() => window.open('https://table-maestro-v2.web.app/public/booking?tenant=a8375505-b197-42c9-9d6e-1a06278d0902', '_blank')}
+                        onClick={onBookClick}
+
                         className="px-8 py-4 bg-gold-dark hover:bg-gold text-white text-xs font-bold uppercase tracking-widest transition-all"
                     >
                         Reserve a Table

@@ -4,7 +4,9 @@ import { ShieldCheck, Target, Heart } from 'lucide-react';
 
 interface AboutProps {
   isFullPage?: boolean;
+  onBookClick?: () => void;
 }
+
 
 const aboutImages = [
   'gallery/about/s1.jpeg',
@@ -15,7 +17,8 @@ const aboutImages = [
   'gallery/about/s6.jpeg',
 ];
 
-const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
+const About: React.FC<AboutProps> = ({ isFullPage = false, onBookClick }) => {
+
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
@@ -37,9 +40,8 @@ const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
                   key={image}
                   src={image}
                   alt="Porterhouse Steakhouse Signature Dish"
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 grayscale-[10%] hover:grayscale-0 ${
-                    index === currentImage ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 grayscale-[10%] hover:grayscale-0 ${index === currentImage ? 'opacity-100' : 'opacity-0'
+                    }`}
                 />
               ))}
             </div>
@@ -117,14 +119,21 @@ const About: React.FC<AboutProps> = ({ isFullPage = false }) => {
                   Porterhouse Steakhouse began with a simple observation: Winchester was missing a true temple to beef. We didn't want a generic bistro or a fusion experiment. We wanted a place where the steak was the star, treated with the reverence it deserves.
                 </p>
                 <p>
-                  Our journey took us to farms across Hampshire and beyond, searching for the perfect grass-fed cattle. We experimented with aging techniques until we found the "sweet spot" of 28 to 35 days, where tenderness and flavor reach their peak.
-                </p>
-                <p>
                   Today, located next to the historic Theatre Royal, Porterhouse Steakhouse stands as a beacon for those who appreciate the finer things in life—exceptional meat, fine wine, and a rustic-modern atmosphere that feels both timeless and current.
                 </p>
               </div>
+
+              <div className="pt-12 text-center">
+                <button
+                  onClick={onBookClick}
+                  className="px-12 py-5 bg-gold-dark hover:bg-gold text-white text-xs font-bold uppercase tracking-[0.3em] transition-all shadow-2xl"
+                >
+                  Join Us At Our Table
+                </button>
+              </div>
             </div>
           </section>
+
         </>
       )}
     </div>

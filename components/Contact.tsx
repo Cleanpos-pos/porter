@@ -3,9 +3,12 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 
 interface ContactProps {
   isFullPage?: boolean;
+  onBookClick?: () => void;
 }
 
-const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
+
+const Contact: React.FC<ContactProps> = ({ isFullPage = false, onBookClick }) => {
+
   const [formState, setFormState] = useState({ name: '', email: '', subject: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -88,7 +91,15 @@ const Contact: React.FC<ContactProps> = ({ isFullPage = false }) => {
                   <div className="space-y-2">
                     <p className="font-bold text-white uppercase text-xs tracking-widest">Reservations</p>
                     <p className="text-zinc-100 font-medium text-lg">01962 810532</p>
+                    <button
+                      onClick={onBookClick}
+                      className="mt-2 text-gold text-[10px] font-bold uppercase tracking-[.2em] hover:text-white transition-colors flex items-center gap-2"
+                    >
+                      <span className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse"></span>
+                      Book Online
+                    </button>
                   </div>
+
                 </div>
 
                 <div className="flex items-start space-x-4">

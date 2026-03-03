@@ -13,7 +13,12 @@ interface MenuItem {
   cookingOptions?: string[];
 }
 
-const Menu: React.FC = () => {
+interface MenuProps {
+  onBookClick?: () => void;
+}
+
+const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
+
   const [activeTab, setActiveTab] = useState<'dinner' | 'daytime' | 'specials' | 'drinks'>('dinner');
   const [activeCategory, setActiveCategory] = useState<string>('starters');
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
@@ -577,7 +582,16 @@ const Menu: React.FC = () => {
             <br />
             All wines available by the glass can be served in 125ml measures upon request.
           </p>
+          <div className="pt-8">
+            <button
+              onClick={onBookClick}
+              className="px-10 py-4 bg-gold-dark hover:bg-gold text-white text-[10px] font-black uppercase tracking-[0.3em] transition-all"
+            >
+              Ready to Order? Book Your Table
+            </button>
+          </div>
         </div>
+
       </div>
       {/* Item Detail Modal */}
       {selectedItem && (
