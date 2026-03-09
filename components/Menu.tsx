@@ -111,11 +111,11 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
       { name: "Mash Potato", price: "2.50", v: true, gf: true },
     ],
     desserts: [
-      { name: "Baileys Cheesecake", price: "6.9" },
-      { name: "Chocolate Brownie", price: "6.9", desc: "Served with Vanilla Ice Cream." },
-      { name: "Apple & Raspberry Crumble", price: "6.9", desc: "Served with Vanilla Ice Cream." },
-      { name: "Sticky Toffee Pudding", price: "6.9", desc: "Served with Vanilla Ice Cream." },
-      { name: "Ice Cream or Sorbet", price: "5.3", desc: "Mint Chocolate, Pistachio, Caramelita, Blackcurrant, Lemon." },
+      { name: "Homemade Baileys Cheesecake", price: "7.2" },
+      { name: "Homemade Chocolate Brownie", price: "7.2", desc: "Served with Vanilla Ice Cream.", gf: true },
+      { name: "Homemade Apple and Raspberry Crumble", price: "7.2", desc: "Served with Vanilla Ice Cream." },
+      { name: "Homemade Sticky Toffee Pudding", price: "7.2", desc: "Served with Vanilla Ice Cream.", gf: true },
+      { name: "Ice Cream or Sorbet", price: "5.3", desc: "Mint Chocolate, Pistachio, Caramelita, Blackcurrant Sorbet, or Lemon Sorbet." },
       { name: "Cheese Selection", price: "8.3" },
     ]
   };
@@ -209,67 +209,53 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
 
   const drinksMenu = {
     sparkling: [
-      { name: "La Tordera Saomi Prosecco", price: "30", notes: "Veneto, Italy | 125ml: £7.1", desc: "An elegant and refined wine from a family-owned estate." },
-      { name: "La Tordera Tor Se Prosecco Rose", price: "30", notes: "Veneto, Italy | 125ml: £7.1", desc: "A pink and bubbly selection from high-altitude vineyards." },
-      { name: "Copenhagen Bla Organic Sparkling Tea", price: "38", notes: "Copenhagen, Denmark", desc: "A non-alcoholic, complex, and aromatic option made from Jasmine, White Tea, and Darjeeling." },
-      { name: "Francois Lavergne Classic Champagne", price: "44", notes: "Champagne, France", desc: "Rounded and toasty with citrus and brioche notes." },
-      { name: "Bollinger Special Cuvée", price: "82", notes: "Champagne, France", desc: "A traditional and robust champagne made predominantly from Pinot Noir." },
-      { name: "Laurent-Perrier Cuvée Rosé", price: "110", notes: "Champagne, France", desc: "Elegant and soft with consistent bubbles and berry fruit notes." },
+      { name: "La Tordera Saomi Prosecco", price: "30", notes: "Veneto, Italy | 125ml: £7.1" },
+      { name: "La Tordera Tor Se Prosecco Rosé", price: "30", notes: "Veneto, Italy | 125ml: £7.1" },
     ],
-    white: [
-      { name: "La Huppe du Midi Organic Chardonnay", price: "31", notes: "Pays d'Oc, France", desc: "Stylish and rich with vanilla and tropical fruit from oak aging." },
-      { name: "Domaine Durand Sancerre", price: "45", notes: "Loire Valley, France", desc: "A pure and expressive Sauvignon Blanc." },
-      { name: "Domaine Long-Depaquit Chablis", price: "55", notes: "Burgundy, France", desc: "Round and generous with lemon notes and minerality." },
-      { name: "Colognola ai Colli Pinot Grigio", price: "29", notes: "Veneto, Italy | 175ml: £7.4", desc: "Floral and dry with a Sauvignon Blanc twist." },
-      { name: "Quintas Las Cabras", price: "29", notes: "Cachapoal, Chile | 175ml: £7.4", desc: "Floral and dry with a Sauvignon Blanc twist." },
-      { name: "Gigo Alvarinho", price: "34", notes: "Vinho Verde, Portugal", desc: "Fragrant and reserved." },
-      { name: "Kaituna Vineyard Sauvignon Blanc", price: "35", notes: "Marlborough, New Zealand | 175ml: £8.3", desc: "Tropical and succulent." },
+    beer: [
+      { name: "Peroni / Asahi", price: "4.3", notes: "330ml" },
+      { name: "Peroni 0.0 (Alcohol Free)", price: "3.5", notes: "330ml" },
+      { name: "Alfred's Brewery Winchester Pale Ale", price: "5.3", notes: "440ml Can" },
+      { name: "Budweiser / Corona / Becks / Magners / Guinness Foreign Extra", price: "4.1" },
     ],
-    rose: [
-      { name: "Cruz Alta Malbec Rosé", price: "29", notes: "Mendoza, Argentina | 175ml: £7.4", desc: "Delicate and aromatic from mountain vineyards." },
-      { name: "Apres au soleil et al la neige", price: "45", notes: "Provence, France", desc: "Balanced with peach, pear, and exotic fruit." },
-      { name: "Mirabeau en Classic Rosé (Magnum)", price: "85", notes: "375ml: n/a | 150cl Magnum", desc: "A quintessential Provence rosé." },
+    sweetFortified: [
+      { name: "Chateau Delmond Sauternes", price: "25", notes: "Bordeaux, France | 50ml: £8 | 37.5cl: £25", desc: "Elegant & luscious with pineapple, marmalade flavours reminiscent of botrytis." },
+      { name: "Graham's Late Bottled Vintage Port", price: "35", notes: "Vila Nova de Gaia, Portugal | 50ml: £5.5", desc: "Poised & balanced with beautiful richness, intensity and opulence." },
+      { name: "Taylor's Vintage Port 2007", price: "80", notes: "Douro Valley, Portugal | Bottle only", desc: "Subtle & rich with aromas of prunes, juniper berry with big round tannins." },
     ],
-    malbec: [
-      { name: "La Vuelta Malbec", price: "31", notes: "Mendoza, Argentina", desc: "Round and juicy with red fruit notes." },
-      { name: "San Felipe Malbec Roble", price: "35", notes: "Mendoza, Argentina | 175ml: £8.3", desc: "Elegant and lightly spiced with chocolate hints." },
-      { name: "Los Haroldos Chacabuco Malbec", price: "37", notes: "Mendoza, Argentina", desc: "Smooth and simple with upfront fruit and spice." },
-      { name: "Cruz Alta Grand Reserve Malbec", price: "45", notes: "Mendoza, Argentina", desc: "Bold and mature, aged in French and American oak." },
-      { name: "Rutini Altamira Single Vineyard", price: "85", notes: "Mendoza, Argentina", desc: "Classic and powerful, aged for 12 months in oak." },
-    ],
-    european: [
-      { name: "Linteo Primitivo Appassimento", price: "32", notes: "Puglia, Italy", desc: "Rich and concentrated with plum and cherry." },
-      { name: "Pouca Roupa", price: "33", notes: "Alentejo, Portugal", desc: "Rounded with cassis and blackberry notes." },
-      { name: "Lacrimus 5 Tempranillo", price: "35", notes: "Rioja, Spain | 175ml: £8.3", desc: "Modern and elegant, grown on fossil riverbeds." },
-      { name: "Casa al Pruno Valpolicella Ripasso", price: "37", notes: "Veneto, Italy", desc: "Deep and full with raisin spice." },
-      { name: "Domaine Sarrelon Côtes du Rhone", price: "39", notes: "Rhone, France | 175ml: £9.5", desc: "Organic and expressive." },
-      { name: "Chateau Barre Gentillot", price: "45", notes: "Bordeaux, France", desc: "An approachable and mellow Merlot blend." },
-      { name: "Pagos del Rey Arnegui Rioja", price: "51", notes: "Rioja, Spain", desc: "Intense with sweet spice." },
-      { name: "Domaine Albert Bichot Beaune", price: "70", notes: "Burgundy, France", desc: "Floral with cherry, red fruit, and clove notes." },
-      { name: "Chateau Moulin de La Rose", price: "85", notes: "Saint Julien, France", desc: "Generous and structural with cedar and blackcurrant." },
-      { name: "Tenuta Cappollotto Barolo Riserva", price: "95", notes: "Piedmont, Italy", desc: "Robust with notes of liquorice, truffle, and leather." },
-    ],
-    worldReds: [
-      { name: "Quinta Las Cabras", price: "29", notes: "Cachapoal, Chile | 175ml: £7.4", desc: "Light and ripe with plum flavors." },
-      { name: "Riebeek Pinotage", price: "29", notes: "Swartland, South Africa", desc: "Soft and expressive with supple tannins." },
-      { name: "Cepa Tradicional Blend", price: "32", notes: "Mendoza, Argentina", desc: "Complex and harmonious with spicy notes." },
-      { name: "Cumbres Pinot Noir Reserve", price: "37", notes: "Curico Valley, Chile", desc: "Warming and juicy with a smoky finish." },
-      { name: "Leese-Fitch Zinfandel", price: "43", notes: "California, USA", desc: "Plush and brambly with toasted coconut notes." },
-      { name: "Three Bridges Shiraz", price: "46", notes: "Barossa Valley, Australia", desc: "Generous and rich with a peppery finish." },
-      { name: "Meerlust Red (Magnum)", price: "95", notes: "Stellenbosch, South Africa | 150cl Magnum", desc: "Grown near False Bay." },
+    liqueurs: [
+      { name: "Limoncetta di Sorrento", price: "5", notes: "Italy" },
+      { name: "Cotswold Cream Liqueur", price: "5", notes: "England" },
+      { name: "Standard Selection", price: "4", desc: "Grand Marnier, Sambuca, Amaretto, Baileys, Tia Maria & Cointreau" },
     ],
     digestifs: [
-      { name: "Hennessy XO Cognac", price: "16.5", notes: "France" },
-      { name: "VSOP Armagnac 10yr", price: "7.5", notes: "France" },
-      { name: "Knob Creek Bourbon", price: "5.5", notes: "USA" },
-      { name: "Limoncetta di Sorrento", price: "4", notes: "Italy" },
-      { name: "Cotswold Single Malt", price: "5.5", notes: "England" },
+      { name: "Jagermeister", price: "4", notes: "Germany | 25ml" },
+      { name: "Amaro Montenegro", price: "5", notes: "Italy | 25ml" },
+      { name: "Grappa", price: "5", notes: "Italy | 25ml" },
+      { name: "Vivir Reposado Tequila", price: "6", notes: "Mexico | 25ml" },
+      { name: "Baron de Sigognac Bas Armagnac VSOP", price: "6", notes: "France | 25ml" },
+      { name: "Baron de Sigognac Bas Armagnac 10yr. Old", price: "7.5", notes: "France | 25ml" },
+      { name: "Maxime Trijol Grande Champagne VSOP Cognac", price: "8.5", notes: "France | 25ml" },
+      { name: "Hennessy XO Cognac", price: "16.5", notes: "France | 25ml" },
+      { name: "Cotswold Single Malt Whisky", price: "5.5", notes: "England | 25ml" },
+      { name: "Knob Creek 9yr. Old Bourbon", price: "5.5", notes: "USA | 25ml" },
+      { name: "Sazerac Straight Rye", price: "6.5", notes: "Kentucky, USA | 25ml" },
+    ],
+    spirits: [
+      { name: "Aperitifs", price: "4.5", desc: "Martini, Pimm's, Pernod, Campari" },
+      { name: "Premium Spirits", price: "5.9", desc: "Winchester Twisted Nose, Hendricks, Conker Dorset, Hayman's Old Tom, Cotswold Wildflower, Pinkster Gin, Greygoose Vodka, Mermaid Salt Vodka" },
+      { name: "Regular Spirits", price: "4.5", desc: "Vodka, Gin, Rum, Whisky" },
+    ],
+    softDrinks: [
+      { name: "Coke, Lemonade, Orange/Apple Juice", price: "2.5" },
+      { name: "J20", price: "2.5" },
+      { name: "Water", price: "2.1", notes: "330ml: £2.1 | 750ml: £3.8" },
     ],
     coffee: [
-      { name: "Liqueur Coffee", price: "7.5", desc: "Irish, Royal, Calypso or Baileys" },
-      { name: "Cappuccino / Latte", price: "3.5" },
-      { name: "Espresso / Coffee", price: "2.8" },
-      { name: "Tea & Infusions", price: "2.8" },
+      { name: "Liqueur Coffees", price: "7.5", desc: "Irish, Royal, Calypso or Baileys" },
+      { name: "Espresso or Coffee", price: "2.8" },
+      { name: "Cappuccino or Latte", price: "3.5" },
+      { name: "Tea, Mint Tea, Earl Grey & Infusions", price: "2.8" },
     ]
   };
 
@@ -398,14 +384,14 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
               {cat}
             </button>
           ))}
-          {activeTab === 'drinks' && ['sparkling', 'white', 'rose', 'malbec', 'european', 'worldReds', 'digestifs', 'coffee'].map(cat => (
+          {activeTab === 'drinks' && ['sparkling', 'beer', 'sweetFortified', 'liqueurs', 'digestifs', 'spirits', 'softDrinks', 'coffee'].map(cat => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${activeCategory === cat ? 'text-gold scale-110' : 'text-zinc-600 hover:text-zinc-400'
                 }`}
             >
-              {cat === 'worldReds' ? 'World Red' : cat}
+              {cat === 'sweetFortified' ? 'Sweet Wine' : cat === 'softDrinks' ? 'Soft Drinks' : cat}
             </button>
           ))}
         </div>
@@ -520,49 +506,49 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
             <div className="animate-fadeIn">
               {activeCategory === 'sparkling' && (
                 <div>
-                  <SectionHeader title="Sparkling & Champagne" icon={categoryIcons.drinks} />
+                  <SectionHeader title="Sparkling Wine" icon={categoryIcons.drinks} />
                   <MenuGrid items={drinksMenu.sparkling} />
                 </div>
               )}
-              {activeCategory === 'white' && (
+              {activeCategory === 'beer' && (
                 <div>
-                  <SectionHeader title="White Wine" icon={categoryIcons.drinks} />
-                  <MenuGrid items={drinksMenu.white} />
+                  <SectionHeader title="Beer & Cider" icon={categoryIcons.drinks} />
+                  <MenuGrid items={drinksMenu.beer} />
                 </div>
               )}
-              {activeCategory === 'rose' && (
+              {activeCategory === 'sweetFortified' && (
                 <div>
-                  <SectionHeader title="Rosé Wine" icon={categoryIcons.drinks} />
-                  <MenuGrid items={drinksMenu.rose} />
+                  <SectionHeader title="Sweet & Fortified Wine" icon={categoryIcons.drinks} />
+                  <MenuGrid items={drinksMenu.sweetFortified} />
                 </div>
               )}
-              {activeCategory === 'malbec' && (
+              {activeCategory === 'liqueurs' && (
                 <div>
-                  <SectionHeader title="Argentinian Malbec" icon={categoryIcons.drinks} />
-                  <MenuGrid items={drinksMenu.malbec} />
-                </div>
-              )}
-              {activeCategory === 'european' && (
-                <div>
-                  <SectionHeader title="European Reds" icon={categoryIcons.drinks} />
-                  <MenuGrid items={drinksMenu.european} />
-                </div>
-              )}
-              {activeCategory === 'worldReds' && (
-                <div>
-                  <SectionHeader title="World Reds" icon={categoryIcons.drinks} />
-                  <MenuGrid items={drinksMenu.worldReds} />
+                  <SectionHeader title="Liqueurs" icon={categoryIcons.drinks} />
+                  <MenuGrid items={drinksMenu.liqueurs} />
                 </div>
               )}
               {activeCategory === 'digestifs' && (
                 <div>
-                  <SectionHeader title="Digestifs & Liqueurs" icon={categoryIcons.drinks} />
+                  <SectionHeader title="Digestifs" icon={categoryIcons.drinks} />
                   <MenuGrid items={drinksMenu.digestifs} />
+                </div>
+              )}
+              {activeCategory === 'spirits' && (
+                <div>
+                  <SectionHeader title="Spirits" icon={categoryIcons.drinks} />
+                  <MenuGrid items={drinksMenu.spirits} />
+                </div>
+              )}
+              {activeCategory === 'softDrinks' && (
+                <div>
+                  <SectionHeader title="Soft Drinks" icon={categoryIcons.drinks} />
+                  <MenuGrid items={drinksMenu.softDrinks} />
                 </div>
               )}
               {activeCategory === 'coffee' && (
                 <div>
-                  <SectionHeader title="Coffee & Tea" icon={categoryIcons.coffee} />
+                  <SectionHeader title="Hot Drinks" icon={categoryIcons.coffee} />
                   <MenuGrid items={drinksMenu.coffee} />
                 </div>
               )}
