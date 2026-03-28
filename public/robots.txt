@@ -1,4 +1,21 @@
+# Porterhouse Steakhouse - robots.txt
 User-agent: *
 Allow: /
 
-Sitemap: https://porterhouse-winchester.co.uk/sitemap.xml
+Sitemap: https://www.porterhouserestaurant.co.uk/sitemap.xml
+
+# AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /

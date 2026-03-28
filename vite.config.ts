@@ -13,6 +13,14 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     build: {
       outDir: 'dist',
+      rollupOptions: {
+        input: {
+          main: path.resolve(__dirname, 'index.html'),
+          'best-steakhouse-winchester': path.resolve(__dirname, 'best-steakhouse-winchester/index.html'),
+          'best-fine-dining-winchester': path.resolve(__dirname, 'best-fine-dining-winchester/index.html'),
+          'best-sunday-roast-winchester': path.resolve(__dirname, 'best-sunday-roast-winchester/index.html'),
+        },
+      },
     },
     define: {
       'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
