@@ -91,16 +91,12 @@ const ReservationModal: React.FC<ReservationModalProps> = ({ isOpen, onClose }) 
           </div>
 
           <div className="flex-1 overflow-hidden relative">
-            <div style={{ margin: '0 auto', height: '100%' }}>
-              <iframe
-                id="rd-widget-frame"
-                style={{ width: '100%', height: '100%', minHeight: '710px' }}
-                src="https://booking.resdiary.com/widget/Standard/PorterhouseSteakhouse/4797"
-                frameBorder="0"
-                allow="payment *"
-                title="Porterhouse Steakhouse Booking Widget"
-              ></iframe>
-            </div>
+            <iframe
+              src="https://widget.thefork.com/c516f824-1da0-4bfa-b871-0a95030653e1"
+              allow="payment *"
+              style={{ width: '100%', minHeight: '800px', border: 'none', overflow: 'scroll', height: '100%' }}
+              title="Porterhouse Restaurant Booking Widget"
+            ></iframe>
           </div>
         </div>
       </div>
