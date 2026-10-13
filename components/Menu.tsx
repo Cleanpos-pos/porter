@@ -44,6 +44,9 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
         desc: "Hand-dived scallops with grilled asparagus.",
         details: "Plump, pan-seared scallops served with tender seasonal asparagus and finished with a zesty clarified lime butter sauce."
       },
+      { name: "Grilled Calamari", price: "8.50", desc: "Rosemary marinated grilled calamari, cherry tomato salsa, garlic toast.", gf: true },
+      { name: "Teriyaki Beef Skewers", price: "8", desc: "Japanese style marinated strips of beef." },
+      { name: "Pan Fried Jumbo Tiger Prawns", price: "13", desc: "Garlic and chilli jumbo tiger prawns served with peppery lettuce.", gf: true },
       {
         name: "Steak Tartar",
         price: "8.50",
@@ -85,10 +88,39 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
         cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"]
       },
       {
+        name: "Char-Grilled Sirloin 16oz",
+        price: "42",
+        desc: "Well-marbled and full of flavour.",
+        cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"]
+      },
+      {
         name: "Char-Grilled Rib Eye 12oz",
         price: "38",
         desc: "Rich, juicy and exceptionally tender.",
         details: "A favorite among steak connoisseurs. The heavy marbling ensures a juicy and intensely flavorful steak. Best cooked medium-rear to allow the fat to caramelize.",
+        cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"]
+      },
+      {
+        name: "Char-Grilled Rib Eye 16oz",
+        price: "42",
+        desc: "Rich, juicy and exceptionally tender.",
+        cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"]
+      },
+      {
+        name: "Char-Grilled Rump 16oz",
+        price: "28",
+        cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"]
+      },
+      {
+        name: "Char-Grilled T-Bone 18oz",
+        price: "39",
+        cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"]
+      },
+      {
+        name: "Char-Grilled Prime Rib 20oz",
+        price: "45",
+        desc: "Rib on the bone.",
+        details: "Rib on the bone. Prime Rib is tender, juicy and extremely flavourful because the fat-marbled muscles aren't heavily used.",
         cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"]
       },
       {
@@ -116,7 +148,7 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
       { name: "Roasted Vegetables", price: "4.50", v: true, gf: true },
       { name: "Fresh Green Beans", price: "3.75", v: true, gf: true },
       { name: "Mixed Green Salad", price: "3.25", v: true, gf: true },
-      { name: "Red Onion & Tomato Salad", price: "3.25", v: true, gf: true },
+      { name: "Red Onion & Tomato Salad", price: "3.25", desc: "Served with balsamic dressing.", v: true, gf: true },
       { name: "Mash Potato", price: "2.50", v: true, gf: true },
     ],
     desserts: [
@@ -429,9 +461,27 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
                 <div>
                   <SectionHeader title="The Cuts" icon={categoryIcons.steaks} />
                   <div className="bg-gold-dark/5 border border-gold-dark/20 p-6 mb-12 text-center">
-                    <p className="text-[10px] text-zinc-400 uppercase tracking-[0.4em]">All steaks are served with chips and house sauces of the day</p>
+                    <p className="text-[10px] text-zinc-400 uppercase tracking-[0.4em]">All steaks are served with chips and two house sauces of the day</p>
                   </div>
                   <MenuGrid items={dinnerMenu.steaks} />
+                  <div className="mt-16 p-8 border border-gold-dark/20 bg-gold-dark/5">
+                    <h4 className="text-gold text-[10px] font-black uppercase tracking-[0.3em] mb-6 text-center">Steak Cooking Preferences</h4>
+                    <div className="grid md:grid-cols-5 gap-6">
+                      {[
+                        { level: "Rare", text: "Cool or warm red centre, cooked on the outside." },
+                        { level: "Medium Rare", text: "Warm, mostly pink to red centre, soft and juicy inside." },
+                        { level: "Medium", text: "A pronounced pink band in the middle with more grey-brown than pink." },
+                        { level: "Medium Well", text: "Mostly grey-brown with a hint of pale pink." },
+                        { level: "Well Done", text: "Grey-brown throughout, usually slightly charred outside." },
+                      ].map((pref) => (
+                        <div key={pref.level}>
+                          <h5 className="text-zinc-100 text-[10px] font-black uppercase tracking-widest mb-2">{pref.level}</h5>
+                          <p className="text-zinc-500 text-xs italic leading-relaxed">{pref.text}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-[10px] text-zinc-500 italic mt-6 text-center">Steak weights are approximate uncooked weights.</p>
+                  </div>
                 </div>
               )}
               {activeCategory === 'sides' && (
