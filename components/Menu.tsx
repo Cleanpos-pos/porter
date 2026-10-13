@@ -63,15 +63,6 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
       { name: "Mediterranean Olives", price: "4.50", v: true },
       { name: "Assorted Bread Basket", price: "3.25", v: true },
     ],
-    specialities: [
-      { name: "Chimichurri Beef Skewers", price: "24", desc: "Chimichurri grilled beef skewers, red onion & vine tomato salad.", gf: true },
-      { name: "Grilled Trio", price: "27", desc: "Grilled fillet mignon, chicken breast, lamb chops.", gf: true },
-      { name: "Hampshire Pork Loin", price: "20", desc: "With roasted vegetables, vintage port & fig sauce." },
-      { name: "Grilled Lamb Chops", price: "27", desc: "English lamb chops, mint and wholegrain mustard crushed baby potatoes, rosemary red wine sauce." },
-      { name: "Chicken Provencal", price: "19", desc: "Chicken breasts Provencal. Served with fine green beans." },
-      { name: "Pan Fried Salmon", price: "25", desc: "Salmon fillet, mix vegetables, lime butter sauce." },
-      { name: "Roasted Vegetable Stack", price: "16", desc: "Aubergine, artichoke, zucchini, asparagus, mozzarella, vine tomato, basil.", v: true, gf: true },
-    ],
     steaks: [
       {
         name: "Charred Tenderloin (Fillet) 10oz",
@@ -159,6 +150,58 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
       { name: "Ice Cream or Sorbet", price: "5.3", desc: "Mint Chocolate, Pistachio, Caramelita, Blackcurrant Sorbet, or Lemon Sorbet." },
       { name: "Cheese Selection", price: "8.3" },
     ]
+  };
+
+  const houseMenu = {
+    specialities: [
+      { name: "Chimichurri Beef Skewers", price: "24", desc: "Chimichurri grilled beef skewers, red onion & vine tomato salad.", gf: true },
+      { name: "Grilled Trio", price: "27", desc: "Grilled fillet mignon, chicken breast, lamb chops.", gf: true },
+      { name: "Hampshire Pork Loin", price: "20", desc: "With roasted vegetables, vintage port & fig sauce." },
+      { name: "Grilled Lamb Chops", price: "27", desc: "English lamb chops, mint and wholegrain mustard crushed baby potatoes, rosemary red wine sauce." },
+      { name: "Chicken Provencal", price: "19", desc: "Chicken breasts Provencal. Served with fine green beans." },
+      { name: "Pan Fried Salmon", price: "25", desc: "Salmon fillet, mix vegetables, lime butter sauce." },
+      { name: "Roasted Vegetable Stack", price: "16", desc: "Aubergine, artichoke, zucchini, asparagus, mozzarella, vine tomato, basil.", v: true, gf: true },
+    ],
+    starters: [
+      { name: "Mixed Platter for Two", price: "19", desc: "Tiger prawns, beef skewers, chicken skewers, BBQ spare ribs, grilled haloumi cheese and vegetable croquettes." },
+      { name: "Smoked Salmon", price: "9", desc: "Oak wood chips-fired fresh smoked salmon, onion, capers, lettuce, creamy horseradish and garlic toast.", gf: true },
+      { name: "Pan Fried Sea Scallops", price: "12", desc: "Sea scallops, grilled asparagus, lime butter." },
+      { name: "Grilled Calamari", price: "8.50", desc: "Rosemary marinated grilled calamari, cherry tomato salsa, garlic toast.", gf: true },
+      { name: "Teriyaki Beef Skewers", price: "8", desc: "Japanese style marinated strips of beef." },
+      { name: "Pan Fried Jumbo Tiger Prawns", price: "13", desc: "Garlic and chilli jumbo tiger prawns served with peppery lettuce.", gf: true },
+      { name: "Steak Tartar", price: "8.50", desc: "Seared fillet steak, capers, shallots, parsley, Worcestershire sauce, crushed mustard seeds, young rocket, truffle oil.", gf: true },
+      { name: "Veggie Cakes", price: "6.50", desc: "Mixed vegetable cakes with jalapeño, mozzarella, coriander-chipotle sauce.", v: true },
+      { name: "BBQ Spare Ribs", price: "8", desc: "Served with mixed greens." },
+      { name: "Spicy Fusion Chicken", price: "8.50", desc: "Fresh spring onion, coriander and chilli infused chicken mince balls." },
+      { name: "Tomato Mozzarella Salad", price: "6.50", desc: "With aged balsamic dressing.", gf: true },
+      { name: "Soup of the Day", price: "4.50", desc: "Served with bread and butter." },
+      { name: "Ciabatta Garlic Breads", price: "3.25", v: true },
+      { name: "Mediterranean Olives", price: "4.50", v: true },
+      { name: "Assorted Bread Basket", price: "3.25", v: true },
+    ],
+    steaks: [
+      { name: "Charred Tenderloin (Fillet) Steak 10oz", price: "42", cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"] },
+      { name: "Char-Grilled Sirloin Steak 12oz", price: "38", cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"] },
+      { name: "Char-Grilled Sirloin Steak 16oz", price: "42", cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"] },
+      { name: "Char-Grilled Rib Eye Steak 12oz", price: "38", cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"] },
+      { name: "Char-Grilled Rib Eye Steak 16oz", price: "42", cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"] },
+      { name: "Char-Grilled Rump Steak 16oz", price: "28", cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"] },
+      { name: "Char-Grilled T-Bone 18oz", price: "39", cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"] },
+      { name: "Char-Grilled Prime Rib 20oz", price: "45", desc: "Rib on the bone. Prime Rib is tender, juicy and extremely flavourful because the fat-marbled muscles aren't heavily used.", cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"] },
+      { name: "Porterhouse for Two 32oz", price: "72", desc: "A traditional cut of two muscles, the flavourful top loin and buttery soft tenderloin.", notes: "Please allow 30 minutes cooking time.", cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"] },
+      { name: "Freedown Hills UK Olive Fed Wagyu 14oz RibEye Steak", price: "75", desc: "Raised in Yorkshire, Freedown Hills Wagyu delivers an amazing umami experience. Animals are fed for 14 months on grass, then grain for 7 months, and finished on a mix of olive and grain for 4 months.", notes: "Limited availability. Pre-orders welcome.", cookingOptions: ["Rare", "Medium-Rare", "Medium", "Medium-Well", "Well-Done"] },
+    ],
+    sides: [
+      { name: "Baked Broccoli & Cheddar Cheese", price: "5.90", v: true },
+      { name: "Baked Potato with Sour Cream", price: "2.50", v: true, gf: true },
+      { name: "Garlic Sautéed Mushroom", price: "4.50", v: true, gf: true },
+      { name: "Grilled Asparagus, Truffle Oil", price: "4.75", v: true, gf: true },
+      { name: "Roasted Vegetables", price: "4.50", v: true, gf: true },
+      { name: "Fresh Green Beans", price: "3.75", v: true, gf: true },
+      { name: "Mixed Green Salad", price: "3.25", v: true, gf: true },
+      { name: "Red Onion & Vine Tomato Salad", price: "3.25", desc: "Served with balsamic dressing.", v: true, gf: true },
+      { name: "Mash Potato", price: "2.50", v: true, gf: true },
+    ],
   };
 
   const daytimeMenu = {
@@ -336,6 +379,27 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
     </div>
   );
 
+  const CookingPreferences = () => (
+    <div className="mt-16 p-8 border border-gold-dark/20 bg-gold-dark/5">
+      <h4 className="text-gold text-[10px] font-black uppercase tracking-[0.3em] mb-6 text-center">Steak Cooking Preferences</h4>
+      <div className="grid md:grid-cols-5 gap-6">
+        {[
+          { level: "Rare", text: "Cool or warm red centre, cooked on the outside." },
+          { level: "Medium Rare", text: "Warm, mostly pink to red centre, soft and juicy inside." },
+          { level: "Medium", text: "A pronounced pink band in the middle with more grey-brown than pink." },
+          { level: "Medium Well", text: "Mostly grey-brown with a hint of pale pink." },
+          { level: "Well Done", text: "Grey-brown throughout, usually slightly charred outside." },
+        ].map((pref) => (
+          <div key={pref.level}>
+            <h5 className="text-zinc-100 text-[10px] font-black uppercase tracking-widest mb-2">{pref.level}</h5>
+            <p className="text-zinc-500 text-xs italic leading-relaxed">{pref.text}</p>
+          </div>
+        ))}
+      </div>
+      <p className="text-[10px] text-zinc-500 italic mt-6 text-center">Steak weights are approximate uncooked weights.</p>
+    </div>
+  );
+
   const categoryIcons: Record<string, React.ReactNode> = {
     starters: <Utensils size={24} />,
     specialities: <ChefHat size={24} />,
@@ -397,7 +461,7 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
         </div>
 
         {/* Secondary Navigation (Categories) */}
-        <div className={`flex justify-center flex-wrap gap-8 mb-16 border-b border-zinc-900 pb-8 ${activeTab === 'house' ? 'hidden' : ''}`}>
+        <div className="flex justify-center flex-wrap gap-8 mb-16 border-b border-zinc-900 pb-8">
           {activeTab === 'dinner' && ['starters', 'steaks', 'sides', 'desserts'].map(cat => (
             <button
               key={cat}
@@ -406,6 +470,16 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
                 }`}
             >
               {cat}
+            </button>
+          ))}
+          {activeTab === 'house' && ['specialities', 'starters', 'steaks', 'sides'].map(cat => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${activeCategory === cat ? 'text-gold scale-110' : 'text-zinc-600 hover:text-zinc-400'
+                }`}
+            >
+              {cat === 'specialities' ? 'House Specialities' : cat === 'sides' ? 'Side Orders' : cat}
             </button>
           ))}
           {activeTab === 'daytime' && ['starters', 'mains'].map(cat => (
@@ -457,24 +531,7 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
                     <p className="text-[10px] text-zinc-400 uppercase tracking-[0.4em]">All steaks are served with chips and two house sauces of the day</p>
                   </div>
                   <MenuGrid items={dinnerMenu.steaks} />
-                  <div className="mt-16 p-8 border border-gold-dark/20 bg-gold-dark/5">
-                    <h4 className="text-gold text-[10px] font-black uppercase tracking-[0.3em] mb-6 text-center">Steak Cooking Preferences</h4>
-                    <div className="grid md:grid-cols-5 gap-6">
-                      {[
-                        { level: "Rare", text: "Cool or warm red centre, cooked on the outside." },
-                        { level: "Medium Rare", text: "Warm, mostly pink to red centre, soft and juicy inside." },
-                        { level: "Medium", text: "A pronounced pink band in the middle with more grey-brown than pink." },
-                        { level: "Medium Well", text: "Mostly grey-brown with a hint of pale pink." },
-                        { level: "Well Done", text: "Grey-brown throughout, usually slightly charred outside." },
-                      ].map((pref) => (
-                        <div key={pref.level}>
-                          <h5 className="text-zinc-100 text-[10px] font-black uppercase tracking-widest mb-2">{pref.level}</h5>
-                          <p className="text-zinc-500 text-xs italic leading-relaxed">{pref.text}</p>
-                        </div>
-                      ))}
-                    </div>
-                    <p className="text-[10px] text-zinc-500 italic mt-6 text-center">Steak weights are approximate uncooked weights.</p>
-                  </div>
+                  <CookingPreferences />
                 </div>
               )}
               {activeCategory === 'sides' && (
@@ -494,13 +551,37 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
 
           {activeTab === 'house' && (
             <div className="animate-fadeIn space-y-20">
-              <div>
-                <SectionHeader title="House Specialities" icon={categoryIcons.specialities} />
-                <div className="bg-gold-dark/5 border border-gold-dark/20 p-6 mb-12 text-center">
-                  <p className="text-[10px] text-zinc-400 uppercase tracking-[0.4em]">All mains are served with chips</p>
+              {activeCategory === 'specialities' && (
+                <div>
+                  <SectionHeader title="House Specialities" icon={categoryIcons.specialities} />
+                  <div className="bg-gold-dark/5 border border-gold-dark/20 p-6 mb-12 text-center">
+                    <p className="text-[10px] text-zinc-400 uppercase tracking-[0.4em]">All mains are served with chips</p>
+                  </div>
+                  <MenuGrid items={houseMenu.specialities} />
                 </div>
-                <MenuGrid items={dinnerMenu.specialities} />
-              </div>
+              )}
+              {activeCategory === 'starters' && (
+                <div>
+                  <SectionHeader title="Starters" icon={categoryIcons.starters} />
+                  <MenuGrid items={houseMenu.starters} />
+                </div>
+              )}
+              {activeCategory === 'steaks' && (
+                <div>
+                  <SectionHeader title="Steaks" icon={categoryIcons.steaks} />
+                  <div className="bg-gold-dark/5 border border-gold-dark/20 p-6 mb-12 text-center">
+                    <p className="text-[10px] text-zinc-400 uppercase tracking-[0.4em]">All steaks are served with chips and two house sauces of the day</p>
+                  </div>
+                  <MenuGrid items={houseMenu.steaks} />
+                  <CookingPreferences />
+                </div>
+              )}
+              {activeCategory === 'sides' && (
+                <div>
+                  <SectionHeader title="Side Orders" icon={categoryIcons.sides} />
+                  <MenuGrid items={houseMenu.sides} />
+                </div>
+              )}
             </div>
           )}
 
