@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { Facebook, Instagram, Twitter, Star } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Star, Sparkles } from 'lucide-react';
+import { CHRISTMAS_MENU_URL } from './ChristmasBanner';
 
 interface FooterProps {
   onPrivacyClick: () => void;
@@ -42,7 +43,11 @@ const Footer: React.FC<FooterProps> = ({ onPrivacyClick, onTermsClick, onDisclai
             </div>
           </div>
 
-          <div className="text-sm font-medium tracking-widest uppercase text-zinc-500 flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4">
+          <div className="text-sm font-medium tracking-widest uppercase text-zinc-500 flex flex-wrap items-center justify-center md:justify-end gap-x-8 gap-y-4">
+            <a href={CHRISTMAS_MENU_URL} className="flex items-center gap-2 px-4 py-2 border border-gold-dark/60 bg-gold-dark/10 text-gold font-bold hover:bg-gold-dark/30 transition-colors uppercase">
+              <Sparkles size={14} />
+              Christmas Menu
+            </a>
             <button onClick={onPrivacyClick} className="hover:text-zinc-100 transition-colors uppercase">Privacy</button>
             <button onClick={onTermsClick} className="hover:text-zinc-100 transition-colors uppercase">Terms</button>
             <button onClick={onDisclaimerClick} className="hover:text-zinc-100 transition-colors uppercase">Disclaimer</button>

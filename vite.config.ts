@@ -19,6 +19,7 @@ export default defineConfig(({ mode }) => {
           'best-steakhouse-winchester': path.resolve(__dirname, 'best-steakhouse-winchester/index.html'),
           'best-fine-dining-winchester': path.resolve(__dirname, 'best-fine-dining-winchester/index.html'),
           'best-sunday-roast-winchester': path.resolve(__dirname, 'best-sunday-roast-winchester/index.html'),
+          'christmas-party-menu-winchester': path.resolve(__dirname, 'christmas-party-menu-winchester/index.html'),
         },
       },
     },

@@ -13,6 +13,7 @@ import GiftCard from './components/GiftCard';
 import Blog from './components/Blog';
 import BlogPostDetail, { BlogPost } from './components/BlogPostDetail';
 import Gallery from './components/Gallery';
+import ChristmasBanner from './components/ChristmasBanner';
 
 export type View = 'home' | 'menu' | 'about' | 'contact' | 'gift-card' | 'blog' | 'gallery';
 
@@ -69,6 +70,7 @@ const App: React.FC = () => {
         return (
           <>
             <Hero onBookClick={openReservation} />
+            <ChristmasBanner />
             <About onBookClick={openReservation} />
             <Menu onBookClick={openReservation} />
 
