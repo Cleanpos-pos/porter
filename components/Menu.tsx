@@ -432,10 +432,10 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
         <div className="flex flex-wrap justify-center gap-2 mb-12">
           {[
             { id: 'dinner', label: 'Dinner Menu', icon: <Utensils size={14} /> },
-            { id: 'house', label: 'House Specialities', icon: <ChefHat size={14} /> },
             { id: 'daytime', label: 'Day Time', icon: <Clock size={14} /> },
             { id: 'specials', label: 'Specials', icon: <Star size={14} /> },
             { id: 'drinks', label: 'Beverages', icon: <Wine size={14} /> },
+            { id: 'house', label: 'House Specialities', icon: <ChefHat size={14} /> },
           ].map((tab) => (
             <button
               key={tab.id}
