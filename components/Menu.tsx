@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Utensils, Wine, Clock, Beef, Beer, Coffee, IceCream, Info as InfoIcon, X, Check, Star } from 'lucide-react';
+import { Utensils, Wine, Clock, Beef, Beer, Coffee, IceCream, ChefHat, Info as InfoIcon, X, Check, Star } from 'lucide-react';
 
 interface MenuItem {
   name: string;
@@ -59,6 +59,15 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
       { name: "Ciabatta Garlic Breads", price: "3.25", v: true },
       { name: "Mediterranean Olives", price: "4.50", v: true },
       { name: "Assorted Bread Basket", price: "3.25", v: true },
+    ],
+    specialities: [
+      { name: "Chimichurri Beef Skewers", price: "24", desc: "Chimichurri grilled beef skewers, red onion & vine tomato salad.", gf: true },
+      { name: "Grilled Trio", price: "27", desc: "Grilled fillet mignon, chicken breast, lamb chops.", gf: true },
+      { name: "Hampshire Pork Loin", price: "20", desc: "With roasted vegetables, vintage port & fig sauce." },
+      { name: "Grilled Lamb Chops", price: "27", desc: "English lamb chops, mint and wholegrain mustard crushed baby potatoes, rosemary red wine sauce." },
+      { name: "Chicken Provencal", price: "19", desc: "Chicken breasts Provencal. Served with fine green beans." },
+      { name: "Pan Fried Salmon", price: "25", desc: "Salmon fillet, mix vegetables, lime butter sauce." },
+      { name: "Roasted Vegetable Stack", price: "16", desc: "Aubergine, artichoke, zucchini, asparagus, mozzarella, vine tomato, basil.", v: true, gf: true },
     ],
     steaks: [
       {
@@ -297,6 +306,7 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
 
   const categoryIcons: Record<string, React.ReactNode> = {
     starters: <Utensils size={24} />,
+    specialities: <ChefHat size={24} />,
     steaks: <Beef size={24} />,
     sides: <Beer size={24} />,
     desserts: <IceCream size={24} />,
@@ -354,14 +364,14 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
 
         {/* Secondary Navigation (Categories) */}
         <div className="flex justify-center flex-wrap gap-8 mb-16 border-b border-zinc-900 pb-8">
-          {activeTab === 'dinner' && ['starters', 'steaks', 'sides', 'desserts'].map(cat => (
+          {activeTab === 'dinner' && ['starters', 'specialities', 'steaks', 'sides', 'desserts'].map(cat => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${activeCategory === cat ? 'text-gold scale-110' : 'text-zinc-600 hover:text-zinc-400'
                 }`}
             >
-              {cat}
+              {cat === 'specialities' ? 'House Specialities' : cat}
             </button>
           ))}
           {activeTab === 'daytime' && ['starters', 'mains'].map(cat => (
@@ -404,6 +414,15 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
                 <div>
                   <SectionHeader title="To Begin" icon={categoryIcons.starters} />
                   <MenuGrid items={dinnerMenu.starters} />
+                </div>
+              )}
+              {activeCategory === 'specialities' && (
+                <div>
+                  <SectionHeader title="House Specialities" icon={categoryIcons.specialities} />
+                  <div className="bg-gold-dark/5 border border-gold-dark/20 p-6 mb-12 text-center">
+                    <p className="text-[10px] text-zinc-400 uppercase tracking-[0.4em]">All mains are served with chips</p>
+                  </div>
+                  <MenuGrid items={dinnerMenu.specialities} />
                 </div>
               )}
               {activeCategory === 'steaks' && (
