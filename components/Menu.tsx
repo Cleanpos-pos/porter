@@ -19,7 +19,7 @@ interface MenuProps {
 
 const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
 
-  const [activeTab, setActiveTab] = useState<'dinner' | 'daytime' | 'specials' | 'drinks'>('dinner');
+  const [activeTab, setActiveTab] = useState<'dinner' | 'house' | 'daytime' | 'specials' | 'drinks'>('dinner');
   const [activeCategory, setActiveCategory] = useState<string>('starters');
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
@@ -368,6 +368,7 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
         <div className="flex flex-wrap justify-center gap-2 mb-12">
           {[
             { id: 'dinner', label: 'Dinner Menu', icon: <Utensils size={14} /> },
+            { id: 'house', label: 'House Specialities', icon: <ChefHat size={14} /> },
             { id: 'daytime', label: 'Day Time', icon: <Clock size={14} /> },
             { id: 'specials', label: 'Specials', icon: <Star size={14} /> },
             { id: 'drinks', label: 'Beverages', icon: <Wine size={14} /> },
@@ -377,6 +378,7 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
               onClick={() => {
                 setActiveTab(tab.id as any);
                 if (tab.id === 'dinner') setActiveCategory('starters');
+                if (tab.id === 'house') setActiveCategory('specialities');
                 if (tab.id === 'daytime') setActiveCategory('starters');
                 if (tab.id === 'specials') setActiveCategory('starters');
                 if (tab.id === 'drinks') setActiveCategory('sparkling');
@@ -395,15 +397,15 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
         </div>
 
         {/* Secondary Navigation (Categories) */}
-        <div className="flex justify-center flex-wrap gap-8 mb-16 border-b border-zinc-900 pb-8">
-          {activeTab === 'dinner' && ['starters', 'specialities', 'steaks', 'sides', 'desserts'].map(cat => (
+        <div className={`flex justify-center flex-wrap gap-8 mb-16 border-b border-zinc-900 pb-8 ${activeTab === 'house' ? 'hidden' : ''}`}>
+          {activeTab === 'dinner' && ['starters', 'steaks', 'sides', 'desserts'].map(cat => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`text-[11px] uppercase tracking-[0.3em] font-bold transition-all ${activeCategory === cat ? 'text-gold scale-110' : 'text-zinc-600 hover:text-zinc-400'
                 }`}
             >
-              {cat === 'specialities' ? 'House Specialities' : cat}
+              {cat}
             </button>
           ))}
           {activeTab === 'daytime' && ['starters', 'mains'].map(cat => (
@@ -448,15 +450,6 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
                   <MenuGrid items={dinnerMenu.starters} />
                 </div>
               )}
-              {activeCategory === 'specialities' && (
-                <div>
-                  <SectionHeader title="House Specialities" icon={categoryIcons.specialities} />
-                  <div className="bg-gold-dark/5 border border-gold-dark/20 p-6 mb-12 text-center">
-                    <p className="text-[10px] text-zinc-400 uppercase tracking-[0.4em]">All mains are served with chips</p>
-                  </div>
-                  <MenuGrid items={dinnerMenu.specialities} />
-                </div>
-              )}
               {activeCategory === 'steaks' && (
                 <div>
                   <SectionHeader title="The Cuts" icon={categoryIcons.steaks} />
@@ -496,6 +489,18 @@ const Menu: React.FC<MenuProps> = ({ onBookClick }) => {
                   <MenuGrid items={dinnerMenu.desserts} />
                 </div>
               )}
+            </div>
+          )}
+
+          {activeTab === 'house' && (
+            <div className="animate-fadeIn space-y-20">
+              <div>
+                <SectionHeader title="House Specialities" icon={categoryIcons.specialities} />
+                <div className="bg-gold-dark/5 border border-gold-dark/20 p-6 mb-12 text-center">
+                  <p className="text-[10px] text-zinc-400 uppercase tracking-[0.4em]">All mains are served with chips</p>
+                </div>
+                <MenuGrid items={dinnerMenu.specialities} />
+              </div>
             </div>
           )}
 
